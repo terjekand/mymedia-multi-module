@@ -1,0 +1,4 @@
+org\mymedia\database\entities\Post.class
+org\mymedia\database\dao\UserDataBase.class
+org\mymedia\database\entities\User.class
+org\mymedia\database\dao\PostDataBase.class
