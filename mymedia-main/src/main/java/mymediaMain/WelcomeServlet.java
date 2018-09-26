@@ -7,11 +7,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 
 import org.mymedia.database.entities.User;
 import org.mymedia.database.dao.UserDataBase;
 
-
+@Slf4j
 @WebServlet(urlPatterns = "/login")
 public class WelcomeServlet extends HttpServlet {
 	private static final UserDataBase UserDB = UserDataBase.getDataBase();
@@ -20,7 +21,7 @@ public class WelcomeServlet extends HttpServlet {
 		   
 		   try {
 	            UserDB.connectDB();
-	            System.out.println("Connect to database");
+	            log.trace("Connected to database!");
 		       
 
 	        } catch (Exception e) {
@@ -46,9 +47,9 @@ public class WelcomeServlet extends HttpServlet {
 			   request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
 		   }
 		   if(user != null && user.getPassword().equals(request.getParameter("password"))) {
-			   System.out.println("USER INFO");
-			   System.out.println(user.getUsername());
-			   System.out.println(user.getPassword());
+			   log.trace("USER INFO");
+			   log.trace(user.getUsername());
+			   log.trace(user.getPassword());
 			   request.setAttribute("username", request.getParameter("username"));
 			   request.setAttribute("password", request.getParameter("password"));
 			   request.getRequestDispatcher("WEB-INF/views/welcome.jsp").forward(request, response);

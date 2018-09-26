@@ -15,6 +15,15 @@
 .vcf
 .xml
 
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+
 ### Database ###
 .accdb
 .db

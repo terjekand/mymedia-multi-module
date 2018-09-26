@@ -13,9 +13,11 @@ import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 import javax.persistence.Query;
+import lombok.extern.slf4j.Slf4j;
 import org.mymedia.database.entities.Post;
 import org.mymedia.database.entities.User;
 
+@Slf4j
 public class PostDataBase {
     public static final PostDataBase DB_PELDANY = new PostDataBase();
     @PersistenceContext(unitName = "UsersDB")
@@ -31,6 +33,7 @@ public class PostDataBase {
     public void connectDB() throws Exception{
         EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("UsersDB");
         em = emFactory.createEntityManager();
+        log.trace("Connected!");
     }
     
     public boolean connected(){
@@ -42,18 +45,18 @@ public class PostDataBase {
     public void disconnectDB(){
         if(connected()){
             em.close();
-            //log.trace("Disconnected!");
+            log.trace("Disconnected!");
         }
         em = null;
     }
     public Post save(Post entity) throws IllegalStateException, IllegalArgumentException, Exception {
 
         if (!connected()) {
-            throw new IllegalStateException("Nincs adatb�zis-kapcsolat!");
+            throw new IllegalStateException("No database connecton!");
         }
 
         if (entity == null) {
-            throw new IllegalArgumentException("A mentend� entit�s null!");
+            throw new IllegalArgumentException("Null entity!");
         }
 
         try {
@@ -69,17 +72,17 @@ public class PostDataBase {
 
             return entity;
         } catch (PersistenceException e) {
-            throw new Exception("JPA hiba!", e);
+            throw new Exception("JPA error!", e);
         }
     }
 
     public void delete(Post entity) throws IllegalStateException, IllegalArgumentException, Exception {
         if (!connected()) {
-            throw new IllegalStateException("Nincs adatb�zis-kapcsolat!");
+            throw new IllegalStateException("No database connecton!");
         }
 
         if (entity == null || entity.getId() == 0) {
-            throw new IllegalArgumentException("A t�rlend� entit�s null vagy nincs ID-je!");
+            throw new IllegalArgumentException("Null entitiy vagy nincs id-je");
         }
 
         try {
@@ -87,7 +90,7 @@ public class PostDataBase {
             User delEntity = em.find(User.class, entity.getId());
 
             if (delEntity.getId() == null) {
-                throw new IllegalArgumentException("A t�rlend� entit�s nincs az adatb�zisban!");
+                throw new IllegalArgumentException("A torlendo entitas nincs az adatbazisban");
             }
 
             em.getTransaction().begin();
@@ -111,7 +114,7 @@ public class PostDataBase {
             posts = query.getResultList();
             return posts;
         }catch(Exception e){
-            System.err.println(e);
+            log.error("" + e);
             return null;
         }
     }

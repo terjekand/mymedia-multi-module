@@ -15,8 +15,10 @@ import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 import javax.persistence.Query;
+import lombok.extern.slf4j.Slf4j;
 import org.mymedia.database.entities.User;
 
+@Slf4j
 public class UserDataBase implements Serializable{
     public static final UserDataBase DB_PELDANY = new UserDataBase();
     @PersistenceContext(unitName = "UsersDB")
@@ -50,11 +52,11 @@ public class UserDataBase implements Serializable{
     public User save(User entity) throws IllegalStateException, IllegalArgumentException, Exception {
 
         if (!connected()) {
-            throw new IllegalStateException("Nincs adatb�zis-kapcsolat!");
+            throw new IllegalStateException("Nincs adatbazis kapcsolat!");
         }
 
         if (entity == null) {
-            throw new IllegalArgumentException("A mentend� entit�s null!");
+            throw new IllegalArgumentException("A mentendo entitas null!");
         }
 
         try {
@@ -76,11 +78,11 @@ public class UserDataBase implements Serializable{
 
     public void delete(User entity) throws IllegalStateException, IllegalArgumentException, Exception {
         if (!connected()) {
-            throw new IllegalStateException("Nincs adatb�zis-kapcsolat!");
+            throw new IllegalStateException("Nincs adatbazis-kapcsolat!");
         }
 
         if (entity == null || entity.getId() == 0) {
-            throw new IllegalArgumentException("A t�rlend� entit�s null vagy nincs ID-je!");
+            throw new IllegalArgumentException("A torlendo entitas null vagy nincs ID-je!");
         }
 
         try {
@@ -101,7 +103,7 @@ public class UserDataBase implements Serializable{
 
     public boolean validUser(User user){
         if(!connected()){
-            throw new IllegalStateException("Nincs adatb�zis-kapcsolat!");
+            throw new IllegalStateException("Nincs adatbazis-kapcsolat!");
         }
         try{
              Query query = em.createNamedQuery("User.validUser", User.class);
@@ -122,7 +124,7 @@ public class UserDataBase implements Serializable{
 
     public User getUser(String USERNAME){
         if(!connected()){
-            throw new IllegalStateException("Nincs adatb�zis-kapcsolat!");
+            throw new IllegalStateException("Nincs adatbazis-kapcsolat!");
         }
         try{
              Query query = em.createNamedQuery("User.getUser", User.class);
@@ -139,7 +141,7 @@ public class UserDataBase implements Serializable{
              }  
              
         }catch(Exception e){
-            System.err.println(e);
+            log.error("" + e);
             return null;
         }
     }
@@ -156,7 +158,7 @@ public class UserDataBase implements Serializable{
             users = query.getResultList();
             return users;
         }catch(Exception e){
-            System.err.println(e);
+            log.error("" + e);
             return null;
         }
     }

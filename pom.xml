@@ -70,9 +70,29 @@
 				<scope>provided</scope>
 			</dependency>
 
+			<!-- LogBack + Slf4j -->
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>1.2.3</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.25</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>1.18.2</version>
+				<scope>provided</scope>
+			</dependency>
+
+
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -108,6 +128,6 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-	
+
 	</build>
 </project>

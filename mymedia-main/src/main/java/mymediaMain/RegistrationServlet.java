@@ -7,10 +7,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 
 import org.mymedia.database.entities.User;
 import org.mymedia.database.dao.UserDataBase;
 
+@Slf4j
 @WebServlet(urlPatterns = "/registration")
 public class RegistrationServlet extends HttpServlet{
 	private static final UserDataBase USER_DB = UserDataBase.getDataBase();
@@ -19,10 +21,10 @@ public class RegistrationServlet extends HttpServlet{
 		   
 		   try {
 	            USER_DB.connectDB();
-	            System.out.println("Connect to database");     
+	            log.trace("Connect to database!");    
 	            
 	        } catch (Exception e) {
-	        	System.err.println(e);
+	        	log.error("" + e);
 	        }
 	}
 		@Override
@@ -48,11 +50,11 @@ public class RegistrationServlet extends HttpServlet{
 				   USER_DB.save(user);
 				   request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
 			   } catch (IllegalStateException e) {
-					e.printStackTrace();
+					log.error("" + e);
 				} catch (IllegalArgumentException e) {
-					e.printStackTrace();
+					log.error("" + e);
 				} catch (Exception e) {
-					e.printStackTrace();
+					log.error("" + e);;
 				}    
 		   }
 		   
