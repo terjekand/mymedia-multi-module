@@ -49,12 +49,10 @@ public class RegistrationServlet extends HttpServlet{
 			   try {
 				   USER_DB.save(user);
 				   request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
-			   } catch (IllegalStateException e) {
-					log.error("" + e);
-				} catch (IllegalArgumentException e) {
+			   } catch (IllegalStateException | IllegalArgumentException e) {
 					log.error("" + e);
 				} catch (Exception e) {
-					log.error("" + e);;
+					log.error("" + e);
 				}    
 		   }
 		   
