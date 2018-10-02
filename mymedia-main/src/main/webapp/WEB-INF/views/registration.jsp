@@ -4,47 +4,45 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="styles/bscstyle.css" />
+        <link rel="stylesheet" type="text/css" href="../styles/bscstyle.css">
         <title>Registration</title>
     </head>
     <body>
-        <h1>Sing in</h1>
+        <h1>Register</h1>
         <form action="registration" method="post">
-            <table
-                cellpadding = "8"
-                align = center>
+            <table>
 
                 <tr>
-                    <td><center>Full Name</center></td>
+                    <td>Full Name</td>
                 </tr>
 
                 <td><center><input type="text" name = fullname></center></td>
                 </tr>
 
                 <tr>
-                    <td><center>Email</center></td>
+                    <td>Email</td>
                 </tr>
 
-                <td><center><input type="text" name = email></center></td>
-                </tr>
-
-                <tr>
-                    <td><center>Username</center></td>
-                </tr>
-
-                <td><center><input type="text" name = username></center></td>
+                <td><input type="text" name = email></td>
                 </tr>
 
                 <tr>
-                    <td><center>Password</center></td>
+                    <td>Username</td>
+                </tr>
+
+                <td><input type="text" name = username></td>
                 </tr>
 
                 <tr>
-                    <td><center><input type="password" name = password></center></td>
+                    <td>Password</td>
                 </tr>
 
                 <tr>
-                    <td><center><input type="submit" value = "Registration"></center></td>
+                    <td><input type="password" name = password></td>
+                </tr>
+
+                <tr>
+                    <td><input type="submit" value = "Registration"></td>
                 </tr>
 
             </table>
