@@ -16,17 +16,17 @@ import org.mymedia.database.dao.UserDataBase;
 @WebServlet(urlPatterns = "/registration")
 public class RegistrationServlet extends HttpServlet{
 	private static final UserDataBase USER_DB = UserDataBase.getDataBase();
-	@Override
-	public void init() {
-		   
-		   try {
-	            USER_DB.connectDB();
-	            log.trace("Connect to database!");    
-	            
-	        } catch (Exception e) {
-	        	log.error("" + e);
-	        }
-	}
+//	@Override
+//	public void init() {
+//		   
+//		   try {
+//	            USER_DB.connectDB();
+//	            log.trace("Connect to database!");    
+//	            
+//	        } catch (Exception e) {
+//	        	log.error("" + e);
+//	        }
+//	}
 		@Override
 		public void doGet(HttpServletRequest request, HttpServletResponse response)
 	      throws ServletException, IOException{
@@ -60,10 +60,10 @@ public class RegistrationServlet extends HttpServlet{
 		   
 	   }
 	   
-	   @Override
-	   public void destroy() {
-           USER_DB.disconnectDB();
-	   }
+//	   @Override
+//	   public void destroy() {
+//           USER_DB.disconnectDB();
+//	   }
 
 
 }

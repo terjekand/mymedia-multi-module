@@ -16,7 +16,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Users", schema = "MY_SCHEMA")
+@Table(name = "Users")
 
 @NamedQueries({
     @NamedQuery(name = "User.validUser", query = "SELECT u FROM User u WHERE u.username =:un AND u.password =:pw"),

@@ -1,0 +1,12 @@
+body{
+    background-color: #324677;
+    color: #f3ff99; 
+    font-weight: bold;
+}
+table{
+    border: 1px solid black;
+    border-radius: 16px; 
+    border-color: #f3ff99;
+    border-width: 3px;
+    padding: 20px;
+}

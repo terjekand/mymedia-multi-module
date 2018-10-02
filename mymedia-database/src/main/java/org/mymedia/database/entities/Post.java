@@ -22,7 +22,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Posts", schema = "MY_SCHEMA")
+@Table(name = "Posts")
 
 @NamedQueries({
     @NamedQuery(name = "Post.getPostsOfUser", query = "SELECT u FROM Post u WHERE u.user =:un"),
