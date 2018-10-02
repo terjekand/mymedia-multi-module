@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
+import mymediaMain.services.BCrypt;
 
 import org.mymedia.database.entities.User;
 import org.mymedia.database.dao.UserDataBase;
@@ -47,7 +48,7 @@ public class RegistrationServlet extends HttpServlet {
             request.getRequestDispatcher("WEB-INF/views/registration.jsp").forward(request, response);
         } else {
             user = new User(request.getParameter("username"),
-                    request.getParameter("password"),
+                    BCrypt.hashpw(request.getParameter("password"), BCrypt.gensalt()),
                     request.getParameter("email"),
                     request.getParameter("fullname"));
             try {

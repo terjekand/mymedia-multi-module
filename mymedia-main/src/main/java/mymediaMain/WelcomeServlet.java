@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
+import mymediaMain.services.BCrypt;
 
 import org.mymedia.database.entities.User;
 import org.mymedia.database.dao.UserDataBase;
@@ -48,7 +49,7 @@ public class WelcomeServlet extends HttpServlet {
         if (user == null) {
             request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
         }
-        if (user != null && user.getPassword().equals(request.getParameter("password"))) {
+        if (user != null && BCrypt.checkpw(request.getParameter("password"), BCrypt.hashpw(request.getParameter("password"), BCrypt.gensalt()))) {
             log.trace("USER INFO");
             log.trace(user.getUsername());
             log.trace(user.getPassword());

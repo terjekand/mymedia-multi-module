@@ -16,8 +16,7 @@
             <artifactId>javaee-api</artifactId>
             <scope>provided</scope>
         </dependency>
-
-
+        
         <!-- LogBack + Slf4j -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
