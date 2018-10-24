@@ -146,7 +146,7 @@ public class UserDataBase implements Serializable{
         }
     }
     
-    public List<User> listAllUser(){
+    public List<User> getAllUser(){
         if(!connected()){
             throw new IllegalStateException("Nincs adatb�zis-kapcsolat!t");
         }

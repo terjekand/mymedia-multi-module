@@ -10,7 +10,7 @@
     <artifactId>mymedia-main</artifactId>
     <packaging>war</packaging>
     <dependencies>
-
+        
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
@@ -26,7 +26,17 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
         </dependency>
-
+        
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>        
+        
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>mymedia-database</artifactId>

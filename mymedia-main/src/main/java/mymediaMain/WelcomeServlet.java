@@ -55,7 +55,7 @@ public class WelcomeServlet extends HttpServlet {
             log.trace(user.getPassword());
             request.setAttribute("username", request.getParameter("username"));
             request.setAttribute("password", request.getParameter("password"));
-            request.getRequestDispatcher("WEB-INF/views/welcome.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/views/news.jsp").forward(request, response);
         }
 
     }
