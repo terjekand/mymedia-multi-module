@@ -1,11 +1,11 @@
-package mymediaMain.Response;
+package mymediaMain.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import mymediaMain.Enums.ErrorCodes;
-import mymediaMain.Enums.ErrorMessages;
+import mymediaMain.enums.ErrorCodes;
+import mymediaMain.enums.ErrorMessages;
 
 @AllArgsConstructor
 @NoArgsConstructor

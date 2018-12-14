@@ -1,9 +1,9 @@
 package mymediaMain.services;
 
 import lombok.extern.slf4j.Slf4j;
-import mymediaMain.Enums.ErrorCodes;
-import mymediaMain.Enums.ErrorMessages;
-import mymediaMain.Response.Response;
+import mymediaMain.enums.ErrorCodes;
+import mymediaMain.enums.ErrorMessages;
+import mymediaMain.response.Response;
 import org.mymedia.database.dao.UserDataBase;
 import org.mymedia.database.entities.User;
 
@@ -51,7 +51,7 @@ public class RegistrationService {
     public Response userRegistration(User user){
 
         if(isUsedUsername(user.getUsername())){
-            return new Response(ErrorMessages.WRONG_USERNAME, ErrorCodes.WRONG_USERNAME);
+            return new Response(ErrorMessages.USED_USERNAME, ErrorCodes.USED_USERNAME);
         }
 
         else if(isValidEmail(user.getUsername())) {
@@ -59,7 +59,7 @@ public class RegistrationService {
         }
 
         else if(isUsedEmail(user.getEmail())){
-            return new Response(ErrorMessages.WRONG_EMAIL, ErrorCodes.WRONG_EMAIL);
+            return new Response(ErrorMessages.USED_EMAIL, ErrorCodes.USED_EMAIL);
         }
 
         try {

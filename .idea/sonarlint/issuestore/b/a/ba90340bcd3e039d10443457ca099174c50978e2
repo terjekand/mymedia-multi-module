@@ -1,30 +1,30 @@
 
+%squid:RedundantThrowsDeclarationCheck""lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ê¾Íò
 qsquid:S2293µ"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ñ×©’
-Qsquid:S1854µ"9Remove this useless assignment to local variable "users".(Ñ×©’
-Ysquid:S1141"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8á£µäú,
+U
+squid:S106‹"9Replace this use of System.out or System.err by a logger.(°£Ö‹üÿÿÿÿ
+^squid:S00112d"FDefine and throw a dedicated exception instead of using a generic one.(ÈÉÂÇ
 ®%squid:RedundantThrowsDeclarationCheckO"}Remove the declaration of thrown exception 'java.lang.IllegalArgumentException' which is a subclass of 'java.lang.Exception'.(şÅá‚
-^squid:S001124"FDefine and throw a dedicated exception instead of using a generic one.(»Æ‘Õ
+wsquid:S1192Q"[Define a constant instead of duplicating this literal "Nincs adatbazis-kapcsolat!" 4 times.(î“³Òúÿÿÿÿ
+Ysquid:S1141"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8á£µäú,
+Qsquid:S1854µ"9Remove this useless assignment to local variable "users".(Ñ×©’
+]squid:S1126("AReplace this if-then-else statement by a single return statement.(ÑéÒíüÿÿÿÿ
+^squid:S00112O"FDefine and throw a dedicated exception instead of using a generic one.(şÅá‚
 «%squid:RedundantThrowsDeclarationCheckO"zRemove the declaration of thrown exception 'java.lang.IllegalStateException' which is a subclass of 'java.lang.Exception'.(şÅá‚
-@squid:S1948"$Make "em" transient or serializable.(‘æ¿Úúÿÿÿÿ
-«%squid:RedundantThrowsDeclarationCheck4"zRemove the declaration of thrown exception 'java.lang.IllegalStateException' which is a subclass of 'java.lang.Exception'.(»Æ‘Õ
-]squid:S1126s"AReplace this if-then-else statement by a single return statement.(éá¼ùÿÿÿÿÿ
-®%squid:RedundantThrowsDeclarationCheck4"}Remove the declaration of thrown exception 'java.lang.IllegalArgumentException' which is a subclass of 'java.lang.Exception'.(»Æ‘Õ
 U
 squid:S106ˆ"9Replace this use of System.out or System.err by a logger.(€¹•ôıÿÿÿÿ
 \
 squid:S106 "9Replace this use of System.out or System.err by a logger.(€¹•ôıÿÿÿÿ8á£µäú,
-]squid:S1126("AReplace this if-then-else statement by a single return statement.(ÑéÒíüÿÿÿÿ
+Csquid:S1168º"+Return an empty collection instead of null.(¥¹ï
+^squid:S001124"FDefine and throw a dedicated exception instead of using a generic one.(»Æ‘Õ
 T
 squid:S106x"9Replace this use of System.out or System.err by a logger.(Şàš¬øÿÿÿÿ
-Csquid:S1168º"+Return an empty collection instead of null.(¥¹ï
+«%squid:RedundantThrowsDeclarationCheck4"zRemove the declaration of thrown exception 'java.lang.IllegalStateException' which is a subclass of 'java.lang.Exception'.(»Æ‘Õ
+Rsquid:S1141…"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+®%squid:RedundantThrowsDeclarationCheck4"}Remove the declaration of thrown exception 'java.lang.IllegalArgumentException' which is a subclass of 'java.lang.Exception'.(»Æ‘Õ
+^squid:S00112""FDefine and throw a dedicated exception instead of using a generic one.(ê¾Íò
+^squid:S00112K"FDefine and throw a dedicated exception instead of using a generic one.(û§›¦
+]squid:S1126s"AReplace this if-then-else statement by a single return statement.(éá¼ùÿÿÿÿÿ
 \
 squid:S106£"9Replace this use of System.out or System.err by a logger.(°£Ö‹üÿÿÿÿ8á£µäú,
-^squid:S00112O"FDefine and throw a dedicated exception instead of using a generic one.(şÅá‚
-wsquid:S1192Q"[Define a constant instead of duplicating this literal "Nincs adatbazis-kapcsolat!" 4 times.(î“³Òúÿÿÿÿ
-^squid:S00112""FDefine and throw a dedicated exception instead of using a generic one.(ê¾Íò
-^squid:S00112d"FDefine and throw a dedicated exception instead of using a generic one.(ÈÉÂÇ
-Rsquid:S1141…"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
-U
-squid:S106‹"9Replace this use of System.out or System.err by a logger.(°£Ö‹üÿÿÿÿ
-^squid:S00112K"FDefine and throw a dedicated exception instead of using a generic one.(û§›¦
-%squid:RedundantThrowsDeclarationCheck""lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ê¾Íò
+@squid:S1948"$Make "em" transient or serializable.(‘æ¿Úúÿÿÿÿ

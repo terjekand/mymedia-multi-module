@@ -1,4 +1,4 @@
-package mymediaMain.Enums;
+package mymediaMain.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,9 +8,10 @@ import lombok.Getter;
 public enum ErrorMessages {
 
     UNAUTHORIZED("Access denied!"),
-    WRONG_USERNAME("This user name is taken!"),
-    WRONG_EMAIL("This email address is taken!"),
-    WRONG_EMAIL_FORMAT("This is not a valid email adress!"),
+    USED_USERNAME("This user name is taken!"),
+    USED_EMAIL("This email address is taken!"),
+    WRONG_EMAIL_FORMAT("This is not a valid email address!"),
+    WRONG_USERNAME("Wrong username!"),
     OK("Successful!"),
     UNKNOWN_ERROR("UNKNOWN_ERROR"),
     TOKEN_REFRESH_ERROR("Token refresh error!"),

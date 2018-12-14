@@ -1,4 +1,4 @@
-package mymediaMain.Enums;
+package mymediaMain.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,12 +7,13 @@ import lombok.Getter;
 @Getter
 public enum ErrorCodes {
 
-    WRONG_USERNAME(-1),
-    WRONG_EMAIL(-2),
+    USED_USERNAME(-1),
+    USED_EMAIL(-2),
     TOKEN_REFRESH_ERROR(-3),
-    USER_ALREADY_HAS_NO_PREMISSION(-4),
+    USER_ALREADY_HAS_NO_PERMISSION(-4),
     ALREADY_AUTHORIZED_USER(-5),
     WRONG_EMAIL_FORMAT(-6),
+    WRONG_USERNAME(-7),
     OK(200),
     UNAUTHORIZED(401),
     UNKNOWN_ERROR(-999);

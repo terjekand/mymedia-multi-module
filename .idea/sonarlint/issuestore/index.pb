@@ -33,3 +33,11 @@ y
 Imymedia-database/src/main/java/org/mymedia/database/dao/UserDataBase.java,b\a\ba90340bcd3e039d10443457ca099174c50978e2
 p
 @mymedia-main/src/main/java/mymediaMain/services/AuthService.java,3\a\3a8a30f5729d83095393c962bfb21c5443562d06
+k
+;mymedia-main/src/main/java/mymediaMain/services/BCrypt.java,8\d\8dc92ab8d2195003bc478f7c69088bb1bd1f90df
+l
+<mymedia-main/src/main/java/mymediaMain/enums/ErrorCodes.java,0\4\046a1271bfa5558485f81a49edfb07debed5c15a
+g
+7mymedia-main/src/main/java/mymediaMain/dto/AuthDto.java,1\c\1c0774de50b198126d86c734175b3ac313308c0a
+o
+?mymedia-main/src/main/java/mymediaMain/enums/ErrorMessages.java,b\b\bb99faea288b3555e6a89dd9329018182e671463

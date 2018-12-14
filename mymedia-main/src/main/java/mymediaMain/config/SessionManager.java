@@ -1,9 +1,9 @@
 package mymediaMain.config;
 
 
-import mymediaMain.Enums.ErrorCodes;
-import mymediaMain.Enums.ErrorMessages;
-import mymediaMain.Response.Response;
+import mymediaMain.enums.ErrorCodes;
+import mymediaMain.enums.ErrorMessages;
+import mymediaMain.response.Response;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -46,7 +46,7 @@ public class SessionManager {
             sessionMap.remove(userId);
             return new Response(ErrorMessages.OK, ErrorCodes.OK);
         }
-        return new Response(ErrorMessages.USER_ALREADY_HAS_NO_PREMISSION, ErrorCodes.USER_ALREADY_HAS_NO_PREMISSION);
+        return new Response(ErrorMessages.USER_ALREADY_HAS_NO_PREMISSION, ErrorCodes.USER_ALREADY_HAS_NO_PERMISSION);
     }
     public Set<Long> listAllUsersOfSession(){
         return sessionMap.keySet();

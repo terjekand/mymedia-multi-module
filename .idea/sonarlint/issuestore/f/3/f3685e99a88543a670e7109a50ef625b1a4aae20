@@ -1,12 +1,12 @@
 
+nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ôé¹þÿÿÿÿ8†š°áú,
+wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ô¼Â£üÿÿÿÿ
+Wsquid:UnusedPrivateMethodC"-Remove this unused private "getPosts" method.(Œ¼ùÿýÿÿÿÿ
+ssquid:UselessImportCheck"CRemove this unused import 'javax.annotation.security.DeclareRoles'.(®ìžƒýÿÿÿÿ8°Â¯àú,
+=squid:S1989Q"&Add a "try/catch" block for "forward".(óåÌÛ
+squid:S1186V"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(þ³‚”ûÿÿÿÿ
+=squid:S1989Q"&Add a "try/catch" block for "forward".(óåÌÛ
+gsquid:CommentedOutCodeLine]"<This block of commented-out lines of code should be removed.(ä®›‹øÿÿÿÿ
+isquid:CommentedOutCodeLine""<This block of commented-out lines of code should be removed.(á»Ñ8†š°áú,
 T
 squid:S1064"9Replace this use of System.out or System.err by a logger.(Þàš¬øÿÿÿÿ
-wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ô¼Â£üÿÿÿÿ
-gsquid:CommentedOutCodeLine]"<This block of commented-out lines of code should be removed.(ä®›‹øÿÿÿÿ
-=squid:S1989Q"&Add a "try/catch" block for "forward".(óåÌÛ
-nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ôé¹þÿÿÿÿ8†š°áú,
-=squid:S1989Q"&Add a "try/catch" block for "forward".(óåÌÛ
-isquid:CommentedOutCodeLine""<This block of commented-out lines of code should be removed.(á»Ñ8†š°áú,
-ssquid:UselessImportCheck"CRemove this unused import 'javax.annotation.security.DeclareRoles'.(®ìžƒýÿÿÿÿ8°Â¯àú,
-squid:S1186V"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(þ³‚”ûÿÿÿÿ
-Wsquid:UnusedPrivateMethodC"-Remove this unused private "getPosts" method.(Œ¼ùÿýÿÿÿÿ

@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
-import mymediaMain.Enums.ErrorCodes;
-import mymediaMain.Response.Response;
+import mymediaMain.enums.ErrorCodes;
+import mymediaMain.response.Response;
 import mymediaMain.services.BCrypt;
 
 import mymediaMain.services.RegistrationService;

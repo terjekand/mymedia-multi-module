@@ -1,9 +1,13 @@
 package mymediaMain.services;
 
 import lombok.extern.slf4j.Slf4j;
-import mymediaMain.Response.Response;
+import mymediaMain.dto.AuthDto;
+import mymediaMain.enums.ErrorCodes;
+import mymediaMain.enums.ErrorMessages;
+import mymediaMain.response.Response;
 import mymediaMain.config.SessionManager;
 import org.mymedia.database.dao.UserDataBase;
+import org.mymedia.database.entities.User;
 
 
 @Slf4j
@@ -20,8 +24,16 @@ public class AuthService {
             System.err.println(e);
         }
     }
-    public Response authenticate(Long userId){
+    private Response authenticate(Long userId){
         return SESSION_MANAGER.addUserId(userId);
+    }
+
+    public Response login(AuthDto authDto){
+        User user = USER_DATA_BASE.getUserByUsername(authDto.getUsername());
+        if (user != null && BCrypt.checkpw(authDto.getPassword(), BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()))){
+            return authenticate(user.getId());
+        }
+        return new Response(ErrorMessages.USED_USERNAME, ErrorCodes.USED_USERNAME);
     }
 
     public Response logout(Long userId){
