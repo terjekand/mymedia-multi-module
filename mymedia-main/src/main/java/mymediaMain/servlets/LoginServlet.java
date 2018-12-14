@@ -1,4 +1,4 @@
-package mymediaMain;
+package mymediaMain.servlets;
 
 import java.io.IOException;
 
@@ -15,20 +15,14 @@ import org.mymedia.database.dao.UserDataBase;
 
 @Slf4j
 @WebServlet(urlPatterns = "/login")
-public class WelcomeServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 
     private static final UserDataBase USERDB = UserDataBase.getDataBase();
 
     @Override
     public void init() {
 
-        try {
-            USERDB.connectDB();
-            log.trace("Connected to database!");
 
-        } catch (Exception e) {
-            System.err.println(e);
-        }
     }
 
     @Override
@@ -45,7 +39,7 @@ public class WelcomeServlet extends HttpServlet {
 
         System.out.println(request.getParameter("username"));
         System.out.println(request.getParameter("password"));
-        User user = USERDB.getUser(request.getParameter("username"));
+        User user = USERDB.getUserByUsername(request.getParameter("username"));
         if (user == null) {
             request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
         }

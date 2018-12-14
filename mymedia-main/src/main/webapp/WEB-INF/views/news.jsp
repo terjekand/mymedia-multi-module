@@ -1,6 +1,11 @@
+<%@ page import="org.mymedia.database.entities.User" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="org.mymedia.database.dao.UserDataBase" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 
 <!DOCTYPE html>
 <html>
@@ -10,11 +15,7 @@
         <title>Insert title here</title>
     </head>
     <body>
-        <table>
-            <c:forEach items="${users}" var="user" varStatus="loop">
-                <tr>
-                    <td><c:out value="${user.username}" /></td>
-            </c:forEach>
-        </table>
+    <h1>You are authorized!</h1>
+
     </body>
 </html>

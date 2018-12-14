@@ -20,7 +20,7 @@ import org.mymedia.database.entities.User;
 
 @Slf4j
 public class UserDataBase implements Serializable{
-    public static final UserDataBase DB_PELDANY = new UserDataBase();
+    private static final UserDataBase DB_PELDANY = new UserDataBase();
     @PersistenceContext(unitName = "UsersDB")
     private EntityManager em;
     private UserDataBase(){
@@ -122,13 +122,13 @@ public class UserDataBase implements Serializable{
         }
     }
 
-    public User getUser(String USERNAME){
+    public User getUserByUsername(String username){
         if(!connected()){
             throw new IllegalStateException("Nincs adatbazis-kapcsolat!");
         }
         try{
-             Query query = em.createNamedQuery("User.getUser", User.class);
-             query.setParameter("un", USERNAME);
+             Query query = em.createNamedQuery("User.getUserByUsername", User.class);
+             query.setParameter("un", username);
              
              try {
             	 @SuppressWarnings("unchecked")
@@ -140,6 +140,30 @@ public class UserDataBase implements Serializable{
             	 return null;
              }  
              
+        }catch(Exception e){
+            log.error("" + e);
+            return null;
+        }
+    }
+
+    public User getUsernameByEmail(String email){
+        if(!connected()){
+            throw new IllegalStateException("Nincs adatbazis-kapcsolat!");
+        }
+        try{
+            Query query = em.createNamedQuery("User.getUserByEmail", User.class);
+            query.setParameter("un", email);
+
+            try {
+                @SuppressWarnings("unchecked")
+                User entity = (User)query.getSingleResult();
+                System.out.println(entity);
+                return entity;
+            }catch(NoResultException ex) {
+                System.err.println(ex);
+                return null;
+            }
+
         }catch(Exception e){
             log.error("" + e);
             return null;

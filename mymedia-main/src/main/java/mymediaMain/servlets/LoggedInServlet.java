@@ -3,13 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mymediaMain;
+package mymediaMain.servlets;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.security.DeclareRoles;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.HttpConstraint;
+import javax.servlet.annotation.HttpMethodConstraint;
+import javax.servlet.annotation.ServletSecurity;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +25,17 @@ import org.mymedia.database.dao.UserDataBase;
 import org.mymedia.database.entities.Post;
 
 @Slf4j
-@WebServlet(urlPatterns = "/news")
+@WebServlet(name = "news", urlPatterns = "/news")
+//@ServletSecurity(
+//        value = @HttpConstraint(
+//                rolesAllowed = {
+//                        "employee"
+//                }),
+//        httpMethodConstraints = {
+//                @HttpMethodConstraint(value = "GET", rolesAllowed = {
+//                        "employee"
+//                })
+//        })
 public class LoggedInServlet extends HttpServlet {
 
     private static final UserDataBase USERDB = UserDataBase.getDataBase();
@@ -45,7 +58,7 @@ public class LoggedInServlet extends HttpServlet {
             log.trace("Connected to database!");
 
             } catch (Exception e) {
-                System.err.println(e);
+                log.error("" + e);
             }
         }
          

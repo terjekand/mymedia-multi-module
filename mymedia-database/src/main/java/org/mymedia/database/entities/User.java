@@ -20,7 +20,8 @@ import javax.persistence.Table;
 
 @NamedQueries({
     @NamedQuery(name = "User.validUser", query = "SELECT u FROM User u WHERE u.username =:un AND u.password =:pw"),
-    @NamedQuery(name = "User.getUser", query = "SELECT u FROM User u WHERE u.username =:un"),
+    @NamedQuery(name = "User.getUserByUsername", query = "SELECT u FROM User u WHERE u.username =:un"),
+	@NamedQuery(name = "User.getUserByEmail", query = "SELECT u FROM User u WHERE u.email =:un"),
     @NamedQuery(name = "User.listAllUser", query = "SELECT u FROM User u")
 })
 
@@ -33,13 +34,13 @@ public class User implements Serializable{
     @Column(name = "USERNAME", nullable = false, updatable = false)
     private String username;
     
-    @Column(name = "PASSWORD", nullable = false, updatable = true)
+    @Column(name = "PASSWORD", nullable = false)
     private String password;
     
     @Column(name = "EMAIL", nullable = false, updatable = false)
     private String email;
     
-    @Column(name = "FULLNAME", nullable = false, updatable = true)
+    @Column(name = "FULLNAME", nullable = false)
     private String fullname;
     
     
