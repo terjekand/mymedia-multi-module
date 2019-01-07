@@ -13,7 +13,7 @@ import java.util.UUID;
 
 public class SessionManager {
 
-    private Map<Long, UUID> sessionMap = new HashMap<>();
+    private Map<String, UUID> sessionMap = new HashMap<>();
     private static SessionManager instance = new SessionManager();
 
 
@@ -25,7 +25,7 @@ public class SessionManager {
         return instance;
     }
 
-    public Response addUserId(Long userId){
+    public Response addUserId(String userId){
         if(!hasPermission(userId)){
             sessionMap.put(userId, UUID.randomUUID());
             return new Response(ErrorMessages.OK, ErrorCodes.OK);
@@ -33,22 +33,22 @@ public class SessionManager {
         return new Response(ErrorMessages.ALREADY_AUTHORIZED_USER, ErrorCodes.ALREADY_AUTHORIZED_USER);
     }
 
-    public boolean hasPermission(Long userId){
+    public boolean hasPermission(String userId){
         return sessionMap.containsKey(userId);
     }
 
-    public UUID getUUIDofUser(Long userId){
+    public UUID getUUIDofUser(String userId){
             return sessionMap.get(userId);
     }
 
-    public Response removePermission(Long userId){
+    public Response removePermission(String userId){
         if(hasPermission(userId)){
             sessionMap.remove(userId);
             return new Response(ErrorMessages.OK, ErrorCodes.OK);
         }
         return new Response(ErrorMessages.USER_ALREADY_HAS_NO_PREMISSION, ErrorCodes.USER_ALREADY_HAS_NO_PERMISSION);
     }
-    public Set<Long> listAllUsersOfSession(){
+    public Set<String> listAllUsersOfSession(){
         return sessionMap.keySet();
     }
 }

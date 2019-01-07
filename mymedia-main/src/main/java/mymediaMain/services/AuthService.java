@@ -24,19 +24,19 @@ public class AuthService {
             System.err.println(e);
         }
     }
-    private Response authenticate(Long userId){
+    private Response authenticate(String userId){
         return SESSION_MANAGER.addUserId(userId);
     }
 
     public Response login(AuthDto authDto){
         User user = USER_DATA_BASE.getUserByUsername(authDto.getUsername());
-        if (user != null && BCrypt.checkpw(authDto.getPassword(), BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()))){
+        if (user != null && BCrypt.checkpw(authDto.getPassword(), user.getPassword())){
             return authenticate(user.getId());
         }
         return new Response(ErrorMessages.USED_USERNAME, ErrorCodes.USED_USERNAME);
     }
 
-    public Response logout(Long userId){
+    public Response logout(String userId){
         return SESSION_MANAGER.removePermission(userId);
     }
 }

@@ -8,12 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
+import mymediaMain.config.SessionManager;
 import mymediaMain.dto.AuthDto;
 import mymediaMain.response.Response;
 import mymediaMain.services.AuthService;
-import mymediaMain.services.BCrypt;
-
-import org.mymedia.database.entities.User;
 import org.mymedia.database.dao.UserDataBase;
 
 @Slf4j
@@ -34,6 +32,8 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
 
         request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
+        SessionManager sessionManager = SessionManager.getInstance();
+        System.out.println(sessionManager.listAllUsersOfSession());
 
     }
 
@@ -49,16 +49,15 @@ public class LoginServlet extends HttpServlet {
             request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
         }
         if (resp.getErrorCode() == 200){
-            request.setAttribute("username", request.getParameter("username"));
-            request.setAttribute("password", request.getParameter("password"));
+            request.setAttribute("userid", USERDB.getUserByUsername(authDto.getUsername()).getId());
             request.getRequestDispatcher("WEB-INF/views/news.jsp").forward(request, response);
         }
 
     }
 
     @Override
-    public void destroy() {
-        USERDB.disconnectDB();
+    public void destroy(){
+
     }
 
 }

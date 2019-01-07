@@ -81,7 +81,7 @@ public class UserDataBase implements Serializable{
             throw new IllegalStateException("Nincs adatbazis-kapcsolat!");
         }
 
-        if (entity == null || entity.getId() == 0) {
+        if (entity == null || entity.getId() == null) {
             throw new IllegalArgumentException("A torlendo entitas null vagy nincs ID-je!");
         }
 
@@ -127,19 +127,43 @@ public class UserDataBase implements Serializable{
             throw new IllegalStateException("Nincs adatbazis-kapcsolat!");
         }
         try{
-             Query query = em.createNamedQuery("User.getUserByUsername", User.class);
-             query.setParameter("un", username);
-             
-             try {
-            	 @SuppressWarnings("unchecked")
-            	 User entity = (User)query.getSingleResult();
-            	 System.out.println(entity);
-            	 return entity;
-             }catch(NoResultException ex) {
-            	 System.err.println(ex);
-            	 return null;
-             }  
-             
+            Query query = em.createNamedQuery("User.getUserByUsername", User.class);
+            query.setParameter("un", username);
+
+            try {
+                @SuppressWarnings("unchecked")
+                User entity = (User)query.getSingleResult();
+                System.out.println(entity);
+                return entity;
+            }catch(NoResultException ex) {
+                System.err.println(ex);
+                return null;
+            }
+
+        }catch(Exception e){
+            log.error("" + e);
+            return null;
+        }
+    }
+
+    public User getUserById(String userId){
+        if(!connected()){
+            throw new IllegalStateException("Nincs adatbazis-kapcsolat!");
+        }
+        try{
+            Query query = em.createNamedQuery("User.getUserByUserId", User.class);
+            query.setParameter("id", userId);
+
+            try {
+                @SuppressWarnings("unchecked")
+                User entity = (User)query.getSingleResult();
+                System.out.println(entity);
+                return entity;
+            }catch(NoResultException ex) {
+                System.err.println(ex);
+                return null;
+            }
+
         }catch(Exception e){
             log.error("" + e);
             return null;
