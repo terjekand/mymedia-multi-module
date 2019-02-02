@@ -16,7 +16,8 @@ public enum ErrorMessages {
     UNKNOWN_ERROR("UNKNOWN_ERROR"),
     TOKEN_REFRESH_ERROR("Token refresh error!"),
     ALREADY_AUTHORIZED_USER("This user already has permissions"),
-    USER_ALREADY_HAS_NO_PREMISSION("Already unauthorized user");
+    USER_ALREADY_HAS_NO_PREMISSION("Already unauthorized user"),
+    MALFORMED_TOKEN("TOKEN HAS NO PREFIX");
 
     private String message;
 

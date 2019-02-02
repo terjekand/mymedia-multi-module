@@ -16,12 +16,9 @@
         <title>Insert title here</title>
     </head>
     <body>
-    <h1>You are authorized! ${userid}</h1>
-    <%
-        UserDataBase USER_DATA_BASE = UserDataBase.getDataBase();
-        User user = USER_DATA_BASE.getUserById(request.getAttribute("userid").toString());
-    %>
-    <h2><%=user.getFullname()%></h2>
-    <h2><%=user.getEmail()%></h2>
+    <h1>You are authorized ${FULLNAME}</h1>
+    <h3>Your username is: ${USERNAME}</h3>
+    <h3>Your email is: ${EMAIL}</h3>
+    <h3>your userid is: ${userid} (it comes from the login)</h3>
     </body>
 </html>

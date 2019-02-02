@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="javaeeApplication" url="file://$PROJECT_DIR$/mymedia-rest" />
     <file type="web" url="file://$PROJECT_DIR$/mymedia-main" />
   </component>
   <component name="MavenProjectsManager">

@@ -21,7 +21,7 @@ public class AuthService {
             log.trace("Connected to database!");
 
         } catch (Exception e) {
-            System.err.println(e);
+            log.error("" +  e);
         }
     }
     private Response authenticate(String userId){
@@ -36,7 +36,7 @@ public class AuthService {
         return new Response(ErrorMessages.USED_USERNAME, ErrorCodes.USED_USERNAME);
     }
 
-    public Response logout(String userId){
-        return SESSION_MANAGER.removePermission(userId);
+    public Response logout(String token){
+        return SESSION_MANAGER.removePermission(token);
     }
 }
