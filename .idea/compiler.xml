@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="mymedia-database" />
         <module name="mymedia-main" />
+        <module name="mymedia-rest" />
         <module name="mymediarest" />
       </profile>
     </annotationProcessing>

@@ -1,13 +1,0 @@
-
-=squid:S19891"&Add a "try/catch" block for "forward".(ÿÓš¼
-usquid:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ÃÎÚp8í©éèú,
-jsquid:UselessImportCheck"?Remove this unused import 'org.mymedia.database.entities.User'.(¸¨şß8“†œéú,
-=squid:S19896"&Add a "try/catch" block for "forward".(óåÌÛ
-hsquid:UselessImportCheck"8Remove this unused import 'mymediaMain.services.BCrypt'.(æ¡˜¹ÿÿÿÿÿ8èÓ½éú,
-=squid:S19891"&Add a "try/catch" block for "forward".(ÿÓš¼
-=squid:S1989$"&Add a "try/catch" block for "forward".(ÿÓš¼
-=squid:S1989$"&Add a "try/catch" block for "forward".(ÿÓš¼
-=squid:S19896"&Add a "try/catch" block for "forward".(óåÌÛ
-wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ô¼Â£üÿÿÿÿ
-gsquid:S1192-"IDefine a constant instead of duplicating this literal "username" 3 times.(Ğ¥Øæ8èáÑéú,
-gsquid:S1192."IDefine a constant instead of duplicating this literal "password" 3 times.(¿»µÂ8èáÑéú,

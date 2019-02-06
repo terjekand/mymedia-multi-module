@@ -1,10 +1,0 @@
-
-=squid:S1989+"&Add a "try/catch" block for "forward".(‰šÁ¤
-gsquid:CommentedOutCodeLineC"<This block of commented-out lines of code should be removed.(é¥Ûåþÿÿÿÿ
-{squid:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(¶§¿þÿÿÿÿ8ôÎ“äú,
-Dsquid:S1989<"&Add a "try/catch" block for "forward".(‰šÁ¤8È·žäú,
-Dsquid:S19899"&Add a "try/catch" block for "forward".(ÿÓš¼8†×Œäú,
-Dsquid:S1989<"&Add a "try/catch" block for "forward".(‰šÁ¤8È·žäú,
-Dsquid:S19899"&Add a "try/catch" block for "forward".(ÿÓš¼8†×Œäú,
-=squid:S1989+"&Add a "try/catch" block for "forward".(‰šÁ¤
-wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ô¼Â£üÿÿÿÿ

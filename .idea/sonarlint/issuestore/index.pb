@@ -1,12 +1,8 @@
 
 v
 Fmymedia-database/src/main/java/org/mymedia/database/entities/User.java,6\e\6e5fd08d60d11bf87f964fa7ca49fe27cfcb09d7
-d
-4mymedia-main/src/main/webapp/WEB-INF/views/login.jsp,e\8\e87f875b2c3b0457ba12e3835e636b27b9db0191
 c
 3mymedia-main/src/main/webapp/WEB-INF/views/news.jsp,d\4\d40b50977da4df7d6643672cec308c82097cefff
-q
-Amymedia-main/src/main/java/mymediaMain/servlets/LoginServlet.java,e\2\e2fcce2ccad8f6cca6d38c292eb53afa8ea28620
 \
 ,mymedia-main/src/main/webapp/WEB-INF/web.xml,8\4\84aee47a6917aecd2cfc0794adc4583fc5e7c5b1
 q
@@ -15,14 +11,10 @@ l
 <mymedia-main/src/main/java/mymediaMain/Enums/ErrorCodes.java,4\d\4d15577e62c64454ceee05dd21f357ef2b1c33f1
 o
 ?mymedia-main/src/main/java/mymediaMain/Enums/ErrorMessages.java,1\c\1c9b71d7c763c0b2fa42c69af9982544c3c2a03a
-t
-Dmymedia-main/src/main/java/mymediaMain/servlets/LoggedInServlet.java,f\3\f3685e99a88543a670e7109a50ef625b1a4aae20
 m
 =mymedia-main/src/main/java/mymediaMain/Response/Response.java,d\f\dfad9826272c5ce2ce89284d7cd18e48ed795248
 q
 Amymedia-main/src/main/java/mymediaMain/config/SessionManager.java,b\e\be75a3776b293d88826e463ad4a6137edef57378
-x
-Hmymedia-main/src/main/java/mymediaMain/servlets/RegistrationServlet.java,3\a\3acd11b47c36cdaaf66cb8011d12f11cdc849283
 x
 Hmymedia-main/src/main/java/mymediaMain/services/RegistrationService.java,e\2\e27b9579cdfc81f7e6bc1b36546351e8ca42cd5b
 D
@@ -41,3 +33,7 @@ g
 7mymedia-main/src/main/java/mymediaMain/dto/AuthDto.java,1\c\1c0774de50b198126d86c734175b3ac313308c0a
 o
 ?mymedia-main/src/main/java/mymediaMain/enums/ErrorMessages.java,b\b\bb99faea288b3555e6a89dd9329018182e671463
+g
+7mymedia-rest/src/main/java/auth/MyMediaRestExample.java,d\7\d77267740a97fb68506183354acac61e1a501ac3
+D
+mymedia-rest/pom.xml,5\c\5ce29434210ed630e9b238fbdc92541afe9db75c
