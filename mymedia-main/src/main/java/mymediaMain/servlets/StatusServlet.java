@@ -2,7 +2,6 @@ package mymediaMain.servlets;
 
 import lombok.extern.slf4j.Slf4j;
 import mymediaMain.config.SessionManager;
-import mymediaMain.services.AuthService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,10 +15,10 @@ import java.io.IOException;
 public class StatusServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
-    SessionManager sessionManager = SessionManager.getInstance();
+            throws ServletException, IOException {
+        SessionManager sessionManager = SessionManager.getInstance();
         request.setAttribute("numberOfUsers", sessionManager.numberOfUsers());
         request.getRequestDispatcher("WEB-INF/views/status.jsp").forward(request, response);
-        }
+    }
 
 }

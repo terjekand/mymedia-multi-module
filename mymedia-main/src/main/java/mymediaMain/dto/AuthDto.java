@@ -9,5 +9,5 @@ import lombok.*;
 @Builder
 public class AuthDto {
     private String username;
-    private  String password;
+    private String password;
 }

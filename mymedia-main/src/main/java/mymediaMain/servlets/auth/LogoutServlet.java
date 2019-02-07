@@ -1,8 +1,6 @@
 package mymediaMain.servlets.auth;
 
 import lombok.extern.slf4j.Slf4j;
-import mymediaMain.dto.AuthDto;
-import mymediaMain.response.Response;
 import mymediaMain.services.AuthService;
 import org.mymedia.database.dao.UserDataBase;
 
@@ -18,24 +16,25 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/logout")
 public class LogoutServlet extends HttpServlet {
 
-        private static final UserDataBase USERDB = UserDataBase.getDataBase();
+    private static final UserDataBase USERDB = UserDataBase.getDataBase();
 
-        private AuthService authService;
-        @Override
-        public void init() {
-            authService = new AuthService();
+    private AuthService authService;
 
-        }
+    @Override
+    public void init() {
+        authService = new AuthService();
 
-        @Override
-        protected void doPost(HttpServletRequest request, HttpServletResponse response)
-                throws ServletException, IOException {
-            AuthService authService = new AuthService();
-            if (request.getParameter("logout") != null) {
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        AuthService authService = new AuthService();
+        if (request.getParameter("logout") != null) {
 //                Long userId =Long.parseLong(request.getAttribute("userid")) ;
 //                authService.logout(userId);
-                request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
-            }
-
+            request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
         }
+
+    }
 }

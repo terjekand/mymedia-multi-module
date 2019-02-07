@@ -2,7 +2,7 @@ package mymediaMain.exceptions;
 
 public class MalformedTokenException extends Exception {
 
-    public MalformedTokenException(){
+    public MalformedTokenException() {
         super();
     }
 

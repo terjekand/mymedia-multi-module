@@ -13,7 +13,7 @@ public class Response {
     private ErrorMessages errorMessage;
     private ErrorCodes errorCode;
 
-    public Response(ErrorMessages errorMessages, ErrorCodes errorCodes){
+    public Response(ErrorMessages errorMessages, ErrorCodes errorCodes) {
         this.errorCode = errorCodes;
         this.errorMessage = errorMessages;
     }

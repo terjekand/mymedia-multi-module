@@ -1,22 +1,25 @@
-body{
+body {
     background-color: #324677;
-    color: #f3ff99; 
+    color: #f3ff99;
     font-weight: bold;
 }
-table{
+
+table {
     border: 1px solid black;
-    border-radius: 16px; 
+    border-radius: 16px;
     border-color: #f3ff99;
     border-width: 3px;
     padding: 20px;
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: auto;
     padding: 15px;
     border-spacing: 10px;
 }
-td{
+
+td {
     text-align: center;
 }
-h1{
+
+h1 {
     text-align: center;
 }

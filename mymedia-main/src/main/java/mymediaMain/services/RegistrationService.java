@@ -16,7 +16,7 @@ public class RegistrationService {
 
     private static final UserDataBase USERDB = UserDataBase.getDataBase();
 
-    public RegistrationService(){
+    public RegistrationService() {
         if (!USERDB.connected()) {
             try {
                 USERDB.connectDB();
@@ -38,33 +38,30 @@ public class RegistrationService {
         }
         return true;
     }
-    private boolean isUsedUsername(String username){
+
+    private boolean isUsedUsername(String username) {
 
         return USERDB.getUserByUsername(username) != null;
     }
 
-    private boolean isUsedEmail(String email){
+    private boolean isUsedEmail(String email) {
 
         return USERDB.getUsernameByEmail(email) != null;
     }
 
-    public Response userRegistration(User user){
+    public Response userRegistration(User user) {
 
-        if(isUsedUsername(user.getUsername())){
+        if (isUsedUsername(user.getUsername())) {
             return new Response(ErrorMessages.USED_USERNAME, ErrorCodes.USED_USERNAME);
-        }
-
-        else if(isValidEmail(user.getEmail())) {
+        } else if (isValidEmail(user.getEmail())) {
             return new Response(ErrorMessages.WRONG_EMAIL_FORMAT, ErrorCodes.WRONG_EMAIL_FORMAT);
-        }
-
-        else if(isUsedEmail(user.getEmail())){
+        } else if (isUsedEmail(user.getEmail())) {
             return new Response(ErrorMessages.USED_EMAIL, ErrorCodes.USED_EMAIL);
         }
 
         try {
             USERDB.save(user);
-        } catch (Exception  e) {
+        } catch (Exception e) {
             log.error("" + e);
             return new Response(ErrorMessages.UNKNOWN_ERROR, ErrorCodes.UNKNOWN_ERROR);
         }

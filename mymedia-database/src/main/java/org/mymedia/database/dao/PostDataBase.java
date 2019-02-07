@@ -5,50 +5,48 @@
  */
 package org.mymedia.database.dao;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceException;
-import javax.persistence.Query;
 import lombok.extern.slf4j.Slf4j;
 import org.mymedia.database.entities.Post;
 import org.mymedia.database.entities.User;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Slf4j
 public class PostDataBase {
     public static final PostDataBase DB_PELDANY = new PostDataBase();
     @PersistenceContext(unitName = "UsersDB")
     private EntityManager em;
-    private PostDataBase(){
-        
+
+    private PostDataBase() {
+
     }
-    
-    public static PostDataBase getDataBase(){
+
+    public static PostDataBase getDataBase() {
         return DB_PELDANY;
     }
-   
-    public void connectDB() throws Exception{
+
+    public void connectDB() throws Exception {
         EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("UsersDB");
         em = emFactory.createEntityManager();
         log.trace("Connected!");
     }
-    
-    public boolean connected(){
-        if(em != null && em.isOpen())
+
+    public boolean connected() {
+        if (em != null && em.isOpen())
             return true;
         return false;
     }
-    
-    public void disconnectDB(){
-        if(connected()){
+
+    public void disconnectDB() {
+        if (connected()) {
             em.close();
             log.trace("Disconnected!");
         }
         em = null;
     }
+
     public Post save(Post entity) throws IllegalStateException, IllegalArgumentException, Exception {
 
         if (!connected()) {
@@ -101,23 +99,23 @@ public class PostDataBase {
             throw new Exception("JPA hiba", e);
         }
     }
-    
-    public List<Post> getPostsOfUser(User user){
-        if(!connected()){
+
+    public List<Post> getPostsOfUser(User user) {
+        if (!connected()) {
             throw new IllegalStateException("Nincs adatbázis-kapcsolat");
         }
-        try{
+        try {
             Query query = em.createNamedQuery("Post.getPostsOfUser", Post.class);
             query.setParameter("un", user);
             @SuppressWarnings("unchecked")
             List<Post> posts = new ArrayList<Post>();
             posts = query.getResultList();
             return posts;
-        }catch(Exception e){
+        } catch (Exception e) {
             log.error("" + e);
             return null;
         }
     }
-    
-    
+
+
 }

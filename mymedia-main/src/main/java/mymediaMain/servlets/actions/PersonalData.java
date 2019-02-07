@@ -17,11 +17,11 @@ public class PersonalData extends HttpServlet {
     private static final UserDataBase USER_DATA_BASE = UserDataBase.getDataBase();
 
     @Override
-    public void init(){
-        if(!USER_DATA_BASE.connected()){
-            try{
+    public void init() {
+        if (!USER_DATA_BASE.connected()) {
+            try {
                 USER_DATA_BASE.connectDB();
-            } catch(Exception ex){
+            } catch (Exception ex) {
                 log.error("" + ex);
             }
         }

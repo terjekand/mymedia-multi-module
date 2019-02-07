@@ -2,9 +2,9 @@ package mymediaMain.config;
 
 
 import lombok.extern.slf4j.Slf4j;
-import mymediaMain.exceptions.MalformedTokenException;
 import mymediaMain.enums.ErrorCodes;
 import mymediaMain.enums.ErrorMessages;
+import mymediaMain.exceptions.MalformedTokenException;
 import mymediaMain.response.Response;
 
 import java.util.*;
@@ -18,16 +18,16 @@ public class SessionManager {
     private static SessionManager instance = new SessionManager();
 
 
-    private SessionManager(){
+    private SessionManager() {
 
     }
 
-    public static SessionManager getInstance(){
+    public static SessionManager getInstance() {
         return instance;
     }
 
-    public Response addUserId(String userId){
-        if(!hasPermission(userId)){
+    public Response addUserId(String userId) {
+        if (!hasPermission(userId)) {
 
             String token = "TK_" + UUID.randomUUID().toString();
 
@@ -37,12 +37,12 @@ public class SessionManager {
         return new Response(ErrorMessages.ALREADY_AUTHORIZED_USER, ErrorCodes.ALREADY_AUTHORIZED_USER);
     }
 
-    public boolean hasPermission(String userId){
+    public boolean hasPermission(String userId) {
         return sessionMap.containsKey(userId);
     }
 
-    public String getTokenOfUser(String userId){
-            return sessionMap.get(userId);
+    public String getTokenOfUser(String userId) {
+        return sessionMap.get(userId);
     }
 
     public static String getUserIdByToken(Map<String, String> map, String value) {
@@ -54,10 +54,10 @@ public class SessionManager {
         return keys.get(0);
     }
 
-    public Response removePermission(String token){
-        try{
+    public Response removePermission(String token) {
+        try {
             checkTokenFormat(token);
-        }catch (MalformedTokenException ex){
+        } catch (MalformedTokenException ex) {
 
             log.error("" + ex);
 
@@ -65,30 +65,30 @@ public class SessionManager {
         }
         String userId = getUserIdByToken(sessionMap, token);
 
-        if(hasPermission(userId)){
+        if (hasPermission(userId)) {
             sessionMap.remove(userId);
             return new Response(ErrorMessages.OK, ErrorCodes.OK);
         }
         return new Response(ErrorMessages.USER_ALREADY_HAS_NO_PREMISSION, ErrorCodes.USER_ALREADY_HAS_NO_PERMISSION);
     }
 
-    public List<String> listAllTokensOfSession(){
+    public List<String> listAllTokensOfSession() {
         final ArrayList<String> tokens = new ArrayList<>();
         sessionMap.values().stream().forEach(e -> tokens.add(e));
         return tokens;
     }
 
-    public int numberOfUsers(){
+    public int numberOfUsers() {
         return sessionMap.size();
     }
 
     public void checkTokenFormat(String token) throws MalformedTokenException {
-        if(!token.startsWith("TK_")){
+        if (!token.startsWith("TK_")) {
             throw new MalformedTokenException("Malformed token!");
         }
     }
 
-    public void clear(){
+    public void clear() {
         sessionMap = new HashMap<>();
     }
 }

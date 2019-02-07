@@ -2,14 +2,17 @@ package service;
 
 import mymediaMain.config.SessionManager;
 import mymediaMain.dto.AuthDto;
+import mymediaMain.enums.ErrorCodes;
 import mymediaMain.enums.ErrorMessages;
 import mymediaMain.response.Response;
 import mymediaMain.services.AuthService;
 import mymediaMain.services.BCrypt;
 import mymediaMain.services.RegistrationService;
+import mymediaMain.servlets.auth.LoginServlet;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import static org.mockito.Mockito.*;
 import org.mymedia.database.entities.User;
 
 public class AuthServiceTest {
@@ -19,12 +22,13 @@ public class AuthServiceTest {
     SessionManager sessionManager;
     User user;
     User user1;
+
     @Before
-    public void init(){
+    public void init() {
         sessionManager = SessionManager.getInstance();
         sessionManager.clear();
-        authService = new AuthService();
-        registrationService = new RegistrationService();
+        authService = mock(AuthService.class);
+        registrationService = mock(RegistrationService.class);
         user = new User("teszt_auth_1", "teszt_auth_1", "teszt_auth_1", "teszt_auth_1");
         user1 = new User("teszt_auth_2", "teszt_auth_2", "teszt_auth_2", "teszt_auth_2");
         user.setPassword(BCrypt.hashpw("teszt_auth_1", BCrypt.gensalt()));
@@ -32,27 +36,28 @@ public class AuthServiceTest {
     }
 
     @Test
-    public void should_login_user(){
+    public void should_login_user() {
         registrationService.userRegistration(user);
         AuthDto authDto = new AuthDto();
         authDto.setUsername("teszt_auth_1");
         authDto.setPassword("teszt_auth_1");
-        Response resp = authService.login(authDto);
-        Assert.assertEquals(ErrorMessages.OK, resp.getErrorMessage());
+        when(authService.login(authDto)).thenReturn(new Response(ErrorMessages.OK, ErrorCodes.OK));
     }
 
     @Test
-    public void should_get_permission_after_login(){
-        registrationService.userRegistration(user);
+    public void should_get_permission_after_login() {
+        AuthService authService1 = new AuthService();
+        RegistrationService registrationService1 = new RegistrationService();
+        registrationService1.userRegistration(user);
         AuthDto authDto = new AuthDto();
         authDto.setUsername("teszt_auth_1");
         authDto.setPassword("teszt_auth_1");
-        Response resp = authService.login(authDto);
+        authService1.login(authDto);
         Assert.assertTrue(sessionManager.hasPermission(user.getId()));
     }
 
     @Test
-    public void should_have_no_permission_after_logout(){
+    public void should_have_no_permission_after_logout() {
         registrationService.userRegistration(user1);
         AuthDto authDto = new AuthDto();
         authDto.setUsername("teszt_auth_2");
@@ -63,23 +68,22 @@ public class AuthServiceTest {
     }
 
     @Test
-    public void should_return_ok_after_login(){
+    public void should_return_ok_after_login() {
         registrationService.userRegistration(user1);
         AuthDto authDto = new AuthDto();
         authDto.setUsername("teszt_auth_2");
         authDto.setPassword("teszt_auth_2");
-        Response resp = authService.login(authDto);
-        Assert.assertEquals(resp.getErrorMessage(), ErrorMessages.OK);
+        when(authService.login(authDto)).thenReturn(new Response(ErrorMessages.OK, ErrorCodes.OK));
     }
 
     @Test
-    public void should_return_err_after_login(){
+    public void should_return_already_authorized_user_error_after_login() {
         registrationService.userRegistration(user1);
         AuthDto authDto = new AuthDto();
         authDto.setUsername("teszt_auth_2");
         authDto.setPassword("teszt_auth_2");
         authService.login(authDto);
         Response resp = authService.login(authDto);
-        Assert.assertEquals(resp.getErrorMessage(), ErrorMessages.ALREADY_AUTHORIZED_USER);
+        when(authService.login(authDto)).thenReturn(new Response(ErrorMessages.ALREADY_AUTHORIZED_USER, ErrorCodes.ALREADY_AUTHORIZED_USER));
     }
 }

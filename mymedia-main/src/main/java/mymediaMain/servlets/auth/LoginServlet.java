@@ -1,12 +1,5 @@
 package mymediaMain.servlets.auth;
 
-import java.io.IOException;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import mymediaMain.config.SessionManager;
 import mymediaMain.dto.AuthDto;
@@ -15,6 +8,13 @@ import mymediaMain.response.Response;
 import mymediaMain.services.AuthService;
 import org.mymedia.database.dao.UserDataBase;
 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
 @Slf4j
 @WebServlet(urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
@@ -22,6 +22,7 @@ public class LoginServlet extends HttpServlet {
     private static final UserDataBase USERDB = UserDataBase.getDataBase();
 
     private AuthService authService;
+
     @Override
     public void init() {
         authService = new AuthService();
@@ -49,7 +50,7 @@ public class LoginServlet extends HttpServlet {
         if (resp.getErrorCode() != ErrorCodes.OK) {
             request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
         }
-        if (resp.getErrorCode() == ErrorCodes.OK){
+        if (resp.getErrorCode() == ErrorCodes.OK) {
             request.setAttribute("userid", USERDB.getUserByUsername(authDto.getUsername()).getId());
             request.getRequestDispatcher("WEB-INF/views/news.jsp").forward(request, response);
         }
@@ -57,7 +58,7 @@ public class LoginServlet extends HttpServlet {
     }
 
     @Override
-    public void destroy(){
+    public void destroy() {
 
     }
 
