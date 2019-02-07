@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9f23e7c-1b1d-45fd-b903-5c6e252312d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/response/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/response/Response.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/services/RegistrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/services/RegistrationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/auth/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/auth/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/auth/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/auth/RegistrationServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-main/src/test/java/service/AuthServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-main/src/test/java/service/AuthServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-main/src/test/java/service/RegistrationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-main/src/test/java/service/RegistrationServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d9f23e7c-1b1d-45fd-b903-5c6e252312d4" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/mymedia-database/target/" />
     <ignored path="$PROJECT_DIR$/mymedia-main/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -112,8 +103,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mymedia-main/src/test/java/service/RegistrationServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+            <state relative-caret-position="306">
+              <caret line="18" column="56" lean-forward="true" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -477,7 +468,7 @@
     <property name="DatabaseDriversLRU" value="hsqldb" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549545395341" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549546320787" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -684,14 +675,11 @@
       <workItem from="1549103646079" duration="2366000" />
       <workItem from="1549448803635" duration="170000" />
       <workItem from="1549461349630" duration="1904000" />
-      <workItem from="1549533874929" duration="10037000" />
+      <workItem from="1549533874929" duration="10774000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_mymedia-main - 2019.02.07 at 13h 51m 05s.xml">
-      <configuration name="All in mymedia-main" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_mymedia-main - 2019.02.07 at 13h 55m 30s.xml">
       <configuration name="All in mymedia-main" configurationId="JUnit" />
     </history-entry>
@@ -719,9 +707,12 @@
     <history-entry file="All_in_mymedia-main - 2019.02.07 at 14h 16m 04s.xml">
       <configuration name="All in mymedia-main" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_mymedia-main - 2019.02.07 at 14h 16m 44s.xml">
+      <configuration name="All in mymedia-main" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44929000" />
+    <option name="totallyTimeSpent" value="45666000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -733,7 +724,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1186" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19189766" />
@@ -1107,8 +1098,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mymedia-main/src/test/java/service/RegistrationServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+        <state relative-caret-position="306">
+          <caret line="18" column="56" lean-forward="true" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
