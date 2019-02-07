@@ -3,62 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d9f23e7c-1b1d-45fd-b903-5c6e252312d4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UsersDB.lck" beforeDir="false" afterPath="$PROJECT_DIR$/UsersDB.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UsersDB.log" beforeDir="false" afterPath="$PROJECT_DIR$/UsersDB.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UsersDB.properties" beforeDir="false" afterPath="$PROJECT_DIR$/UsersDB.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UsersDB.script" beforeDir="false" afterPath="$PROJECT_DIR$/UsersDB.script" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-database/src/main/java/org/mymedia/database/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-database/src/main/java/org/mymedia/database/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-main/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/config/SessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/config/SessionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/response/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/response/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/services/RegistrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/services/RegistrationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/auth/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/auth/LoginServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/auth/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/auth/RegistrationServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-main/src/main/webapp/WEB-INF/views/news.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-main/src/main/webapp/WEB-INF/views/news.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/application.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/classes/auth/MyMediaRestExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT.ear" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/META-INF/application.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/activation-1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/antlr-2.7.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/classmate-1.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/dom4j-1.6.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/hibernate-commons-annotations-4.0.5.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/hibernate-core-4.3.6.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/hibernate-entitymanager-4.3.6.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/hibernate-jpa-2.1-api-1.0.0.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/hibernate-validator-5.3.4.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/hsqldb-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/jackson-core-asl-1.9.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/jackson-jaxrs-1.9.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/jackson-mapper-asl-1.9.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/jackson-xc-1.9.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/jandex-1.1.0.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/javassist-3.18.1-GA.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/javax.ws.rs-api-2.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/jaxb-api-2.2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/jaxb-impl-2.2.3-1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/jboss-logging-3.1.3.GA.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/jboss-logging-annotations-1.2.0.Beta1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/jboss-transaction-api_1.2_spec-1.0.0.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/jersey-bundle-1.19.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/jersey-core-1.19.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/jersey-json-1.19.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/jersey-server-1.19.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/jettison-1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/jsr311-api-1.1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/jstl-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/logback-classic-1.2.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/logback-core-1.2.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/mail-1.4.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/mymedia-database-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/slf4j-api-1.7.25.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/standard-1.1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/stax-api-1.0-2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/validation-api-1.1.0.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest-0.0.1-SNAPSHOT/xml-apis-1.0.b2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-main/src/test/java/service/AuthServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-main/src/test/java/service/AuthServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-main/src/test/java/service/RegistrationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-main/src/test/java/service/RegistrationServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/mymedia-database/target/" />
     <ignored path="$PROJECT_DIR$/mymedia-main/target/" />
@@ -69,6 +20,20 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="332682845">
@@ -83,38 +48,40 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="20" />
-          <entry key="java" value="1731" />
+          <entry key="dummy" value="12" />
+          <entry key="java" value="3407" />
           <entry key="jsp" value="74" />
-          <entry key="xml" value="50" />
+          <entry key="xml" value="67" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="20" />
-          <entry key="JAVA" value="1731" />
+          <entry key="JAVA" value="3407" />
           <entry key="JSP" value="74" />
-          <entry key="XML" value="50" />
+          <entry key="PLAIN_TEXT" value="12" />
+          <entry key="XML" value="67" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="3" />
-          <entry key="java" value="13" />
+          <entry key="java" value="32" />
           <entry key="jsp" value="3" />
           <entry key="log" value="1" />
           <entry key="properties" value="1" />
           <entry key="script" value="1" />
-          <entry key="xml" value="5" />
+          <entry key="xml" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="3" />
-          <entry key="JAVA" value="13" />
+          <entry key="JAVA" value="32" />
           <entry key="JSP" value="3" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Properties" value="1" />
-          <entry key="XML" value="5" />
+          <entry key="XML" value="7" />
         </counts>
       </usages-collector>
     </session>
@@ -122,11 +89,58 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mymedia-main/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mymedia-main/src/test/java/service/AuthServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1394">
+              <caret line="82" column="89" selection-start-line="82" selection-start-column="89" selection-end-line="82" selection-end-column="89" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mymedia-main/src/test/java/service/RegistrationServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/response/Response.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/config/SessionManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="84" column="77" selection-start-line="84" selection-start-column="54" selection-end-line="84" selection-end-column="77" />
+            <state relative-caret-position="236">
+              <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
               <folding>
+                <element signature="e#1006#1007#0" expanded="true" />
+                <element signature="e#1059#1060#0" expanded="true" />
                 <element signature="e#2607#2608#0" expanded="true" />
                 <element signature="e#2651#2652#0" expanded="true" />
               </folding>
@@ -134,38 +148,38 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mymedia-main/src/test/java/security/SessionManagerTest.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/auth/RegistrationServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="283">
+              <caret line="57" column="58" selection-start-line="57" selection-start-column="58" selection-end-line="57" selection-end-column="58" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mymedia-database/src/main/java/org/mymedia/database/entities/User.java">
+        <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/auth/LoginServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="646">
+              <caret line="51" column="32" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mymedia-main/src/test/java/suites/AllSecurityTests.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="307">
+              <caret line="134" column="25" selection-start-line="134" selection-start-column="25" selection-end-line="134" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/services/RegistrationService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="714">
+              <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -201,7 +215,6 @@
         <option value="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/RegistrationServlet.java" />
         <option value="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/Enums/ErrorMessages.java" />
         <option value="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/Enums/ErrorCodes.java" />
-        <option value="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/services/RegistrationService.java" />
         <option value="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/dto/AuthDto.java" />
         <option value="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/LogoutServlet.java" />
         <option value="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/LoginServlet.java" />
@@ -218,23 +231,30 @@
         <option value="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/actions/PersonalData.java" />
         <option value="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/actions/NewsFeedServlet.java" />
         <option value="$PROJECT_DIR$/mymedia-main/src/main/webapp/WEB-INF/views/login.jsp" />
-        <option value="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/auth/LoginServlet.java" />
         <option value="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/auth/LogoutServlet.java" />
         <option value="$PROJECT_DIR$/mymedia-main/src/main/webapp/styles/styles.css" />
         <option value="$PROJECT_DIR$/mymedia-main/src/main/webapp/WEB-INF/views/index.jsp" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/mymedia-rest/pom.xml" />
         <option value="$PROJECT_DIR$/mymedia-main/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/mymedia-rest/src/main/java/auth/MyMediaRestExample.java" />
-        <option value="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/auth/RegistrationServlet.java" />
         <option value="$PROJECT_DIR$/mymedia-main/src/main/webapp/WEB-INF/views/news.jsp" />
         <option value="$PROJECT_DIR$/mymedia-main/src/main/webapp/styles/newsfeed/styles.css" />
-        <option value="$PROJECT_DIR$/mymedia-main/pom.xml" />
         <option value="$PROJECT_DIR$/mymedia-main/src/test/java/Security/SessionManagerTest.java" />
         <option value="$PROJECT_DIR$/mymedia-main/src/test/java/suites/AllSecurityTests.java" />
         <option value="$PROJECT_DIR$/mymedia-database/src/main/java/org/mymedia/database/entities/User.java" />
         <option value="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/config/SessionManager.java" />
         <option value="$PROJECT_DIR$/mymedia-main/src/test/java/security/SessionManagerTest.java" />
+        <option value="$PROJECT_DIR$/mymedia-main/src/test/java/suites/AllAuthTests.java" />
+        <option value="$PROJECT_DIR$/mymedia-main/src/test/java/suites/AllAuthServiceTests.java" />
+        <option value="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/services/RegistrationService.java" />
+        <option value="$PROJECT_DIR$/mymedia-main/src/test/java/suites/AllServiceTests.java" />
+        <option value="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/response/Response.java" />
+        <option value="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/auth/RegistrationServlet.java" />
+        <option value="$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/auth/LoginServlet.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/mymedia-main/pom.xml" />
+        <option value="$PROJECT_DIR$/mymedia-main/src/test/java/service/AuthServiceTest.java" />
+        <option value="$PROJECT_DIR$/mymedia-main/src/test/java/service/RegistrationServiceTest.java" />
       </list>
     </option>
   </component>
@@ -389,6 +409,27 @@
               <item name="mymedia-multi-module" type="462c0819:PsiDirectoryNode" />
               <item name="mymedia-main" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mymediaMain" type="462c0819:PsiDirectoryNode" />
+              <item name="servlets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mymedia-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mymedia-multi-module" type="462c0819:PsiDirectoryNode" />
+              <item name="mymedia-main" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mymediaMain" type="462c0819:PsiDirectoryNode" />
+              <item name="servlets" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mymedia-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mymedia-multi-module" type="462c0819:PsiDirectoryNode" />
+              <item name="mymedia-main" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -406,7 +447,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mymedia-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mymedia-multi-module" type="462c0819:PsiDirectoryNode" />
+              <item name="mymedia-main" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mymedia-parent" type="b2602c69:ProjectViewProjectNode" />
@@ -424,9 +474,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="hsqldb" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549541506836" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549545395341" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -464,7 +515,32 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SessionManagerTest">
+  <component name="RunManager" selected="JUnit.All in mymedia-main">
+    <configuration name="All Features in: test" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="3" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/mymedia-main/src/test" />
+      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
+      <module name="mymedia-main" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm3SMFormatter" />
+      <option name="SUGGESTED_NAME" value="All Features in: test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cucumber.api.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in mymedia-main" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mymedia-main" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AllSecurityTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mymedia-main" />
       <extension name="coverage">
@@ -505,20 +581,6 @@
       <option name="MAIN_CLASS_NAME" value="security.SessionManagerTest" />
       <option name="METHOD_NAME" value="should_not_throw_exception_for_token" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="suites in mymedia-main" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mymedia-main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="suites.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="suites" />
-      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -579,16 +641,18 @@
       <item itemvalue="Maven.install" />
       <item itemvalue="Maven.tomcat7:run" />
       <item itemvalue="JUnit.SessionManagerTest" />
-      <item itemvalue="JUnit.suites in mymedia-main" />
       <item itemvalue="JUnit.AllSecurityTests" />
       <item itemvalue="JUnit.SessionManagerTest.should_not_throw_exception_for_token" />
+      <item itemvalue="Cucumber java.All Features in: test" />
+      <item itemvalue="JUnit.All in mymedia-main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in mymedia-main" />
+        <item itemvalue="Cucumber java.All Features in: test" />
         <item itemvalue="JUnit.SessionManagerTest" />
         <item itemvalue="JUnit.SessionManagerTest.should_not_throw_exception_for_token" />
         <item itemvalue="JUnit.AllSecurityTests" />
-        <item itemvalue="JUnit.suites in mymedia-main" />
       </list>
     </recent_temporary>
   </component>
@@ -620,44 +684,44 @@
       <workItem from="1549103646079" duration="2366000" />
       <workItem from="1549448803635" duration="170000" />
       <workItem from="1549461349630" duration="1904000" />
-      <workItem from="1549533874929" duration="6149000" />
+      <workItem from="1549533874929" duration="10037000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AllSecurityTests - 2019.02.07 at 12h 48m 48s.xml">
-      <configuration name="AllSecurityTests" configurationId="JUnit" />
+    <history-entry file="All_in_mymedia-main - 2019.02.07 at 13h 51m 05s.xml">
+      <configuration name="All in mymedia-main" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AllSecurityTests - 2019.02.07 at 12h 51m 42s.xml">
-      <configuration name="AllSecurityTests" configurationId="JUnit" />
+    <history-entry file="All_in_mymedia-main - 2019.02.07 at 13h 55m 30s.xml">
+      <configuration name="All in mymedia-main" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AllSecurityTests - 2019.02.07 at 12h 56m 06s.xml">
-      <configuration name="AllSecurityTests" configurationId="JUnit" />
+    <history-entry file="All_in_mymedia-main - 2019.02.07 at 13h 56m 01s.xml">
+      <configuration name="All in mymedia-main" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AllSecurityTests - 2019.02.07 at 12h 57m 00s.xml">
-      <configuration name="AllSecurityTests" configurationId="JUnit" />
+    <history-entry file="All_in_mymedia-main - 2019.02.07 at 13h 57m 25s.xml">
+      <configuration name="All in mymedia-main" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AllSecurityTests - 2019.02.07 at 12h 58m 23s.xml">
-      <configuration name="AllSecurityTests" configurationId="JUnit" />
+    <history-entry file="All_in_mymedia-main - 2019.02.07 at 13h 58m 28s.xml">
+      <configuration name="All in mymedia-main" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AllSecurityTests - 2019.02.07 at 12h 58m 41s.xml">
-      <configuration name="AllSecurityTests" configurationId="JUnit" />
+    <history-entry file="All_in_mymedia-main - 2019.02.07 at 14h 07m 00s.xml">
+      <configuration name="All in mymedia-main" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AllSecurityTests - 2019.02.07 at 13h 00m 33s.xml">
-      <configuration name="AllSecurityTests" configurationId="JUnit" />
+    <history-entry file="All_in_mymedia-main - 2019.02.07 at 14h 12m 15s.xml">
+      <configuration name="All in mymedia-main" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AllSecurityTests - 2019.02.07 at 13h 07m 43s.xml">
-      <configuration name="AllSecurityTests" configurationId="JUnit" />
+    <history-entry file="All_in_mymedia-main - 2019.02.07 at 14h 13m 49s.xml">
+      <configuration name="All in mymedia-main" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AllSecurityTests - 2019.02.07 at 13h 08m 53s.xml">
-      <configuration name="AllSecurityTests" configurationId="JUnit" />
+    <history-entry file="All_in_mymedia-main - 2019.02.07 at 14h 15m 03s.xml">
+      <configuration name="All in mymedia-main" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SessionManagerTest - 2019.02.07 at 13h 11m 21s.xml">
-      <configuration name="SessionManagerTest" configurationId="JUnit" />
+    <history-entry file="All_in_mymedia-main - 2019.02.07 at 14h 16m 04s.xml">
+      <configuration name="All in mymedia-main" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41041000" />
+    <option name="totallyTimeSpent" value="44929000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -704,7 +768,7 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="JSF" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Database" order="7" weight="0.32995737" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info anchor="right" id="CDI" order="10" />
@@ -726,36 +790,12 @@
       </configuration>
     </watches-manager>
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/Response.java" />
-    <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/response/Response.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/services/BCrypt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="760" column="26" selection-start-line="760" selection-start-column="26" selection-end-line="760" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/dto/AuthDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/services/RegistrationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mymedia-database/src/main/java/org/mymedia/database/dao/UserDataBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2516">
@@ -791,13 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/services/AuthService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/webapp/WEB-INF/archive/webxmlArchSec.txt" />
     <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/actions/NewsFeedServlet.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -810,13 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/auth/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="48" column="61" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -908,13 +934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/auth/RegistrationServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/webapp/WEB-INF/views/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -936,24 +955,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="64" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mymedia-main/src/test/java/servlet/LoginServletTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-main/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="61" column="42" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -964,24 +969,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-main/src/test/java/service/AuthServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-main/src/test/java/service/RegistrationServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mymedia-database/src/main/java/org/mymedia/database/entities/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
           <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-main/src/test/java/security/SessionManagerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="43" column="71" lean-forward="true" selection-start-line="43" selection-start-column="71" selection-end-line="43" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -998,21 +999,116 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-main/src/test/java/suites/AllServiceTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/dto/AuthDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/services/BCrypt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="764" selection-start-line="764" selection-end-line="764" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/services/AuthService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="32" column="82" selection-start-line="32" selection-start-column="71" selection-end-line="32" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/services/RegistrationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/auth/RegistrationServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="57" column="58" selection-start-line="57" selection-start-column="58" selection-end-line="57" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/servlets/auth/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="51" column="32" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="164" column="12" selection-start-line="164" selection-start-column="12" selection-end-line="164" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/config/SessionManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="84" column="77" selection-start-line="84" selection-start-column="54" selection-end-line="84" selection-end-column="77" />
+        <state relative-caret-position="236">
+          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
           <folding>
+            <element signature="e#1006#1007#0" expanded="true" />
+            <element signature="e#1059#1060#0" expanded="true" />
             <element signature="e#2607#2608#0" expanded="true" />
             <element signature="e#2651#2652#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-main/src/test/java/security/SessionManagerTest.java">
+    <entry file="file://$PROJECT_DIR$/mymedia-main/src/main/java/mymediaMain/response/Response.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="134" column="25" selection-start-line="134" selection-start-column="25" selection-end-line="134" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-main/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-main/src/test/java/service/AuthServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1394">
+          <caret line="82" column="89" selection-start-line="82" selection-start-column="89" selection-end-line="82" selection-end-column="89" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-main/src/test/java/service/RegistrationServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

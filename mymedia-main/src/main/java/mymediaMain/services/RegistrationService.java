@@ -54,7 +54,7 @@ public class RegistrationService {
             return new Response(ErrorMessages.USED_USERNAME, ErrorCodes.USED_USERNAME);
         }
 
-        else if(isValidEmail(user.getUsername())) {
+        else if(isValidEmail(user.getEmail())) {
             return new Response(ErrorMessages.WRONG_EMAIL_FORMAT, ErrorCodes.WRONG_EMAIL_FORMAT);
         }
 

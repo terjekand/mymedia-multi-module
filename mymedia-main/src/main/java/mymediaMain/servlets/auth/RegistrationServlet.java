@@ -55,7 +55,7 @@ public class RegistrationServlet extends HttpServlet {
                     request.getParameter("email"),
                     request.getParameter("fullname"));
             Response regResponse = registrationService.userRegistration(user);
-            if(regResponse.getErrorCode() == ErrorCodes.OK.getNumber()){
+            if(regResponse.getErrorCode() == ErrorCodes.OK){
                 log.info("[New user] - " + user.toString() + "\n[ErrCode:] " + regResponse.getErrorCode() + "[ErrorMsg:] " + regResponse.getErrorMessage());
                 request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
             }

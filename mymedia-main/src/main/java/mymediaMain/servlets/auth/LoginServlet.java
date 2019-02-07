@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import mymediaMain.config.SessionManager;
 import mymediaMain.dto.AuthDto;
+import mymediaMain.enums.ErrorCodes;
 import mymediaMain.response.Response;
 import mymediaMain.services.AuthService;
 import org.mymedia.database.dao.UserDataBase;
@@ -45,10 +46,10 @@ public class LoginServlet extends HttpServlet {
         authDto.setUsername(request.getParameter("username"));
         authDto.setPassword(request.getParameter("password"));
         Response resp = authService.login(authDto);
-        if (resp.getErrorCode() != 200) {
+        if (resp.getErrorCode() != ErrorCodes.OK) {
             request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
         }
-        if (resp.getErrorCode() == 200){
+        if (resp.getErrorCode() == ErrorCodes.OK){
             request.setAttribute("userid", USERDB.getUserByUsername(authDto.getUsername()).getId());
             request.getRequestDispatcher("WEB-INF/views/news.jsp").forward(request, response);
         }
