@@ -87,5 +87,9 @@ public class SessionManager {
             throw new MalformedTokenException("Malformed token!");
         }
     }
+
+    public void clear(){
+        sessionMap = new HashMap<>();
+    }
 }
 

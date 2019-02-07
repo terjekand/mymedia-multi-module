@@ -47,7 +47,7 @@ public class RegistrationServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            if(request.getParameter("password-re") != request.getParameter("password")){
+            if(!request.getParameter("password-re").equals(request.getParameter("password"))){
                 request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
             }
             User user = new User(request.getParameter("username"),
@@ -56,9 +56,11 @@ public class RegistrationServlet extends HttpServlet {
                     request.getParameter("fullname"));
             Response regResponse = registrationService.userRegistration(user);
             if(regResponse.getErrorCode() == ErrorCodes.OK.getNumber()){
+                log.info("[New user] - " + user.toString() + "\n[ErrCode:] " + regResponse.getErrorCode() + "[ErrorMsg:] " + regResponse.getErrorMessage());
                 request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
             }
             else {
+                log.info("[Bad Reg] - " + user.toString() + "\n[ErrCode:] " + regResponse.getErrorCode() + "[ErrMsg:] " + regResponse.getErrorMessage());
                 request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
             }
 
