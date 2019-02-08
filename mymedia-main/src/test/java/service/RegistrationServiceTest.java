@@ -22,7 +22,7 @@ public class RegistrationServiceTest {
 
     @Test
     public void should_registrate_user() {
-        Response res = registrationService.userRegistration(user);
+        registrationService.userRegistration(user);
         when(registrationService.userRegistration(user)).thenReturn(new Response(ErrorMessages.OK, ErrorCodes.OK));
     }
 

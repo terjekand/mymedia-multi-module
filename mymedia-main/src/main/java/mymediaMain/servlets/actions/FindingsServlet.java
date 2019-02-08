@@ -1,7 +1,7 @@
 package mymediaMain.servlets.actions;
 
 import lombok.extern.slf4j.Slf4j;
-import org.mymedia.database.dao.UserDataBase;
+import mymediaMain.services.Connector;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,20 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Slf4j
-@WebServlet(name = "myself", urlPatterns = "/myself")
-public class PersonalData extends HttpServlet {
-
-    private static final UserDataBase USER_DATA_BASE = UserDataBase.getDataBase();
+@WebServlet(name = "findings", urlPatterns = "/findings")
+public class FindingsServlet extends HttpServlet {
 
     @Override
-    public void init() {
-        if (!USER_DATA_BASE.connected()) {
-            try {
-                USER_DATA_BASE.connectDB();
-            } catch (Exception ex) {
-                log.error("" + ex);
-            }
-        }
+    public void init(){
+        Connector connector = new Connector();
+        connector.userConnection();
     }
 
     @Override
@@ -33,5 +26,12 @@ public class PersonalData extends HttpServlet {
 
     }
 
+
+
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+    }
 
 }

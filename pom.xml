@@ -11,7 +11,6 @@
     <modules>
         <module>mymedia-main</module>
         <module>mymedia-database</module>
-        <module>mymedia-rest</module>
     </modules>
 
     <dependencyManagement>
@@ -102,36 +101,6 @@
                 <groupId>javax.mail</groupId>
                 <artifactId>mail</artifactId>
                 <version>1.4.7</version>
-            </dependency>
-
-            <!-- https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
-            <dependency>
-                <groupId>javax.ws.rs</groupId>
-                <artifactId>javax.ws.rs-api</artifactId>
-                <version>2.1</version>
-            </dependency>
-
-
-            <dependency>
-                <groupId>com.sun.jersey</groupId>
-                <artifactId>jersey-server</artifactId>
-                <version>1.19.4</version>
-            </dependency>
-            <dependency>
-                <groupId>com.sun.jersey</groupId>
-                <artifactId>jersey-json</artifactId>
-                <version>1.19.4</version>
-            </dependency>
-            <dependency>
-                <groupId>com.sun.jersey</groupId>
-                <artifactId>jersey-core</artifactId>
-                <version>1.19.4</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.sun.jersey</groupId>
-                <artifactId>jersey-bundle</artifactId>
-                <version>1.19.4</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->

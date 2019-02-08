@@ -1,6 +1,7 @@
 package mymediaMain.servlets.actions;
 
 import lombok.extern.slf4j.Slf4j;
+import mymediaMain.services.Connector;
 import org.mymedia.database.dao.PostDataBase;
 import org.mymedia.database.dao.UserDataBase;
 import org.mymedia.database.entities.User;
@@ -21,24 +22,8 @@ public class NewsFeedServlet extends HttpServlet {
 
     @Override
     public void init() {
-        if (!USER_DATA_BASE.connected()) {
-            try {
-                USER_DATA_BASE.connectDB();
-                log.trace("Connected to database!");
-
-            } catch (Exception e) {
-                System.err.println(e);
-            }
-        }
-        if (!POST_DATA_BASE.connected()) {
-            try {
-                POST_DATA_BASE.connectDB();
-                log.trace("Connected to database!");
-
-            } catch (Exception e) {
-                log.error("" + e);
-            }
-        }
+      Connector connector = new Connector();
+      connector.fullConnection();
 
     }
 

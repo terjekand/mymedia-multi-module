@@ -17,13 +17,8 @@ public class AuthService {
     private static final UserDataBase USER_DATA_BASE = UserDataBase.getDataBase();
 
     public AuthService() {
-        try {
-            USER_DATA_BASE.connectDB();
-            log.trace("Connected to database!");
-
-        } catch (Exception e) {
-            log.error("" + e);
-        }
+        Connector connector = new Connector();
+        connector.userConnection();
     }
 
     private Response authenticate(String userId) {

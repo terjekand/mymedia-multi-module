@@ -34,8 +34,6 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
 
         request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
-        SessionManager sessionManager = SessionManager.getInstance();
-        System.out.println(sessionManager.listAllTokensOfSession());
 
     }
 

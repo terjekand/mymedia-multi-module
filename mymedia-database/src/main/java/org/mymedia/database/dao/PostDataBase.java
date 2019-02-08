@@ -100,13 +100,13 @@ public class PostDataBase {
         }
     }
 
-    public List<Post> getPostsOfUser(User user) {
+    public List<Post> getPostsOfUserByUserId(String userId) {
         if (!connected()) {
             throw new IllegalStateException("Nincs adatbázis-kapcsolat");
         }
         try {
             Query query = em.createNamedQuery("Post.getPostsOfUser", Post.class);
-            query.setParameter("un", user);
+            query.setParameter("uid", userId);
             @SuppressWarnings("unchecked")
             List<Post> posts = new ArrayList<Post>();
             posts = query.getResultList();

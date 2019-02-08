@@ -17,15 +17,8 @@ public class RegistrationService {
     private static final UserDataBase USERDB = UserDataBase.getDataBase();
 
     public RegistrationService() {
-        if (!USERDB.connected()) {
-            try {
-                USERDB.connectDB();
-                log.trace("Connect to database!");
-
-            } catch (Exception e) {
-                log.error("" + e);
-            }
-        }
+        Connector connector = new Connector();
+        connector.userConnection();
     }
 
     private static boolean isValidEmail(String email) {

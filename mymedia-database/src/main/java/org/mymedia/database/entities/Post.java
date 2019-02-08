@@ -15,7 +15,7 @@ import java.util.List;
 @Table(name = "Posts")
 
 @NamedQueries({
-        @NamedQuery(name = "Post.getPostsOfUser", query = "SELECT u FROM Post u WHERE u.user =:un"),
+        @NamedQuery(name = "Post.getPostsOfUser", query = "SELECT u FROM Post u WHERE u.userId =:id"),
 })
 public class Post implements Serializable {
 
@@ -24,9 +24,8 @@ public class Post implements Serializable {
     @Column(name = "ID", nullable = false, updatable = false)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "USER_ENTITY", nullable = false, updatable = false)
-    private User user;
+    @JoinColumn(name = "USER_ID", nullable = false, updatable = false)
+    private String userId;
 
     @Column(name = "POST_DATE", nullable = false, updatable = false)
     private LocalDate postDate;
@@ -41,8 +40,8 @@ public class Post implements Serializable {
     public Post() {
     }
 
-    public Post(User user, String text) {
-        this.user = user;
+    public Post(String userId, String text) {
+        this.userId = userId;
         postDate = LocalDate.now();
         this.text = text;
         likers = new ArrayList<User>();
@@ -56,12 +55,12 @@ public class Post implements Serializable {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public LocalDate getPostDate() {

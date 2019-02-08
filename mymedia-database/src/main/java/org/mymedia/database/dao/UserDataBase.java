@@ -127,12 +127,10 @@ public class UserDataBase implements Serializable {
             query.setParameter("un", username);
 
             try {
-                @SuppressWarnings("unchecked")
                 User entity = (User) query.getSingleResult();
-                System.out.println(entity);
                 return entity;
             } catch (NoResultException ex) {
-                System.err.println(ex);
+                log.error("" + ex);
                 return null;
             }
 
@@ -141,6 +139,31 @@ public class UserDataBase implements Serializable {
             return null;
         }
     }
+
+    public List<User> searchUser(String filter) {
+        if (!connected()) {
+            throw new IllegalStateException("Nincs adatbazis-kapcsolat!");
+        }
+        try {
+            Query query = em.createNamedQuery("User.searchUser", User.class);
+            query.setParameter("filter", filter);
+
+            try {
+                List<User> findings = (List<User>) query.getResultList();
+                return findings;
+            } catch (NoResultException ex) {
+                log.error("" + ex);
+                return null;
+            }
+
+        } catch (Exception e) {
+            log.error("" + e);
+            return null;
+        }
+    }
+
+
+
 
     public User getUserById(String userId) {
         if (!connected()) {
@@ -151,12 +174,10 @@ public class UserDataBase implements Serializable {
             query.setParameter("id", userId);
 
             try {
-                @SuppressWarnings("unchecked")
                 User entity = (User) query.getSingleResult();
-                System.out.println(entity);
                 return entity;
             } catch (NoResultException ex) {
-                System.err.println(ex);
+                log.error("" + ex);
                 return null;
             }
 
@@ -175,12 +196,10 @@ public class UserDataBase implements Serializable {
             query.setParameter("un", email);
 
             try {
-                @SuppressWarnings("unchecked")
                 User entity = (User) query.getSingleResult();
-                System.out.println(entity);
                 return entity;
             } catch (NoResultException ex) {
-                System.err.println(ex);
+                log.error("" + ex);
                 return null;
             }
 
@@ -206,4 +225,5 @@ public class UserDataBase implements Serializable {
             return null;
         }
     }
+
 }

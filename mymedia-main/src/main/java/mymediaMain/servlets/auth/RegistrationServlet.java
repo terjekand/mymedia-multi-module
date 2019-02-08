@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import mymediaMain.enums.ErrorCodes;
 import mymediaMain.response.Response;
 import mymediaMain.services.BCrypt;
+import mymediaMain.services.Connector;
 import mymediaMain.services.RegistrationService;
 import org.mymedia.database.dao.UserDataBase;
 import org.mymedia.database.entities.User;
@@ -24,15 +25,7 @@ public class RegistrationServlet extends HttpServlet {
 
     @Override
     public void init() {
-        if (!USERDB.connected()) {
-            try {
-                USERDB.connectDB();
-                log.trace("Connect to database!");
 
-            } catch (Exception e) {
-                log.error("" + e);
-            }
-        }
     }
 
     @Override

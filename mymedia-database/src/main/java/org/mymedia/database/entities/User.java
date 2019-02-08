@@ -18,6 +18,7 @@ import java.util.UUID;
 @NamedQueries({
         @NamedQuery(name = "User.validUser", query = "SELECT u FROM User u WHERE u.username =:un AND u.password =:pw"),
         @NamedQuery(name = "User.getUserByUsername", query = "SELECT u FROM User u WHERE u.username =:un"),
+        @NamedQuery(name = "User.searchUser", query = "SELECT u FROM User u WHERE u.username =:filter or u.fullname =:filter"),
         @NamedQuery(name = "User.getUserByUserId", query = "SELECT u FROM User u WHERE u.id =:id"),
         @NamedQuery(name = "User.getUserByEmail", query = "SELECT u FROM User u WHERE u.email =:un"),
         @NamedQuery(name = "User.listAllUser", query = "SELECT u FROM User u")
