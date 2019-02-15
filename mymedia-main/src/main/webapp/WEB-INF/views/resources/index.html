@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="index/styles.css">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div class="container">
+        <div class="login">
+            <form action="/login.php">
+                <h1 class="title">Bejelentkezés</h1>
+
+                <label for="username" class="body">Felhasználónév</label>
+                <br>
+                <input type="text" name="username" required>
+                <br>
+
+                <label for="password" class="body">Jelszó</label>
+                <br>
+                <input type="password" name="password" required>
+                <br>
+
+                <label for="remember" class="body">
+                    <input type="checkbox" checked="checked" name="remember" required>Jegyezze meg a felhasználónevet.
+                    <br>
+                </label>
+
+                <button type="submit">Bejelentkezés</button>
+
+            </form>
+        </div>
+        <div>
+            <button onclick="dropdown()" class="or">
+                Ha nincs még fiókja, <b>regisztráljon</b> egyet most!
+            </button>
+        </div>
+        <div id="reg" class="signup">
+            <form action="/regisztracio.php">
+                <h1 class="title">Regisztráció</h1>
+
+                <label for="username" class="body">Felhasználónév</label>
+                <br>
+                <input type="text" name="username" required>
+                <br>
+
+                <label for="fullname" class="body">Név</label>
+                <br>
+                <input type="text" name="fullname" required>
+                <br>
+
+                <label for="email" class="body">Email</label>
+                <br>
+                <input type="text" name="email" required>
+                <br>
+
+                <label for="password" class="body">Jelszó</label>
+                <br>
+                <input type="password" name="password" required>
+                <br>
+
+                <label for="password-re" class="body">Jelszó ismét</label>
+                <br>
+                <input type="password" name="password-re" required>
+                <br>
+
+                <label for="privacy" class="body">
+                    <input type="checkbox" name="privacy" required>Elfogadom az <a href="#">adatvédelmi szabályzatot</a>.
+                    <br>
+                </label>
+
+                <button type="submit">Regisztráció</button>
+
+            </form>
+        </div>
+
+        <script>
+            function dropdown() {
+                document.getElementById("reg").classList.toggle("show");
+            }
+        </script>
+    </div>
+</body>
+
+</html>

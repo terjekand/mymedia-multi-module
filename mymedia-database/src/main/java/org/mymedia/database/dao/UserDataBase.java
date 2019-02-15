@@ -82,7 +82,7 @@ public class UserDataBase implements Serializable {
         }
 
         try {
-            User delEntity = em.find(User.class, entity.getId());
+            User delEntity = em.find(User.class, entity.getUsername());
 
             if (delEntity.getId() == null) {
                 throw new IllegalArgumentException("A t�rlend� entit�s nincs az adatb�zisban");

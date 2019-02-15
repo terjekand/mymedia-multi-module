@@ -13,8 +13,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import static org.mockito.Mockito.*;
+
+import org.junit.runner.RunWith;
+import org.mockito.runners.MockitoJUnitRunner;
 import org.mymedia.database.entities.User;
 
+@RunWith(MockitoJUnitRunner.class)
 public class AuthServiceTest {
 
     AuthService authService;

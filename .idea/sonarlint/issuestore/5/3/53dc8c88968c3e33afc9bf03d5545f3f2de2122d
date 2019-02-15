@@ -1,0 +1,14 @@
+
+³%squid:RedundantThrowsDeclarationCheck2"}Remove the declaration of thrown exception 'java.lang.IllegalArgumentException' which is a subclass of 'java.lang.Exception'.(±¹÷ÿÿÿÿÿ
+«%squid:RedundantThrowsDeclarationCheckM"zRemove the declaration of thrown exception 'java.lang.IllegalStateException' which is a subclass of 'java.lang.Exception'.(ÓÉµ–
+®%squid:RedundantThrowsDeclarationCheckM"}Remove the declaration of thrown exception 'java.lang.IllegalArgumentException' which is a subclass of 'java.lang.Exception'.(ÓÉµ–
+^squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(ê¾Íò
+^squid:S00112I"FDefine and throw a dedicated exception instead of using a generic one.(æŠ¸
+^squid:S00112M"FDefine and throw a dedicated exception instead of using a generic one.(ÓÉµ–
+Psquid:S1854o"9Remove this useless assignment to local variable "posts".(•ùù¸
+°%squid:RedundantThrowsDeclarationCheck2"zRemove the declaration of thrown exception 'java.lang.IllegalStateException' which is a subclass of 'java.lang.Exception'.(±¹÷ÿÿÿÿÿ
+csquid:S001122"FDefine and throw a dedicated exception instead of using a generic one.(±¹÷ÿÿÿÿÿ
+psquid:S2293o"YReplace the type specification in this constructor call with the diamond operator ("<>").(•ùù¸
+^squid:S00112c"FDefine and throw a dedicated exception instead of using a generic one.(ÈÉÂÇ
+Bsquid:S1168t"+Return an empty collection instead of null.(¥¹ï
+]squid:S1126%"AReplace this if-then-else statement by a single return statement.(ÑéÒíüÿÿÿÿ
