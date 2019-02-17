@@ -5,6 +5,9 @@
  */
 package org.mymedia.database.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -17,6 +20,8 @@ import java.util.List;
 @NamedQueries({
         @NamedQuery(name = "Post.getPostsOfUser", query = "SELECT u FROM Post u WHERE u.userId =:id"),
 })
+@Getter
+@Setter
 public class Post implements Serializable {
 
     @Id
@@ -47,45 +52,14 @@ public class Post implements Serializable {
         likers = new ArrayList<User>();
     }
 
-    public Long getId() {
-        return id;
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", userId='" + userId + '\'' +
+                ", postDate=" + postDate +
+                ", text='" + text + '\'' +
+                ", likers=" + likers +
+                '}';
     }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public LocalDate getPostDate() {
-        return postDate;
-    }
-
-    public void setPostDate(LocalDate postDate) {
-        this.postDate = postDate;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public List<User> getLikers() {
-        return likers;
-    }
-
-    public void setLikers(List<User> likers) {
-        this.likers = likers;
-    }
-
-
 }

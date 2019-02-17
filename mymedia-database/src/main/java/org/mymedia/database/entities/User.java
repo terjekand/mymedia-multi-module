@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.File;
 import java.io.Serializable;
 import java.util.UUID;
 
@@ -43,12 +44,26 @@ public class User implements Serializable {
     private String fullname;
 
 
+    @Column(name = "PICTURE")
+    private String picture;
+
     public User(String username, String password, String email, String fullname) {
         this.id = UUID.randomUUID().toString();
         this.username = username;
         this.password = password;
         this.email = email;
         this.fullname = fullname;
+        this.picture = null;
+    }
+
+    public User(String username, String password, String email, String fullname, String picture) {
+        this.id = UUID.randomUUID().toString();
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.fullname = fullname;
+        this.picture = picture;
+
     }
 
     public User() {

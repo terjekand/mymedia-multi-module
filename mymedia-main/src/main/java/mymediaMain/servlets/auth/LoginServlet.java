@@ -6,8 +6,10 @@ import mymediaMain.dto.AuthDto;
 import mymediaMain.enums.ErrorCodes;
 import mymediaMain.response.Response;
 import mymediaMain.services.AuthService;
+import mymediaMain.servlets.actions.NewsFeedServlet;
 import org.mymedia.database.dao.UserDataBase;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
