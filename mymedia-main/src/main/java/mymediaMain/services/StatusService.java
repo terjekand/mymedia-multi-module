@@ -2,6 +2,7 @@ package mymediaMain.services;
 
 import lombok.extern.slf4j.Slf4j;
 import mymediaMain.config.SessionManager;
+import mymediaMain.services.Connector;
 import org.mymedia.database.dao.UserDataBase;
 import org.mymedia.database.entities.User;
 
@@ -14,7 +15,7 @@ public class StatusService {
     User template2;
     User template3;
 
-    StatusService(){
+    public StatusService(){
 
         template1 = new User("kiss", "kiss", "kiss", "kiss");
         template2 = new User("111", "111", "111", "111");
@@ -28,9 +29,8 @@ public class StatusService {
     public void registrateTemplate1(){
         Connector connector = new Connector();
         connector.userConnection();
-        User template = new User("kiss", "kiss", "kiss", "kiss");
         try{
-            USER_DATA_BASE.save(new User("kiss", "kiss", "kiss", "kiss"));
+            USER_DATA_BASE.save(template1);
         } catch(Exception ex){
             log.error(ex +  "");
         }
@@ -39,9 +39,8 @@ public class StatusService {
     public void registrateTemplate2(){
         Connector connector = new Connector();
         connector.userConnection();
-        User template = new User("asd", "asd", "asd", "asd");
         try{
-            USER_DATA_BASE.save(template);
+            USER_DATA_BASE.save(template2);
         } catch(Exception ex){
             log.error(ex +  "");
         }
@@ -51,7 +50,7 @@ public class StatusService {
         Connector connector = new Connector();
         connector.userConnection();
         try{
-            USER_DATA_BASE.save(template);
+            USER_DATA_BASE.save(template3);
         } catch(Exception ex){
             log.error(ex +  "");
         }
@@ -61,7 +60,7 @@ public class StatusService {
         Connector connector = new Connector();
         connector.userConnection();
         try{
-            USER_DATA_BASE.delete(new User("kiss", "kiss", "kiss", "kiss"));
+            USER_DATA_BASE.delete(template1);
         } catch (Exception ex){
             log.error(ex + "");
         }
@@ -71,7 +70,7 @@ public class StatusService {
         Connector connector = new Connector();
         connector.userConnection();
         try{
-            USER_DATA_BASE.delete(new User("asd", "asd", "asd", "asd"));
+            USER_DATA_BASE.delete(template2);
         } catch (Exception ex){
             log.error(ex + "");
         }
@@ -80,7 +79,7 @@ public class StatusService {
         Connector connector = new Connector();
         connector.userConnection();
         try{
-            USER_DATA_BASE.delete(new User("111", "111", "111", "111"));
+            USER_DATA_BASE.delete(template3);
         } catch (Exception ex){
             log.error(ex + "");
         }

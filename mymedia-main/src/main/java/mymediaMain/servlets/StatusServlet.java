@@ -2,9 +2,7 @@ package mymediaMain.servlets;
 
 import lombok.extern.slf4j.Slf4j;
 import mymediaMain.config.SessionManager;
-import mymediaMain.services.Connector;
 import mymediaMain.services.StatusService;
-import org.mymedia.database.entities.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,16 +16,44 @@ import java.io.IOException;
 public class StatusServlet extends HttpServlet {
     StatusService statusService;
 
+    SessionManager sessionManager;
     @Override
     public void init() {
+        sessionManager = SessionManager.getInstance();
         statusService = new StatusService();
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        SessionManager sessionManager = SessionManager.getInstance();
         request.setAttribute("numberOfUsers", sessionManager.numberOfUsers());
         request.getRequestDispatcher("WEB-INF/views/status.jsp").forward(request, response);
+    }
+
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        if(request.getParameter("operator") == "registrateTemplate1"){
+            registrateTemplate1();
+        }
+        else if(request.getParameter("operator").equals("registrateTemplate2")){
+            registrateTemplate2();
+        }
+        else if(request.getParameter("operator").equals("registrateTemplate3")){
+        registrateTemplate3();
+        }
+        else if(request.getParameter("operator").equals("deleteTemplate1")){
+            deleteTemplate1();
+        }
+        else if(request.getParameter("operator").equals("deleteTemplate2")){
+            deleteTemplate2();
+        }
+        else if(request.getParameter("operator").equals("deleteTemplate3")){
+            deleteTemplate3();
+        }
+        else if(request.getParameter("operator").equals("logoutAllUser")){
+            logoutAllUser();
+        }
     }
 
     public void logoutAllUser(){
