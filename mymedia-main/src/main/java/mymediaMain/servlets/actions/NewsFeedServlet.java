@@ -8,6 +8,7 @@ import org.mymedia.database.entities.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -31,29 +32,40 @@ public class NewsFeedServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String userId = request.getParameter("userId");
+        String userId = null;
+        final Cookie[] cookies = request.getCookies();
+        for(Cookie cookie : cookies){
+            if(cookie.getName().equals("userId")){
+                userId = cookie.getValue();
+                break;
+            }
+        }
+        if(userId != null){
+            User user = USER_DATA_BASE.getUserById(userId);
+            request.setAttribute("USERNAME", user.getUsername());
+            request.setAttribute("FULLNAME", user.getFullname());
+            request.setAttribute("EMAIL", user.getEmail());
 
-        User user = USER_DATA_BASE.getUserById(userId);
+            request.getRequestDispatcher("WEB-INF/views/news.jsp").forward(request, response);
+        }
+        else{
+            response.sendRedirect("/");
+        }
 
-
-        request.setAttribute("USERNAME", user.getUsername());
-        request.setAttribute("FULLNAME", user.getFullname());
-        request.setAttribute("EMAIL", user.getEmail());
-        request.getRequestDispatcher("WEB-INF/views/news.jsp").forward(request, response);
 
     }
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String userId = request.getParameter("userId");
-
-        User user = USER_DATA_BASE.getUserById(userId);
-
-
-        request.setAttribute("USERNAME", user.getUsername());
-        request.setAttribute("FULLNAME", user.getFullname());
-        request.setAttribute("EMAIL", user.getEmail());
+//        String userId = request.getParameter("userId");
+//
+//        User user = USER_DATA_BASE.getUserById(userId);
+//
+//
+//        request.setAttribute("USERNAME", user.getUsername());
+//        request.setAttribute("FULLNAME", user.getFullname());
+//        request.setAttribute("EMAIL", user.getEmail());
         request.getRequestDispatcher("WEB-INF/views/news.jsp").forward(request, response);
 
     }

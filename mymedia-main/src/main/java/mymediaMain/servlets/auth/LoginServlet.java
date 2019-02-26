@@ -6,15 +6,20 @@ import mymediaMain.dto.AuthDto;
 import mymediaMain.enums.ErrorCodes;
 import mymediaMain.response.Response;
 import mymediaMain.services.AuthService;
+import mymediaMain.services.BCrypt;
+import mymediaMain.services.RegistrationService;
 import mymediaMain.servlets.actions.NewsFeedServlet;
 import org.mymedia.database.dao.UserDataBase;
+import org.mymedia.database.entities.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.plaf.basic.BasicViewportUI;
 import java.io.IOException;
 
 @Slf4j
@@ -28,7 +33,6 @@ public class LoginServlet extends HttpServlet {
     @Override
     public void init() {
         authService = new AuthService();
-
     }
 
     @Override
@@ -52,7 +56,13 @@ public class LoginServlet extends HttpServlet {
         }
         if (resp.getErrorCode() == ErrorCodes.OK) {
             request.setAttribute("userid", USERDB.getUserByUsername(authDto.getUsername()).getId());
-            request.getRequestDispatcher("WEB-INF/views/news.jsp").forward(request, response);
+            //request.getRequestDispatcher("WEB-INF/views/news.jsp").forward(request, response);
+            RequestDispatcher rd = request.getRequestDispatcher("/news");
+
+            Cookie cookie = new Cookie("userId", USERDB.getUserByUsername(authDto.getUsername()).getId());
+            response.addCookie(cookie);
+            response.sendRedirect("/news");
+            //rd.forward(request, response);
         }
 
     }
