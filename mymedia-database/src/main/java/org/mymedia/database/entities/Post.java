@@ -35,12 +35,11 @@ public class Post implements Serializable {
     @Column(name = "POST_DATE", nullable = false, updatable = false)
     private LocalDate postDate;
 
-    @Column(name = "TEXT", nullable = false, updatable = true)
+    @Column(name = "TEXT", nullable = false)
     private String text;
 
-    @JoinColumn(name = "LIKERS")
-    @OneToMany
-    private List<User> likers;
+    @Column(name = "LIKERS")
+    private String likers;
 
     public Post() {
     }
@@ -49,7 +48,7 @@ public class Post implements Serializable {
         this.userId = userId;
         postDate = LocalDate.now();
         this.text = text;
-        likers = new ArrayList<User>();
+        likers = null;
     }
 
     @Override

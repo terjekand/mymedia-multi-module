@@ -45,13 +45,17 @@ public class SessionManager {
         return sessionMap.get(userId);
     }
 
-    public static String getUserIdByToken(Map<String, String> map, String value) {
+    private static String getUserIdByToken(Map<String, String> map, String token) {
         List<String> keys = map.entrySet()
                 .stream()
-                .filter(entry -> Objects.equals(entry.getValue(), value))
+                .filter(entry -> Objects.equals(entry.getValue(), token))
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
         return keys.get(0);
+    }
+
+    public String getUserIdByToken(String token){
+        return getUserIdByToken(sessionMap, token);
     }
 
     public Response removePermission(String token) {

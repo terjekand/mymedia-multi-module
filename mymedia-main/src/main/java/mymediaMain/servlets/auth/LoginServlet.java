@@ -29,6 +29,7 @@ public class LoginServlet extends HttpServlet {
     private static final UserDataBase USERDB = UserDataBase.getDataBase();
 
     private AuthService authService;
+    private static final SessionManager SESSION_MANAGER = SessionManager.getInstance();;
 
     @Override
     public void init() {
@@ -54,15 +55,12 @@ public class LoginServlet extends HttpServlet {
         if (resp.getErrorCode() != ErrorCodes.OK) {
             request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
         }
-        if (resp.getErrorCode() == ErrorCodes.OK) {
-            request.setAttribute("userid", USERDB.getUserByUsername(authDto.getUsername()).getId());
-            //request.getRequestDispatcher("WEB-INF/views/news.jsp").forward(request, response);
-            RequestDispatcher rd = request.getRequestDispatcher("/news");
-
-            Cookie cookie = new Cookie("userId", USERDB.getUserByUsername(authDto.getUsername()).getId());
+        else {
+            String userId = USERDB.getUserByUsername(authDto.getUsername()).getId();
+            String token = SESSION_MANAGER.getTokenOfUser(userId);
+            Cookie cookie = new Cookie("token", token);
             response.addCookie(cookie);
             response.sendRedirect("/news");
-            //rd.forward(request, response);
         }
 
     }

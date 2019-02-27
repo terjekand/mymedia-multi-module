@@ -1,6 +1,7 @@
 package mymediaMain.servlets.actions;
 
 import lombok.extern.slf4j.Slf4j;
+import mymediaMain.config.SessionManager;
 import mymediaMain.services.Connector;
 import org.mymedia.database.dao.PostDataBase;
 import org.mymedia.database.dao.UserDataBase;
@@ -20,6 +21,7 @@ public class NewsFeedServlet extends HttpServlet {
 
     private static final UserDataBase USER_DATA_BASE = UserDataBase.getDataBase();
     private static final PostDataBase POST_DATA_BASE = PostDataBase.getDataBase();
+    private static final SessionManager SESSION_MANAGER = SessionManager.getInstance();
 
     @Override
     public void init() {
@@ -32,15 +34,20 @@ public class NewsFeedServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String userId = null;
+        String token = null;
         final Cookie[] cookies = request.getCookies();
         for(Cookie cookie : cookies){
-            if(cookie.getName().equals("userId")){
-                userId = cookie.getValue();
+            if(cookie.getName().equals("token")){
+                token = cookie.getValue();
                 break;
             }
         }
-        if(userId != null){
+        if(token != null){
+            String userId = SESSION_MANAGER.getUserIdByToken(token);
+            if(userId == null || userId.equals("")){
+                log.error("No user found for the given token... [REDIRECT] To Login");
+                response.sendRedirect("/");
+            }
             User user = USER_DATA_BASE.getUserById(userId);
             request.setAttribute("USERNAME", user.getUsername());
             request.setAttribute("FULLNAME", user.getFullname());
