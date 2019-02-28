@@ -11,14 +11,14 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "Posts")
 
 @NamedQueries({
         @NamedQuery(name = "Post.getPostsOfUser", query = "SELECT u FROM Post u WHERE u.userId =:id"),
+        @NamedQuery(name = "Post.getLikersOfPost", query = "SELECT u.likers FROM Post u WHERE u.id =:pId"),
+        @NamedQuery(name = "Post.getPostByPostId", query = "SELECT u FROM Post u WHERE u.id =:id"),
 })
 @Getter
 @Setter

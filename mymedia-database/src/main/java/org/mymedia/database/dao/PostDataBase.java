@@ -15,7 +15,7 @@ import java.util.List;
 
 @Slf4j
 public class PostDataBase {
-    public static final PostDataBase DB_PELDANY = new PostDataBase();
+    private static final PostDataBase DB_PELDANY = new PostDataBase();
     @PersistenceContext(unitName = "UsersDB")
     private EntityManager em;
 
@@ -106,7 +106,7 @@ public class PostDataBase {
         }
         try {
             Query query = em.createNamedQuery("Post.getPostsOfUser", Post.class);
-            query.setParameter("uid", userId);
+            query.setParameter("id", userId);
             @SuppressWarnings("unchecked")
             List<Post> posts = new ArrayList<Post>();
             posts = query.getResultList();
@@ -117,5 +117,21 @@ public class PostDataBase {
         }
     }
 
+    public String getLikersOfPost(Long postId) {
+        if (!connected()) {
+            throw new IllegalStateException("Nincs adatbázis-kapcsolat");
+        }
+        try {
+            Query query = em.createNamedQuery("Post.getLikersOfPost", Post.class);
+            query.setParameter("pId", postId);
+            @SuppressWarnings("unchecked")
+            String likers;
+            likers = (String)query.getSingleResult();
+            return likers;
+        } catch (Exception e) {
+            log.error("" + e);
+            return null;
+        }
+    }
 
 }
