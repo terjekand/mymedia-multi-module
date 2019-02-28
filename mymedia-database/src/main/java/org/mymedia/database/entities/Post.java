@@ -11,6 +11,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "Posts")
@@ -38,8 +39,9 @@ public class Post implements Serializable {
     @Column(name = "TEXT", nullable = false)
     private String text;
 
-    @Column(name = "LIKERS")
-    private String likers;
+    @JoinColumn(name = "LIKERS")
+    @OneToMany
+    private List<User> likers;
 
     public Post() {
     }

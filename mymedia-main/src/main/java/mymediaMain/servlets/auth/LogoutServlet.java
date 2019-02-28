@@ -27,13 +27,13 @@ public class LogoutServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         AuthService authService = new AuthService();
-        if (request.getParameter("logout") != null) {
-//                Long userId =Long.parseLong(request.getAttribute("userid")) ;
-//                authService.logout(userId);
-            request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
+        String tokenToLogout  = request.getParameter("TK");
+        if (tokenToLogout!= null) {
+            authService.logout(tokenToLogout);
+            response.sendRedirect("/");
         }
 
     }

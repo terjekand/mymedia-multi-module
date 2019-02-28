@@ -117,7 +117,7 @@ public class PostDataBase {
         }
     }
 
-    public String getLikersOfPost(Long postId) {
+    public List<User> getLikersOfPostByPostId(Long postId) {
         if (!connected()) {
             throw new IllegalStateException("Nincs adatbázis-kapcsolat");
         }
@@ -125,9 +125,25 @@ public class PostDataBase {
             Query query = em.createNamedQuery("Post.getLikersOfPost", Post.class);
             query.setParameter("pId", postId);
             @SuppressWarnings("unchecked")
-            String likers;
-            likers = (String)query.getSingleResult();
+            List likers;
+            likers = (ArrayList<User>)query.getResultList();
             return likers;
+        } catch (Exception e) {
+            log.error("" + e);
+            return null;
+        }
+    }
+
+    public Post getPostByPostId(Long postId){
+        if (!connected()) {
+            throw new IllegalStateException("Nincs adatbázis-kapcsolat");
+        }
+        try {
+            Query query = em.createNamedQuery("Post.getPostByPostId", Post.class);
+            query.setParameter("id", postId);
+            @SuppressWarnings("unchecked")
+            Post post = (Post)query.getSingleResult();
+            return post;
         } catch (Exception e) {
             log.error("" + e);
             return null;

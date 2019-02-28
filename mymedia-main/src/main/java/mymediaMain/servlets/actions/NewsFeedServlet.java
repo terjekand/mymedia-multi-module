@@ -65,14 +65,6 @@ public class NewsFeedServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        String userId = request.getParameter("userId");
-//
-//        User user = USER_DATA_BASE.getUserById(userId);
-//
-//
-//        request.setAttribute("USERNAME", user.getUsername());
-//        request.setAttribute("FULLNAME", user.getFullname());
-//        request.setAttribute("EMAIL", user.getEmail());
         request.getRequestDispatcher("WEB-INF/views/news.jsp").forward(request, response);
 
     }

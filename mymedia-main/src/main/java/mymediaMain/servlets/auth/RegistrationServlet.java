@@ -40,7 +40,7 @@ public class RegistrationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         if (!request.getParameter("password-re").equals(request.getParameter("password"))) {
-            request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
+            response.sendRedirect("/");
         }
         User user = new User(request.getParameter("username"),
                 BCrypt.hashpw(request.getParameter("password"), BCrypt.gensalt()),
@@ -49,11 +49,10 @@ public class RegistrationServlet extends HttpServlet {
         Response regResponse = registrationService.userRegistration(user);
         if (regResponse.getErrorCode() == ErrorCodes.OK) {
             log.info("[New user] - " + user.toString() + "\n[ErrCode:] " + regResponse.getErrorCode() + "[ErrorMsg:] " + regResponse.getErrorMessage());
-            request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
         } else {
             log.info("[Bad Reg] - " + user.toString() + "\n[ErrCode:] " + regResponse.getErrorCode() + "[ErrMsg:] " + regResponse.getErrorMessage());
-            request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
         }
+        response.sendRedirect("/");
 
     }
 

@@ -14,7 +14,7 @@ import javax.mail.internet.InternetAddress;
 public class RegistrationService {
 
 
-    private static final UserDataBase USERDB = UserDataBase.getDataBase();
+    private static final UserDataBase USER_DATA_BASE = UserDataBase.getDataBase();
 
     public RegistrationService() {
         Connector connector = new Connector();
@@ -34,12 +34,12 @@ public class RegistrationService {
 
     private boolean isUsedUsername(String username) {
 
-        return USERDB.getUserByUsername(username) != null;
+        return USER_DATA_BASE.getUserByUsername(username) != null;
     }
 
     private boolean isUsedEmail(String email) {
 
-        return USERDB.getUsernameByEmail(email) != null;
+        return USER_DATA_BASE.getUsernameByEmail(email) != null;
     }
 
     public Response userRegistration(User user) {
@@ -53,7 +53,7 @@ public class RegistrationService {
         }
 
         try {
-            USERDB.save(user);
+            USER_DATA_BASE.save(user);
         } catch (Exception e) {
             log.error("" + e);
             return new Response(ErrorMessages.UNKNOWN_ERROR, ErrorCodes.UNKNOWN_ERROR);

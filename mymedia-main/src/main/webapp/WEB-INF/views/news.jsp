@@ -8,6 +8,15 @@
 
 <%
     Object username = request.getAttribute("USERNAME");
+    Cookie[] cookies = request.getCookies();
+    Cookie token = null;
+    for(Cookie cookie : cookies){
+        if(cookie.getName().equals("token")){
+            token = cookie;
+            break;
+        }
+    }
+    String tokenValue = token.getValue();
 %>
 
 <!DOCTYPE html>
@@ -20,31 +29,14 @@
 </head>
 
 <body>
-<div class="navbar">
-    <a href="#"><img class="icon" src="newsfeed/img/discovery.png"></a>
-    <a href="profile.html"><img class="icon" src="newsfeed/img/me.png"></a>
-    <a href="news.html"><img class="icon" src="newsfeed/img/feed.png"></a>
-    <div class="src-container">
-        <form action="#">
-            <input type="text" placeholder="Search..." onfocus="this.placeholder=''" onblur="this.placeholder = 'Search...'" name="search" />
-        </form>
-    </div>
+<div>
+    <form action="logout" method="get">
+        <button type = 'submit' value = <%! tokenValue  %> name = "logout">LOGOUT</button>
+    </form>
 </div>
-<div class="post-container">
-    <div class="author">
-        <img class="avatar" src="newsfeed/img/avatar.jpg" alt="Profile Picture">
-        <div class="author-name">kissd97</div>
-    </div>
-    <p class="author-date">2019. 01. 23.</p>
-    <div class="content">
-        <img class="content" src="newsfeed/img/content.jpg" alt="Post Content">
-        <p class="content-text">If you say Jesus backwards, it sounds like sausage. Sausage is innuendo for "dick," and a sausage party is a party full of guys. Two men putting their sausages together is gay. Jesus is trying to say that gay sex is backwards and not in alignment with his word. Therefore, being gay is a sin. lmao</p>
-    </div>
-    <div class="like-section">
-        <button class="like"></button>
-        <p class="like-text">256 likes</p>
-    </div>
-</div>
+
+
+
 </body>
 
 </html>

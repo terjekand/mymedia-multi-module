@@ -19,7 +19,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 import org.mymedia.database.entities.User;
 
 @RunWith(MockitoJUnitRunner.class)
-public class AuthServiceTest {
+public class AuthInterfTest {
 
     AuthService authService;
     RegistrationService registrationService;

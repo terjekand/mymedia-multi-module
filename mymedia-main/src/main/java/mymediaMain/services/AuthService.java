@@ -6,12 +6,13 @@ import mymediaMain.dto.AuthDto;
 import mymediaMain.enums.ErrorCodes;
 import mymediaMain.enums.ErrorMessages;
 import mymediaMain.response.Response;
+import mymediaMain.services.interfaces.AuthInterf;
 import org.mymedia.database.dao.UserDataBase;
 import org.mymedia.database.entities.User;
 
 
 @Slf4j
-public class AuthService {
+public class AuthService implements AuthInterf {
     private static final SessionManager SESSION_MANAGER = SessionManager.getInstance();
 
     private static final UserDataBase USER_DATA_BASE = UserDataBase.getDataBase();
@@ -25,6 +26,7 @@ public class AuthService {
         return SESSION_MANAGER.addUserId(userId);
     }
 
+    @Override
     public Response login(AuthDto authDto) {
         User user = USER_DATA_BASE.getUserByUsername(authDto.getUsername());
         if (user != null && BCrypt.checkpw(authDto.getPassword(), user.getPassword())) {
@@ -33,6 +35,7 @@ public class AuthService {
         return new Response(ErrorMessages.USED_USERNAME, ErrorCodes.USED_USERNAME);
     }
 
+    @Override
     public Response logout(String token) {
         return SESSION_MANAGER.removePermission(token);
     }

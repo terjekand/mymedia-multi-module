@@ -5,7 +5,7 @@ import org.mymedia.database.entities.User;
 
 import java.util.List;
 
-public interface PostService {
+public interface PostInterf {
     /**
      * Returns users who liked the specific post.
      *
