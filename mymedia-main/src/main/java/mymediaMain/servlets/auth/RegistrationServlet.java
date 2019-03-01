@@ -21,7 +21,6 @@ import java.io.IOException;
 public class RegistrationServlet extends HttpServlet {
 
     private RegistrationService registrationService = new RegistrationService();
-    private static final UserDataBase USERDB = UserDataBase.getDataBase();
 
     @Override
     public void init() {

@@ -17,6 +17,7 @@
         }
     }
     String tokenValue = token.getValue();
+    response.addCookie(token);
 %>
 
 <!DOCTYPE html>
@@ -31,7 +32,8 @@
 <body>
 <div>
     <form action="logout" method="get">
-        <button type = 'submit' value = <%! tokenValue  %> name = "logout">LOGOUT</button>
+        <%=tokenValue %>
+        <button type = 'submit' name = <%=tokenValue%> >LOGOUT</button>
     </form>
 </div>
 
