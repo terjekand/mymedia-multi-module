@@ -49,11 +49,17 @@ public class NewsFeedServlet extends HttpServlet {
                 response.sendRedirect("/");
             }
             User user = USER_DATA_BASE.getUserById(userId);
-            request.setAttribute("USERNAME", user.getUsername());
-            request.setAttribute("FULLNAME", user.getFullname());
-            request.setAttribute("EMAIL", user.getEmail());
+            if(user == null){
+                response.addCookie(new Cookie("token", token));
+                response.sendRedirect("/logout");
+            }
+            else{
+                request.setAttribute("USERNAME", user.getUsername());
+                request.setAttribute("FULLNAME", user.getFullname());
+                request.setAttribute("EMAIL", user.getEmail());
 
-            request.getRequestDispatcher("WEB-INF/views/news.jsp").forward(request, response);
+                request.getRequestDispatcher("WEB-INF/views/news.jsp").forward(request, response);
+            }
         }
         else{
             response.sendRedirect("/");
