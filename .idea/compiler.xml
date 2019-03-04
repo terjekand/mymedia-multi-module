@@ -6,13 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mymedia-database" />
-        <module name="mymedia-main" />
+        <module name="mymediadatabase" />
+        <module name="mymediarest" />
+        <module name="mymediaservices" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="mymedia-rest" target="1.5" />
-      <module name="mymediarest" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,30 +1,0 @@
-
-Qsquid:S1854Ü"9Remove this useless assignment to local variable "users".(Ñ×©’
-Csquid:S1168á"+Return an empty collection instead of null.(¥¹ï
-esquid:S00112G"FDefine and throw a dedicated exception instead of using a generic one.(û§›¦8¤Ó“åŒ-
-®%squid:RedundantThrowsDeclarationCheckK"}Remove the declaration of thrown exception 'java.lang.IllegalArgumentException' which is a subclass of 'java.lang.Exception'.(şÅá‚
-wsquid:S1192M"[Define a constant instead of duplicating this literal "Nincs adatbazis-kapcsolat!" 6 times.(î“³Òúÿÿÿÿ
-%squid:RedundantThrowsDeclarationCheck"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ê¾Íò
-Ysquid:S1141—"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8Àš¢åŒ-
-^squid:S001120"FDefine and throw a dedicated exception instead of using a generic one.(»Æ‘Õ
-^squid:S00112`"FDefine and throw a dedicated exception instead of using a generic one.(ÈÉÂÇ
-]squid:S1126$"AReplace this if-then-else statement by a single return statement.(ÑéÒíüÿÿÿÿ
-Rsquid:S1141°"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
-‚squid:S1488Ç"^Immediately return this expression instead of assigning it to the temporary variable "entity".(¼úšóøÿÿÿÿ8ãó›åŒ-
-Ysquid:S1141Æ"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8¤Ó“åŒ-
-Jsquid:S1168¡"+Return an empty collection instead of null.(¥¹ï8ì¹§åŒ-
-®%squid:RedundantThrowsDeclarationCheck0"}Remove the declaration of thrown exception 'java.lang.IllegalArgumentException' which is a subclass of 'java.lang.Exception'.(»Æ‘Õ
-‚squid:S1488±"^Immediately return this expression instead of assigning it to the temporary variable "entity".(¼úšóøÿÿÿÿ8ÍÚ›åŒ-
-Jsquid:S1168œ"+Return an empty collection instead of null.(¥¹ï8ì¹§åŒ-
-T
-squid:S106t"9Replace this use of System.out or System.err by a logger.(Şàš¬øÿÿÿÿ
-]squid:S1126o"AReplace this if-then-else statement by a single return statement.(éá¼ùÿÿÿÿÿ
-‚squid:S1488‚"^Immediately return this expression instead of assigning it to the temporary variable "entity".(¼úšóøÿÿÿÿ8ÅÀ›åŒ-
-„squid:S1488˜"`Immediately return this expression instead of assigning it to the temporary variable "findings".(æ¡Ì–üÿÿÿÿ8½Š©åŒ-
-Ysquid:S1141"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8á£µäú,
-^squid:S00112K"FDefine and throw a dedicated exception instead of using a generic one.(şÅá‚
-qsquid:S2293Ü"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ñ×©’
-«%squid:RedundantThrowsDeclarationCheckK"zRemove the declaration of thrown exception 'java.lang.IllegalStateException' which is a subclass of 'java.lang.Exception'.(şÅá‚
-«%squid:RedundantThrowsDeclarationCheck0"zRemove the declaration of thrown exception 'java.lang.IllegalStateException' which is a subclass of 'java.lang.Exception'.(»Æ‘Õ
-^squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(ê¾Íò
-@squid:S1948"$Make "em" transient or serializable.(‘æ¿Úúÿÿÿÿ
