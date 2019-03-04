@@ -5,9 +5,9 @@
  */
 package database.dao;
 
+import database.entities.Post;
+import database.entities.User;
 import lombok.extern.slf4j.Slf4j;
-import org.mymedia.database.entities.Post;
-import org.mymedia.database.entities.User;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -85,7 +85,7 @@ public class PostDataBase {
 
         try {
 
-            User delEntity = em.find(User.class, entity.getId());
+            Post delEntity = em.find(Post.class, entity.getId());
 
             if (delEntity.getId() == null) {
                 throw new IllegalArgumentException("A torlendo entitas nincs az adatbazisban");
@@ -108,7 +108,7 @@ public class PostDataBase {
             Query query = em.createNamedQuery("Post.getPostsOfUser", Post.class);
             query.setParameter("id", userId);
             @SuppressWarnings("unchecked")
-            List<Post> posts = new ArrayList<Post>();
+            List<Post> posts;
             posts = query.getResultList();
             return posts;
         } catch (Exception e) {

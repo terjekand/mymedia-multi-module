@@ -5,8 +5,8 @@
  */
 package database.dao;
 
+import database.entities.User;
 import lombok.extern.slf4j.Slf4j;
-import org.mymedia.database.entities.User;
 
 import javax.persistence.*;
 import java.io.Serializable;

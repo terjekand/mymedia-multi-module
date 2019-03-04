@@ -6,10 +6,10 @@ import mymediaMain.enums.ErrorCodes;
 import mymediaMain.enums.ErrorMessages;
 import mymediaMain.response.Response;
 import mymediaMain.services.interfaces.PostInterf;
-import org.mymedia.database.dao.PostDataBase;
-import org.mymedia.database.dao.UserDataBase;
-import org.mymedia.database.entities.Post;
-import org.mymedia.database.entities.User;
+import database.dao.PostDataBase;
+import database.dao.UserDataBase;
+import database.entities.Post;
+import database.entities.User;
 
 import java.util.List;
 

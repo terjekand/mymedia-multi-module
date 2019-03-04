@@ -1,7 +1,7 @@
 package mymediaMain.services.interfaces;
 
 import mymediaMain.response.Response;
-import org.mymedia.database.entities.User;
+import database.entities.User;
 
 import java.util.List;
 

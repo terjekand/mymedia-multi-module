@@ -1,8 +1,8 @@
 package mymediaMain.services;
 
 import lombok.extern.slf4j.Slf4j;
-import org.mymedia.database.dao.PostDataBase;
-import org.mymedia.database.dao.UserDataBase;
+import database.dao.PostDataBase;
+import database.dao.UserDataBase;
 
 @Slf4j
 public class Connector {

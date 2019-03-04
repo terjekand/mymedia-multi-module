@@ -4,8 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import mymediaMain.enums.ErrorCodes;
 import mymediaMain.enums.ErrorMessages;
 import mymediaMain.response.Response;
-import org.mymedia.database.dao.UserDataBase;
-import org.mymedia.database.entities.User;
+import database.dao.UserDataBase;
+import database.entities.User;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;

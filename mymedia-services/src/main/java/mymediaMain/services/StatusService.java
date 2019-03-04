@@ -2,8 +2,8 @@ package mymediaMain.services;
 
 import lombok.extern.slf4j.Slf4j;
 import mymediaMain.config.SessionManager;
-import org.mymedia.database.dao.UserDataBase;
-import org.mymedia.database.entities.User;
+import database.dao.UserDataBase;
+import database.entities.User;
 
 @Slf4j
 public class StatusService {

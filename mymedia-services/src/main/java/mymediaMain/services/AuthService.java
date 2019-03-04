@@ -7,8 +7,8 @@ import mymediaMain.enums.ErrorCodes;
 import mymediaMain.enums.ErrorMessages;
 import mymediaMain.response.Response;
 import mymediaMain.services.interfaces.AuthInterf;
-import org.mymedia.database.dao.UserDataBase;
-import org.mymedia.database.entities.User;
+import database.dao.UserDataBase;
+import database.entities.User;
 
 
 @Slf4j
