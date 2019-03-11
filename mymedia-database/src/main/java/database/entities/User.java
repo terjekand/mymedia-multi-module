@@ -37,27 +37,12 @@ public class User implements Serializable {
     @Column(name = "FULLNAME", nullable = false)
     private String fullname;
 
-
-    @Column(name = "PICTURE")
-    private String picture;
-
     public User(String username, String password, String email, String fullname) {
         this.id = UUID.randomUUID().toString();
         this.username = username;
         this.password = password;
         this.email = email;
         this.fullname = fullname;
-        this.picture = null;
-    }
-
-    public User(String username, String password, String email, String fullname, String picture) {
-        this.id = UUID.randomUUID().toString();
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.fullname = fullname;
-        this.picture = picture;
-
     }
 
     public User() {

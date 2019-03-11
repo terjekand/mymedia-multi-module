@@ -7,17 +7,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a38e2dd-713f-4d06-a894-dc2cfdb1c99c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-database/src/main/java/database/dao/PostDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-database/src/main/java/database/dao/PostDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-database/src/main/java/database/dao/UserDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-database/src/main/java/database/dao/UserDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-database/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-database/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-database/src/main/java/database/dao/PostDataBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-database/src/main/java/database/dao/UserDataBase.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mymedia-database/src/main/java/database/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-database/src/main/java/database/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-database/target/classes/database/dao/PostDataBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-database/target/classes/database/dao/UserDataBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-rest/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-rest/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-rest/src/main/java/com/airhacks/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-rest/src/main/java/com/airhacks/JAXRSConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-rest/src/main/java/conf/JAXRSConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/classes/com/airhacks/HelloController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/classes/com/airhacks/JAXRSConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest/WEB-INF/classes/com/airhacks/HelloController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest/WEB-INF/classes/com/airhacks/JAXRSConfiguration.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/AuthService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/Connector.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/Connector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/PictureEncoder.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/PostService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/RegistrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/RegistrationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/StatusService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/StatusService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/interfaces/PostInterf.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/interfaces/PostInterf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/StatusService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-services/src/main/resources/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-services/target/classes/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/services/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/services/AuthService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/services/Connector.class" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/services/Connector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/services/PictureEncoder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/services/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/services/PostService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/services/RegistrationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/services/RegistrationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/services/StatusService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,100 +50,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mymedia-database/src/main/java/database/dao/UserDataBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2482">
-              <caret line="158" column="31" selection-start-line="158" selection-start-column="31" selection-end-line="158" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/AuthService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/Connector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/RegistrationService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/StatusService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/PostService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/interfaces/PostInterf.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mymedia-rest/src/main/java/com/airhacks/HelloController.java">
+        <entry file="file://$PROJECT_DIR$/mymedia-rest/src/main/java/controllers/MymRestAuth.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+            <state relative-caret-position="248">
+              <caret line="39" column="35" lean-forward="true" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#181#182#0" expanded="true" />
-                <element signature="e#212#213#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/interfaces/AuthInterf.java">
+        <entry file="file://$PROJECT_DIR$/mymedia-database/src/main/java/database/dao/DataAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state relative-caret-position="265">
+              <caret line="49" column="24" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mymedia-database/src/main/java/database/entities/Post.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -133,8 +86,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mymedia-database/src/main/java/database/entities/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="8" selection-start-column="8" selection-end-column="25" />
+            <state relative-caret-position="425">
+              <caret line="36" column="28" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -154,21 +107,27 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/mymedia-database/pom.xml" />
         <option value="$PROJECT_DIR$/mymedia-database/src/main/java/database/entities/Post.java" />
         <option value="$PROJECT_DIR$/mymedia-services/pom.xml" />
-        <option value="$PROJECT_DIR$/mymedia-rest/pom.xml" />
         <option value="$PROJECT_DIR$/mymedia-rest/src/main/java/com/airhacks/HelloController.java" />
         <option value="$PROJECT_DIR$/mymedia-database/src/main/java/database/dao/PostDataBase.java" />
         <option value="$PROJECT_DIR$/mymedia-database/src/main/java/database/dao/UserDataBase.java" />
-        <option value="$PROJECT_DIR$/mymedia-database/src/main/java/database/entities/User.java" />
-        <option value="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/AuthService.java" />
+        <option value="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/interfaces/PostInterf.java" />
+        <option value="$PROJECT_DIR$/mymedia-rest/src/main/java/conf/JAXRSConfiguration.java" />
+        <option value="$PROJECT_DIR$/mymedia-rest/pom.xml" />
+        <option value="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/StatusService.java" />
+        <option value="$PROJECT_DIR$/mymedia-rest/src/main/webapp/WEB-INF/glassfish-resources.xml" />
+        <option value="$PROJECT_DIR$/mymedia-database/src/main/resources/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/Connector.java" />
         <option value="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/PostService.java" />
-        <option value="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/interfaces/PostInterf.java" />
         <option value="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/RegistrationService.java" />
-        <option value="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/StatusService.java" />
+        <option value="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/AuthService.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/mymedia-database/pom.xml" />
+        <option value="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/PictureEncoder.java" />
+        <option value="$PROJECT_DIR$/mymedia-database/src/main/java/database/entities/User.java" />
+        <option value="$PROJECT_DIR$/mymedia-database/src/main/java/database/dao/DataAdapter.java" />
+        <option value="$PROJECT_DIR$/mymedia-rest/src/main/java/controllers/MymRestAuth.java" />
       </list>
     </option>
   </component>
@@ -186,18 +145,16 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="908" />
-    <option name="y" value="139" />
-    <option name="width" value="933" />
-    <option name="height" value="867" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -263,6 +220,14 @@
             <path>
               <item name="mymediaparent" type="b2602c69:ProjectViewProjectNode" />
               <item name="mymedia-multi-module" type="462c0819:PsiDirectoryNode" />
+              <item name="mymedia-database" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mymediaparent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mymedia-multi-module" type="462c0819:PsiDirectoryNode" />
               <item name="mymedia-rest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -293,7 +258,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="airhacks" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mymediaparent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mymedia-multi-module" type="462c0819:PsiDirectoryNode" />
+              <item name="mymedia-rest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mymediaparent" type="b2602c69:ProjectViewProjectNode" />
@@ -330,30 +304,60 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="mymediaMain" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="mymediaparent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mymedia-multi-module" type="462c0819:PsiDirectoryNode" />
+              <item name="mymedia-services" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mymediaMain" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mymediaparent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mymedia-multi-module" type="462c0819:PsiDirectoryNode" />
+              <item name="mymedia-services" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mymediaMain" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551709481986" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552344857571" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bolco\Desktop\David\mymedia-multi-module\mymedia-services\src\main\java" />
+      <recent name="C:\Users\bolco\Desktop\David\mymedia-multi-module\mymedia-rest\src\main\resources" />
       <recent name="C:\Users\bolco\Desktop\David\szakdoga rest\mymedia-multi-module\mymedia-services\src\main\resources" />
       <recent name="C:\Users\bolco\Desktop\David\szakdoga rest\mymedia-multi-module\mymedia-services\src\main\java" />
       <recent name="C:\Users\bolco\Desktop\David\szakdoga rest\mymedia-multi-module\mymedia-database\src\main\java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bolco\Desktop\David\mymedia-multi-module\mymedia-rest\src\main\webapp\WEB-INF" />
+      <recent name="C:\Users\bolco\Desktop\David\mymedia-multi-module\mymedia-services\src\main" />
+      <recent name="C:\Users\bolco\Desktop\David\mymedia-multi-module\mymedia-database\src\main" />
+      <recent name="C:\Users\bolco\Desktop\David\mymedia-multi-module\mymedia-rest\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -457,16 +461,27 @@
       <workItem from="1551709059294" duration="504000" />
       <workItem from="1551709653047" duration="93000" />
       <workItem from="1551710130258" duration="74000" />
+      <workItem from="1551726477750" duration="7500000" />
+      <workItem from="1551807376586" duration="596000" />
+      <workItem from="1551815967291" duration="596000" />
+      <workItem from="1551990848382" duration="1342000" />
+      <workItem from="1551992597849" duration="413000" />
+      <workItem from="1552210922343" duration="5305000" />
+      <workItem from="1552317205577" duration="3135000" />
+      <workItem from="1552322239918" duration="597000" />
+      <workItem from="1552341618736" duration="578000" />
+      <workItem from="1552343121152" duration="1720000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2029000" />
+    <option name="totallyTimeSpent" value="23811000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20628998" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -478,15 +493,15 @@
       <window_info id="JavaEE:App" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32936078" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
@@ -509,45 +524,11 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="135" column="80" selection-start-line="135" selection-start-column="80" selection-end-line="135" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-database/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-services/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="88" column="12" selection-start-line="88" selection-start-column="12" selection-end-line="88" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/servlets/actions/NewsFeedServlet.java" />
     <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/servlets/StatusServlet.java" />
     <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/servlets/auth/LoginServlet.java" />
     <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/servlets/actions/FindingsServlet.java" />
-    <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/BCrypt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/resources/logback.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="16" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/resources/logback.xml" />
     <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/enums/ErrorMessages.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -560,88 +541,7 @@
     <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/enums/ErrorCodes.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/PictureEncoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-rest/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-database/src/main/java/database/dao/PostDataBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="141" column="57" selection-start-line="141" selection-start-column="57" selection-end-line="141" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-database/src/main/java/database/entities/Post.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-228">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-database/src/main/java/database/dao/UserDataBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2482">
-          <caret line="158" column="31" selection-start-line="158" selection-start-column="31" selection-end-line="158" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/AuthService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/Connector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/RegistrationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/StatusService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/PostService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-database/src/main/java/database/dao/UserDataBase.java" />
     <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/interfaces/PostInterf.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -659,21 +559,133 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-database/src/main/java/database/entities/User.java">
+    <entry file="file://$PROJECT_DIR$/mymedia-rest/src/main/java/com/airhacks/HelloController.java" />
+    <entry file="file://$PROJECT_DIR$/mymedia-rest/src/main/resources/META-INF/persistence.xml" />
+    <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/META-INF/persistence.xml" />
+    <entry file="file://$PROJECT_DIR$/mymedia-rest/src/main/resources/logback.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/resources/META-INF/persistence.xml" />
+    <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/BCrypt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="25" />
+        <state relative-caret-position="181">
+          <caret line="62" column="3" selection-start-line="62" selection-start-column="3" selection-end-line="62" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mymedia-rest/src/main/java/com/airhacks/HelloController.java">
+    <entry file="file://$PROJECT_DIR$/mymedia-rest/src/main/webapp/WEB-INF/glassfish-resources.xml" />
+    <entry file="file://$PROJECT_DIR$/mymedia-database/src/main/resources/logback.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-database/src/main/resources/META-INF/persistence.xml" />
+    <entry file="file://$PROJECT_DIR$/mymedia-database/src/main/java/database/dao/PostDataBase.java" />
+    <entry file="file://$PROJECT_DIR$/mymedia-services/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        <state relative-caret-position="1207">
+          <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/StatusService.java" />
+    <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/RegistrationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="55" column="80" selection-start-line="55" selection-start-column="80" selection-end-line="55" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#181#182#0" expanded="true" />
-            <element signature="e#212#213#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/AuthService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-109">
+          <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#768#769#0" expanded="true" />
+            <element signature="e#824#825#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-rest/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/PictureEncoder.java" />
+    <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/PostService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-383">
+          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+          <folding>
+            <element signature="e#679#680#0" expanded="true" />
+            <element signature="e#706#707#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/Connector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-database/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="77" column="47" selection-start-line="77" selection-start-column="47" selection-end-line="77" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-rest/src/main/java/conf/JAXRSConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="124" column="51" selection-start-line="124" selection-start-column="51" selection-end-line="124" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-database/src/main/java/database/entities/Post.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-database/src/main/java/database/entities/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="36" column="28" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-database/src/main/java/database/dao/DataAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="49" column="24" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymedia-rest/src/main/java/controllers/MymRestAuth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="39" column="35" lean-forward="true" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -684,10 +696,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>mymedia-main:war</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -695,11 +709,11 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited>Web (mymedia-rest)|Web</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.2632184" />
               </list>
             </option>
           </splitter-proportions>
@@ -730,7 +744,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>mymediadatabase</last-edited>
+          <last-edited>mymedia-parent</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

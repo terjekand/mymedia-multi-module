@@ -4,9 +4,9 @@ import lombok.extern.slf4j.Slf4j;
 import mymediaMain.enums.ErrorCodes;
 import mymediaMain.enums.ErrorMessages;
 import mymediaMain.response.Response;
-import database.dao.UserDataBase;
 import database.entities.User;
 
+import javax.ejb.Stateless;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 
@@ -14,7 +14,7 @@ import javax.mail.internet.InternetAddress;
 public class RegistrationService {
 
 
-    private static final UserDataBase USER_DATA_BASE = UserDataBase.getDataBase();
+//    private static final UserDataBase USER_DATA_BASE = UserDataBase.getDataBase();
 
     public RegistrationService() {
         Connector connector = new Connector();
@@ -32,14 +32,18 @@ public class RegistrationService {
         return true;
     }
 
-    private boolean isUsedUsername(String username) {
-
-        return USER_DATA_BASE.getUserByUsername(username) != null;
+    private Boolean isUsedUsername(String username) {
+        /**
+         *return USER_DATA_BASE.getUserByUsername(username) != null;
+         */
+        return null;
     }
 
-    private boolean isUsedEmail(String email) {
-
-        return USER_DATA_BASE.getUsernameByEmail(email) != null;
+    private Boolean isUsedEmail(String email) {
+        /**
+         * return USER_DATA_BASE.getUsernameByEmail(email) != null;
+         */
+        return null;
     }
 
     public Response userRegistration(User user) {
@@ -53,12 +57,15 @@ public class RegistrationService {
         }
 
         try {
-            USER_DATA_BASE.save(user);
+            /**
+             * USER_DATA_BASE.save(user);
+             */
+            return new Response(ErrorMessages.NOT_IMPLEMENTED, ErrorCodes.NOT_IMPLEMENTED);
         } catch (Exception e) {
             log.error("" + e);
             return new Response(ErrorMessages.UNKNOWN_ERROR, ErrorCodes.UNKNOWN_ERROR);
         }
 
-        return new Response(ErrorMessages.OK, ErrorCodes.OK);
+//        return new Response(ErrorMessages.OK, ErrorCodes.OK);
     }
 }
