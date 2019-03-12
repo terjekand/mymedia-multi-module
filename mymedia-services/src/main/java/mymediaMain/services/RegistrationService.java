@@ -1,5 +1,6 @@
 package mymediaMain.services;
 
+import database.dao.UserDataBase;
 import lombok.extern.slf4j.Slf4j;
 import mymediaMain.enums.ErrorCodes;
 import mymediaMain.enums.ErrorMessages;
@@ -14,11 +15,9 @@ import javax.mail.internet.InternetAddress;
 public class RegistrationService {
 
 
-//    private static final UserDataBase USER_DATA_BASE = UserDataBase.getDataBase();
+    private static final UserDataBase USER_DATA_BASE = UserDataBase.getInstance();
 
     public RegistrationService() {
-        Connector connector = new Connector();
-        connector.userConnection();
     }
 
     private static boolean isValidEmail(String email) {
@@ -36,36 +35,24 @@ public class RegistrationService {
         /**
          *return USER_DATA_BASE.getUserByUsername(username) != null;
          */
-        return null;
+        return true;
     }
 
     private Boolean isUsedEmail(String email) {
         /**
          * return USER_DATA_BASE.getUsernameByEmail(email) != null;
          */
-        return null;
+        return true;
     }
 
     public Response userRegistration(User user) {
-
-        if (isUsedUsername(user.getUsername())) {
-            return new Response(ErrorMessages.USED_USERNAME, ErrorCodes.USED_USERNAME);
-        } else if (isValidEmail(user.getEmail())) {
-            return new Response(ErrorMessages.WRONG_EMAIL_FORMAT, ErrorCodes.WRONG_EMAIL_FORMAT);
-        } else if (isUsedEmail(user.getEmail())) {
-            return new Response(ErrorMessages.USED_EMAIL, ErrorCodes.USED_EMAIL);
-        }
-
         try {
-            /**
-             * USER_DATA_BASE.save(user);
-             */
-            return new Response(ErrorMessages.NOT_IMPLEMENTED, ErrorCodes.NOT_IMPLEMENTED);
+             USER_DATA_BASE.save(user);
         } catch (Exception e) {
             log.error("" + e);
             return new Response(ErrorMessages.UNKNOWN_ERROR, ErrorCodes.UNKNOWN_ERROR);
         }
 
-//        return new Response(ErrorMessages.OK, ErrorCodes.OK);
+        return new Response(ErrorMessages.OK, ErrorCodes.OK);
     }
 }

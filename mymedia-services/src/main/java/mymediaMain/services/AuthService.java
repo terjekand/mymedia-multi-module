@@ -16,8 +16,6 @@ public class AuthService implements AuthInterf {
 //    private static final UserDataBase USER_DATA_BASE = UserDataBase.getDataBase();
 
     public AuthService() {
-        Connector connector = new Connector();
-        connector.userConnection();
     }
 
     private Response authenticate(String userId) {
