@@ -1,16 +1,0 @@
-
-=squid:S1989+"&Add a "try/catch" block for "forward".(§¶„Ù
-=squid:S19894"&Add a "try/catch" block for "forward".(§¶„Ù
-osquid:S1192#"XDefine a constant instead of duplicating this literal "WEB-INF/views/index.jsp" 4 times.(§¶„Ù
-=squid:S1989#"&Add a "try/catch" block for "forward".(§¶„Ù
-=squid:S1989+"&Add a "try/catch" block for "forward".(§¶„Ù
-=squid:S19897"&Add a "try/catch" block for "forward".(§¶„Ù
-=squid:S19897"&Add a "try/catch" block for "forward".(§¶„Ù
-=squid:S19894"&Add a "try/catch" block for "forward".(§¶„Ù
-gsquid:CommentedOutCodeLine>"<This block of commented-out lines of code should be removed.(é¥Ûåþÿÿÿÿ
-Ÿsquid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.( Üó8‘ÈåŒ-
-ksquid:UselessImportCheck";Remove this unused import 'mymediaMain.services.Connector'.(¡Ççƒøÿÿÿÿ8‘ÈåŒ-
-tsquid:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(¶§¿þÿÿÿÿ
-rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ý°ßæ
-Msquid:S1068"*Remove this unused "USERDB" private field.(»º°þÿÿÿÿ8 ”ÇåŒ-
-=squid:S1989#"&Add a "try/catch" block for "forward".(§¶„Ù

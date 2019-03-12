@@ -7,12 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mymedia-database" />
-        <module name="mymedia-main" />
+        <module name="mymedia-rest" />
+        <module name="mymedia-services" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="mymedia-rest" target="1.5" />
-      <module name="mymediarest" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
 </project>

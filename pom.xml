@@ -5,12 +5,19 @@
     <groupId>com.mysocialmedia</groupId>
     <artifactId>mymedia-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
     <packaging>pom</packaging>
     <name>mymedia-parent</name>
     <description>Description</description>
     <modules>
-        <module>mymedia-main</module>
         <module>mymedia-database</module>
+        <module>mymedia-services</module>
+        <module>mymedia-rest</module>
     </modules>
 
     <dependencyManagement>
@@ -118,6 +125,13 @@
                 <version>1.9</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/postgresql/postgresql -->
+            <dependency>
+                <groupId>postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>9.1-901-1.jdbc4</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>
@@ -144,15 +158,6 @@
                         <source>1.8</source>
                         <target>1.8</target>
                         <showWarnings>true</showWarnings>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.tomcat.maven</groupId>
-                    <artifactId>tomcat7-maven-plugin</artifactId>
-                    <version>2.2</version>
-                    <configuration>
-                        <path>/</path>
-                        <contextReloadable>true</contextReloadable>
                     </configuration>
                 </plugin>
             </plugins>
