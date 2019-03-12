@@ -1,20 +1,25 @@
 package database.dao;
 
-import database.entities.User;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import java.sql.*;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Slf4j
-public class DataAdapter {
-    //jdbc:postgresql://<host>:<port>/<dbname>?user=<username>&password=<password>
+public class DatabaseConnector {
+
     private static final String DATABASE_URL = "jdbc:postgresql://localhost:5432/postgres";
     private static final String USERNAME = "postgres";
     private static final String PASSWORD = "kiss";
+
+    private static final DatabaseConnector databaseConnector = new DatabaseConnector();
+
+    private DatabaseConnector() {
+        connect();
+    }
+
+    public static final DatabaseConnector getInstance(){
+        return databaseConnector;
+    }
 
     Connection connection = null;
     Statement statement = null;
@@ -22,7 +27,6 @@ public class DataAdapter {
 
     public void connect(){
         try{
-//            connection = DriverManager.getConnection(DATABASE_URL);
             connection=DriverManager.getConnection(DATABASE_URL, USERNAME, PASSWORD);
             log.info("Connected to PostgreSQL database!");
         } catch (SQLException e){
@@ -47,15 +51,6 @@ public class DataAdapter {
         }
     }
 
-    public void saveUser(User user){
 
-        try {
-
-            Statement statement = connection.createStatement();
-            statement.executeUpdate("INSERT INTO USERS " + "VALUES ('admin', 'admin', 'admin', 'admin', 'admin')");
-        } catch (SQLException e) {
-            log.error(e + "");
-        }
-    }
 
 }
