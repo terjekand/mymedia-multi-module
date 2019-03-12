@@ -1,8 +1,11 @@
 package controllers;
 
 import database.entities.User;
-import mymediaMain.dto.AuthDto;
+import mymediaMain.dto.LoginDto;
+import mymediaMain.dto.RegistrationDto;
+import mymediaMain.response.LoginResponse;
 import mymediaMain.response.Response;
+import mymediaMain.response.UserResponse;
 import mymediaMain.services.AuthService;
 import mymediaMain.services.RegistrationService;
 
@@ -18,15 +21,14 @@ public class MymRestAuth {
     @Path("/login")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response login(AuthDto authDto){
-        return authService.login(authDto);
+    public LoginResponse login(LoginDto loginDto){
+        return authService.login(loginDto);
     }
 
-    @POST
-    @Path("/logout")
-    @Consumes(MediaType.APPLICATION_JSON)
+    @GET
+    @Path("/logout/{token}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response logout(String token){
+    public Response logout(@PathParam("token") String token){
         return authService.logout(token);
     }
 
@@ -34,8 +36,29 @@ public class MymRestAuth {
     @Path("/registration")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response registration(User user){
-        return registrationService.userRegistration(user);
+    public Response registration(RegistrationDto registrationDto){
+        return registrationService.userRegistration(registrationDto);
+    }
+
+    @GET
+    @Path("/getuserbyid/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public UserResponse getUserByid(@PathParam("id") String id){
+        return authService.getUserById(id);
+    }
+
+    @GET
+    @Path("/getuserbyusername/{username}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public UserResponse getUserByUsername(@PathParam("username") String username){
+        return authService.getUserByUsername(username);
+    }
+
+    @GET
+    @Path("/getuserbyemail/{email}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public UserResponse getUserByEmail(@PathParam("email") String email){
+        return authService.getUserByEmail(email);
     }
 
 }

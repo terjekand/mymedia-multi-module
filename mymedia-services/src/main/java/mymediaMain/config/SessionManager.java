@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import mymediaMain.enums.ErrorCodes;
 import mymediaMain.enums.ErrorMessages;
 import mymediaMain.exceptions.MalformedTokenException;
+import mymediaMain.response.LoginResponse;
 import mymediaMain.response.Response;
 
 import java.util.*;
@@ -26,15 +27,16 @@ public class SessionManager {
         return instance;
     }
 
-    public Response addUserId(String userId) {
+    public LoginResponse addUserId(String userId) {
+
         if (!hasPermission(userId)) {
 
             String token = "TK_" + UUID.randomUUID().toString();
 
             sessionMap.put(userId, token);
-            return new Response(ErrorMessages.OK, ErrorCodes.OK);
+            return new LoginResponse(ErrorMessages.OK, ErrorCodes.OK, token);
         }
-        return new Response(ErrorMessages.ALREADY_AUTHORIZED_USER, ErrorCodes.ALREADY_AUTHORIZED_USER);
+        return new LoginResponse(ErrorMessages.ALREADY_AUTHORIZED_USER, ErrorCodes.ALREADY_AUTHORIZED_USER, null);
     }
 
     public boolean hasPermission(String userId) {

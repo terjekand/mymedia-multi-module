@@ -20,15 +20,18 @@ public enum ErrorCodes {
 
     OK(200),
 
-
+    /** POST */
     POST_DOES_NOT_EXIST(-301),
 
-
+    /** SECURITY */
     UNAUTHORIZED(401),
 
+    /** DATABASE */
     NO_DATA_BASE_CONNECTION(-500),
     BAD_PARAMETERS(-501),
+    SAVE_ENTITY_ERROR(-502),
 
+    /** OTHER ERROR CODES */
     UNKNOWN_ERROR(-999),
     NOT_IMPLEMENTED(-3166);
 

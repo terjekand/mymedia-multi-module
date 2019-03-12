@@ -5,6 +5,12 @@
     <groupId>com.mysocialmedia</groupId>
     <artifactId>mymedia-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
     <packaging>pom</packaging>
     <name>mymedia-parent</name>
     <description>Description</description>

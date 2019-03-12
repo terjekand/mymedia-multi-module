@@ -22,6 +22,7 @@ public enum ErrorMessages {
     MALFORMED_TOKEN("Token has no prefix!"),
     NOT_IMPLEMENTED("Not implemented yet!"),
     NO_DATA_BASE_CONNECTION("No database connection!"),
+    SAVE_ENTITY_ERROR("Error while save entity!"),
     BAD_PARAMETERS("Some parameters are empty or null!"),
     POST_DOES_NOT_EXIST("Post does not exist!");
 

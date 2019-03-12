@@ -2,7 +2,6 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -10,13 +9,7 @@
         <module name="mymedia-database" />
         <module name="mymedia-rest" />
         <module name="mymedia-services" />
-        <module name="mymediadatabase" />
-        <module name="mymediarest" />
-        <module name="mymediaservices" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="mymedia-main" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
