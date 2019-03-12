@@ -6,49 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f947340-e003-4457-a3c1-e6532c00ff21" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-database/mymedia-database.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-database/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-database/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-database/src/main/java/database/dao/UserDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-database/src/main/java/database/dao/UserDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-database/src/main/java/database/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-database/src/main/java/database/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-database/target/classes/database/dao/DataAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-database/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-database/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-database/target/mymedia-database-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-database/target/mymedia-database-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-multi-module.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/src/main/java/controllers/MymRestAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-rest/src/main/java/controllers/MymRestAuth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/classes/controllers/MymRestAuth.class" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-rest/target/classes/controllers/MymRestAuth.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest.war" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest/WEB-INF/classes/controllers/MymRestAuth.class" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest/WEB-INF/classes/controllers/MymRestAuth.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest/WEB-INF/lib/mymedia-database-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest/WEB-INF/lib/mymedia-database-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest/WEB-INF/lib/mymedia-services-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-rest/target/mymedia-rest/WEB-INF/lib/mymedia-services-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/config/SessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/config/SessionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/dto/AuthDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/dto/LoginDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/enums/ErrorCodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/enums/ErrorCodes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/enums/ErrorMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/enums/ErrorMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/RegistrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/RegistrationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/interfaces/AuthInterf.java" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/interfaces/AuthInterf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/src/main/java/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/src/main/resources/logback.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/config/SessionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/config/SessionManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/dto/AuthDto$AuthDtoBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/dto/AuthDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/enums/ErrorCodes.class" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/enums/ErrorCodes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/enums/ErrorMessages.class" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/enums/ErrorMessages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/services/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/services/AuthService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/services/Connector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/services/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/services/PostService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/services/RegistrationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/services/RegistrationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/services/interfaces/AuthInterf.class" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/target/classes/mymediaMain/services/interfaces/AuthInterf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymedia-services/target/mymedia-services-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/mymedia-services/target/mymedia-services-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3f947340-e003-4457-a3c1-e6532c00ff21" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/mymedia-rest/target/" />
     <ignored path="$PROJECT_DIR$/mymedia-database/target/" />
     <ignored path="$PROJECT_DIR$/mymedia-services/target/" />
@@ -151,7 +109,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/RegistrationService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
+            <state relative-caret-position="739">
               <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -416,7 +374,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552417009209" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552417098605" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -521,16 +479,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552406537488</updated>
-      <workItem from="1552406541427" duration="8174000" />
+      <workItem from="1552406541427" duration="8844000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8174000" />
+    <option name="totallyTimeSpent" value="8844000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
@@ -538,7 +495,7 @@
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Web" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26172706" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Application Servers" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" />
@@ -550,7 +507,7 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -732,7 +689,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mymedia-services/src/main/java/mymediaMain/services/RegistrationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
+        <state relative-caret-position="739">
           <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
