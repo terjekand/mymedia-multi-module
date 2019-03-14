@@ -1,4 +1,0 @@
-database\dao\PostDataBase.class
-database\entities\Post.class
-database\entities\User.class
-database\dao\UserDataBase.class
