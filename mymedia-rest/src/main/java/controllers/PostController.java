@@ -1,8 +1,12 @@
 package controllers;
 
+import database.entities.Post;
 import database.entities.User;
+import mymediaMain.dto.CreatePostDto;
 import mymediaMain.dto.LikeUserIdDto;
 import mymediaMain.dto.LikeWithTokenDto;
+import mymediaMain.response.LikersResponse;
+import mymediaMain.response.PostResponse;
 import mymediaMain.response.Response;
 import mymediaMain.services.PostService;
 
@@ -19,7 +23,7 @@ public class PostController {
     @GET
     @Path("/getlikersofpost/{postid}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<User> getLikersOfPost(@PathParam("postid") Long postId) {
+    public LikersResponse getLikersOfPost(@PathParam("postid") Long postId) {
         return postService.getLikersOfPost(postId);
     }
 
@@ -37,5 +41,14 @@ public class PostController {
     @Path("/likewithtoken")
     public Response likeWithToken(LikeWithTokenDto likeWithTokenDto) {
         return postService.likeWithToken(likeWithTokenDto.getToken(), likeWithTokenDto.getPostId());
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/createpost")
+    public PostResponse createPost(CreatePostDto createPostDto){
+        Post post = new Post(createPostDto.getUserId(), createPostDto.getText());
+        return postService.createPost(post);
     }
 }

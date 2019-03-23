@@ -24,6 +24,8 @@ public enum ErrorMessages {
     NO_DATA_BASE_CONNECTION("No database connection!"),
     SAVE_ENTITY_ERROR("Error while save entity!"),
     BAD_PARAMETERS("Some parameters are empty or null!"),
+    LIKERS_UPDATE_ERROR("Some error occurred while update Liker's of a post!"),
+    SAVE_POST_FAILED("Failed to save post"),
     POST_DOES_NOT_EXIST("Post does not exist!");
 
     private String message;
