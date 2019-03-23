@@ -6,14 +6,13 @@ import mymediaMain.dto.LikeWithTokenDto;
 import mymediaMain.response.Response;
 import mymediaMain.services.PostService;
 
-import javax.ejb.EJB;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Path("/post")
 public class PostController {
-    @EJB
+
     PostService postService;
 
 

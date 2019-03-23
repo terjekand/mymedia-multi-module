@@ -8,16 +8,13 @@ import mymediaMain.response.UserResponse;
 import mymediaMain.services.AuthService;
 import mymediaMain.services.RegistrationService;
 
-import javax.ejb.EJB;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Path("/auth")
 public class AuthenticationController {
-    @EJB
-    private AuthService authService = new AuthService();
 
-    @EJB
+    private AuthService authService = new AuthService();
     private RegistrationService registrationService = new RegistrationService();
 
     @POST
