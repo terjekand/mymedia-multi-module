@@ -17,13 +17,13 @@ import java.util.List;
 @Path("/post")
 public class PostController {
 
-    PostService postService;
+    PostService postService = new PostService();
 
 
     @GET
     @Path("/getlikersofpost/{postid}")
     @Produces(MediaType.APPLICATION_JSON)
-    public LikersResponse getLikersOfPost(@PathParam("postid") Long postId) {
+    public LikersResponse getLikersOfPost(@PathParam("postid") String postId) {
         return postService.getLikersOfPost(postId);
     }
 
@@ -48,7 +48,6 @@ public class PostController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("/createpost")
     public PostResponse createPost(CreatePostDto createPostDto){
-        Post post = new Post(createPostDto.getUserId(), createPostDto.getText());
-        return postService.createPost(post);
+        return postService.createPost(createPostDto);
     }
 }

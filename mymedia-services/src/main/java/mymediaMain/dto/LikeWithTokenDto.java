@@ -7,5 +7,5 @@ import java.io.Serializable;
 @Data
 public class LikeWithTokenDto implements Serializable {
     private String token;
-    private Long postId;
+    private String postId;
 }

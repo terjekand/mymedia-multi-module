@@ -5,6 +5,7 @@ import database.dao.UserDataBase;
 import database.entities.Post;
 import lombok.extern.slf4j.Slf4j;
 import mymediaMain.config.SessionManager;
+import mymediaMain.dto.CreatePostDto;
 import mymediaMain.enums.ErrorCodes;
 import mymediaMain.enums.ErrorMessages;
 import mymediaMain.response.LikersResponse;
@@ -64,7 +65,7 @@ public class PostService implements PostInterf {
     }
 
     @Override
-    public LikersResponse getLikersOfPost(Long postId){
+    public LikersResponse getLikersOfPost(String postId){
         Post post = POST_DATA_BASE.getPostById(postId);
         if(post == null){
             return new LikersResponse(ErrorMessages.POST_DOES_NOT_EXIST, ErrorCodes.POST_DOES_NOT_EXIST, null);
@@ -75,13 +76,14 @@ public class PostService implements PostInterf {
     }
 
     @Override
-    public Response likeWithToken(String token, Long postId){
+    public Response likeWithToken(String token, String postId){
         String userId = SESSION_MANAGER.getUserIdByToken(token);
         return likeWithUserId(userId, postId);
     }
 
     @Override
-    public PostResponse createPost(Post post) {
+    public PostResponse createPost(CreatePostDto createPostDto) {
+        Post post = new Post(createPostDto.getUserId(), createPostDto.getText());
         try{
             POST_DATA_BASE.save(post);
         } catch (SQLException e){
@@ -92,7 +94,7 @@ public class PostService implements PostInterf {
     }
 
     @Override
-    public Response likeWithUserId(String userId, Long postId){
+    public Response likeWithUserId(String userId, String postId){
         Post post = POST_DATA_BASE.getPostById(postId);
         if(post == null){
             return new Response(ErrorMessages.POST_DOES_NOT_EXIST, ErrorCodes.POST_DOES_NOT_EXIST);

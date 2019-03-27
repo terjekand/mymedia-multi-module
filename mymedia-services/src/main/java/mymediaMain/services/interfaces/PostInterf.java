@@ -1,6 +1,7 @@
 package mymediaMain.services.interfaces;
 
 import database.entities.Post;
+import mymediaMain.dto.CreatePostDto;
 import mymediaMain.response.LikersResponse;
 import mymediaMain.response.PostResponse;
 import mymediaMain.response.Response;
@@ -15,7 +16,7 @@ public interface PostInterf {
      * @param postId id of the post we are looking for.
      * @return a list of Users, 'likers' with error codes and massages.
      */
-    LikersResponse getLikersOfPost(Long postId);
+    LikersResponse getLikersOfPost(String postId);
 
     /**
      * Allows a user to like a specific post.
@@ -25,7 +26,7 @@ public interface PostInterf {
      * @return a response whit named error_codes and error_messages look after at: mymediaMain.enums.ErrorCodes
      *                                                                             and mymediaMain.enums.ErrorMessages
      */
-    Response likeWithUserId(String userId, Long postId);
+    Response likeWithUserId(String userId, String postId);
 
     /**
      * Allows a user to like a specific post.
@@ -35,15 +36,15 @@ public interface PostInterf {
      * @return a response whit named error_codes and error_messages look after at: mymediaMain.enums.ErrorCodes
      *                                                                             and mymediaMain.enums.ErrorMessages
      */
-    Response likeWithToken(String token, Long postId);
+    Response likeWithToken(String token, String postId);
 
     /**
      * Used when a user creates a new post.
      * Save the specific post to the database.
      *
-     * @param post the post what we wants to save.
+     * @param createPostDto the post what we wants to save.
      * @return PostResponse contains ErrorMessages, ErrorCodes and the id of the post.
      */
-    PostResponse createPost(Post post);
+    PostResponse createPost(CreatePostDto createPostDto);
 
 }

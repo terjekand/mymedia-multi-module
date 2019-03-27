@@ -18,13 +18,6 @@ public class PostDataBase {
     private static final String TABLE_NAME = "POSTS";
 
     private PostDataBase(){
-        try{
-            if(databaseConnector.connection.isClosed()){
-                databaseConnector.connect();
-            }
-        } catch (SQLException e){
-            log.error(e + "");
-        }
     }
 
     public static final  PostDataBase getInstance(){
@@ -34,7 +27,7 @@ public class PostDataBase {
     private Post convertResultSetToPost(ResultSet resultSet){
         Post post = new Post();
         try{
-            post.setId(resultSet.getLong("ID"));
+            post.setId(resultSet.getString("ID"));
             post.setLikers(resultSet.getString("LIKERS"));
             post.setPostDate(resultSet.getDate("POST_DATE"));
             post.setText(resultSet.getString("TEXT"));
@@ -62,13 +55,14 @@ public class PostDataBase {
         statement.executeUpdate(sql);
     }
 
-    public Post getPostById(Long postId){
+    public Post getPostById(String postId){
         try{
             Statement statement = databaseConnector.connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_NAME  + " WHERE ID = '"+ postId +"'" );
             if (resultSet.next()){
                 return convertResultSetToPost(resultSet);
             }
+            log.info("No entity found");
             return null;
         }catch (SQLException e){
             log.error(e + "");

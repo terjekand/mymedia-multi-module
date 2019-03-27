@@ -8,39 +8,28 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
-@Entity
-@Table(name = "Posts")
-
-@NamedQueries({
-        @NamedQuery(name = "Post.getPostsOfUser", query = "SELECT u FROM Post u WHERE u.userId =:id"),
-        @NamedQuery(name = "Post.getLikersOfPost", query = "SELECT u.likers FROM Post u WHERE u.id =:pId"),
-        @NamedQuery(name = "Post.getPostByPostId", query = "SELECT u FROM Post u WHERE u.id =:id"),
-})
 @Getter
 @Setter
 public class Post implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID", nullable = false, updatable = false)
-    private Long id;
-
-    @JoinColumn(name = "USER_ID", nullable = false, updatable = false)
+    private String id;
     private String userId;
 
-    @Column(name = "POST_DATE", nullable = false, updatable = false)
     private Date postDate;
 
-    @Column(name = "TEXT", nullable = false)
     private String text;
 
     private String likers;
 
     public Post() {
+        id = UUID.randomUUID().toString();
     }
 
     public Post(String userId, String text) {
+        id = UUID.randomUUID().toString();
         this.userId = userId;
         postDate = new Date();
         this.text = text;
