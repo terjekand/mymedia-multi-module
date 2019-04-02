@@ -5,8 +5,7 @@ import database.entities.User;
 import lombok.extern.slf4j.Slf4j;
 import mymediaMain.config.SessionManager;
 import mymediaMain.dto.LoginDto;
-import mymediaMain.enums.ErrorCodes;
-import mymediaMain.enums.ErrorMessages;
+import mymediaMain.enums.ResponseUtil;
 import mymediaMain.response.LoginResponse;
 import mymediaMain.response.Response;
 import mymediaMain.response.UserResponse;
@@ -32,7 +31,7 @@ public class AuthService implements AuthInterf {
         if (user != null && BCrypt.checkpw(loginDto.getPassword(), user.getPassword())) {
             return authenticate(user.getId());
         }
-        return new LoginResponse(ErrorMessages.WRONG_USERNAME, ErrorCodes.WRONG_USERNAME, null);
+        return new LoginResponse(ResponseUtil.MSG_WRONG_USERNAME, ResponseUtil.CODE_WRONG_USERNAME, null);
     }
 
     @Override
@@ -44,26 +43,26 @@ public class AuthService implements AuthInterf {
     public UserResponse getUserById(String id) {
         User user = USER_DATA_BASE.getUserById(id);
         if(user != null){
-            return new UserResponse(ErrorMessages.OK, ErrorCodes.OK, user);
+            return new UserResponse(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK, user);
         }
-        return new UserResponse(ErrorMessages.USER_NOT_FOUND, ErrorCodes.USER_NOT_FOUND, null);
+        return new UserResponse(ResponseUtil.MSG_USER_NOT_FOUND, ResponseUtil.CODE_USER_NOT_FOUND, null);
     }
 
     @Override
     public UserResponse getUserByUsername(String username) {
         User user = USER_DATA_BASE.getUserByUsername(username);
         if(user != null){
-            return new UserResponse(ErrorMessages.OK, ErrorCodes.OK, user);
+            return new UserResponse(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK, user);
         }
-        return new UserResponse(ErrorMessages.USER_NOT_FOUND, ErrorCodes.USER_NOT_FOUND, null);
+        return new UserResponse(ResponseUtil.MSG_USER_NOT_FOUND, ResponseUtil.CODE_USER_NOT_FOUND, null);
     }
 
     @Override
     public UserResponse getUserByEmail(String email) {
         User user = USER_DATA_BASE.getUserByEmail(email);
         if(user != null){
-            return new UserResponse(ErrorMessages.OK, ErrorCodes.OK, user);
+            return new UserResponse(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK, user);
         }
-        return new UserResponse(ErrorMessages.USER_NOT_FOUND, ErrorCodes.USER_NOT_FOUND, null);
+        return new UserResponse(ResponseUtil.MSG_USER_NOT_FOUND, ResponseUtil.CODE_USER_NOT_FOUND, null);
     }
 }

@@ -5,9 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.util.Date;
-import java.util.List;
+import java.sql.Date;
 import java.util.UUID;
 
 @Getter
@@ -31,7 +29,8 @@ public class Post implements Serializable {
     public Post(String userId, String text) {
         id = UUID.randomUUID().toString();
         this.userId = userId;
-        postDate = new Date();
+        java.util.Date date = new java.util.Date();
+        postDate = new Date(date.getTime());
         this.text = text;
         likers = "";
     }

@@ -47,4 +47,12 @@ public interface PostInterf {
      */
     PostResponse createPost(CreatePostDto createPostDto);
 
+    /**
+     * Returns a post for an id if it's exists.
+     *
+     * @param postId the id of the post, what we are looking for.
+     * @return the post entity.
+     */
+    Post getPostById(String postId);
+
 }

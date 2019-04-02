@@ -2,8 +2,7 @@ package mymediaMain.config;
 
 
 import lombok.extern.slf4j.Slf4j;
-import mymediaMain.enums.ErrorCodes;
-import mymediaMain.enums.ErrorMessages;
+import mymediaMain.enums.ResponseUtil;
 import mymediaMain.exceptions.MalformedTokenException;
 import mymediaMain.response.LoginResponse;
 import mymediaMain.response.Response;
@@ -34,9 +33,9 @@ public class SessionManager {
             String token = "TK_" + UUID.randomUUID().toString();
 
             sessionMap.put(userId, token);
-            return new LoginResponse(ErrorMessages.OK, ErrorCodes.OK, token);
+            return new LoginResponse(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK, token);
         }
-        return new LoginResponse(ErrorMessages.ALREADY_AUTHORIZED_USER, ErrorCodes.ALREADY_AUTHORIZED_USER, null);
+        return new LoginResponse(ResponseUtil.MSG_ALREADY_AUTHORIZED_USER, ResponseUtil.CODE_ALREADY_AUTHORIZED_USER, null);
     }
 
     public boolean hasPermission(String userId) {
@@ -67,15 +66,15 @@ public class SessionManager {
 
             log.error("" + ex);
 
-            return new Response(ErrorMessages.OK, ErrorCodes.OK);
+            return new Response(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK);
         }
         String userId = getUserIdByToken(sessionMap, token);
 
         if (hasPermission(userId)) {
             sessionMap.remove(userId);
-            return new Response(ErrorMessages.OK, ErrorCodes.OK);
+            return new Response(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK);
         }
-        return new Response(ErrorMessages.USER_ALREADY_HAS_NO_PREMISSION, ErrorCodes.USER_ALREADY_HAS_NO_PERMISSION);
+        return new Response(ResponseUtil.MSG_USER_ALREADY_HAS_NO_PREMISSION, ResponseUtil.CODE_USER_ALREADY_HAS_NO_PERMISSION);
     }
 
     public List<String> listAllTokensOfSession() {

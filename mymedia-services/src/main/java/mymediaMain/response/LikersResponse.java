@@ -1,15 +1,19 @@
 package mymediaMain.response;
 
 import database.entities.User;
-import mymediaMain.enums.ErrorCodes;
-import mymediaMain.enums.ErrorMessages;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
+@NoArgsConstructor
+@Getter
+@Setter
 public class LikersResponse extends Response {
-    List<User> likers;
+    private List<User> likers;
 
-    public LikersResponse(ErrorMessages errorMessages, ErrorCodes errorCodes, List<User> likers) {
+    public LikersResponse(String errorMessages, int errorCodes, List<User> likers) {
         super(errorMessages, errorCodes);
         this.likers = likers;
     }

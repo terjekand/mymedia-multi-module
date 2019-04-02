@@ -3,17 +3,17 @@ package mymediaMain.response;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import mymediaMain.enums.ErrorCodes;
-import mymediaMain.enums.ErrorMessages;
+
+import java.io.Serializable;
 
 @NoArgsConstructor
 @Getter
 @Setter
-public class Response {
-    private ErrorMessages errorMessage;
-    private ErrorCodes errorCode;
+public class Response implements Serializable {
+    private String errorMessage;
+    private int errorCode;
 
-    public Response(ErrorMessages errorMessages, ErrorCodes errorCodes) {
+    public Response(String errorMessages, int errorCodes) {
         this.errorCode = errorCodes;
         this.errorMessage = errorMessages;
     }

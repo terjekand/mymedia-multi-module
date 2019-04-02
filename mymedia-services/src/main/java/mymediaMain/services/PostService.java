@@ -6,8 +6,7 @@ import database.entities.Post;
 import lombok.extern.slf4j.Slf4j;
 import mymediaMain.config.SessionManager;
 import mymediaMain.dto.CreatePostDto;
-import mymediaMain.enums.ErrorCodes;
-import mymediaMain.enums.ErrorMessages;
+import mymediaMain.enums.ResponseUtil;
 import mymediaMain.response.LikersResponse;
 import mymediaMain.response.PostResponse;
 import mymediaMain.response.Response;
@@ -68,11 +67,11 @@ public class PostService implements PostInterf {
     public LikersResponse getLikersOfPost(String postId){
         Post post = POST_DATA_BASE.getPostById(postId);
         if(post == null){
-            return new LikersResponse(ErrorMessages.POST_DOES_NOT_EXIST, ErrorCodes.POST_DOES_NOT_EXIST, null);
+            return new LikersResponse(ResponseUtil.MSG_POST_DOES_NOT_EXIST, ResponseUtil.CODE_POST_DOES_NOT_EXIST, null);
         }
         List<String> userIdList = convertStringToIdList(post.getLikers());
         List<User> likers = convertIdsToUsers(userIdList);
-        return new LikersResponse(ErrorMessages.OK, ErrorCodes.OK, likers);
+        return new LikersResponse(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK, likers);
     }
 
     @Override
@@ -88,16 +87,16 @@ public class PostService implements PostInterf {
             POST_DATA_BASE.save(post);
         } catch (SQLException e){
             log.error("An error occurred while save post!\n" + e);
-            return new PostResponse(ErrorMessages.SAVE_POST_FAILED, ErrorCodes.SAVE_POST_FAILED, null);
+            return new PostResponse(ResponseUtil.MSG_SAVE_POST_FAILED, ResponseUtil.CODE_SAVE_POST_FAILED, null);
         }
-        return new PostResponse(ErrorMessages.OK, ErrorCodes.OK, post.getId());
+        return new PostResponse(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK, post.getId());
     }
 
     @Override
     public Response likeWithUserId(String userId, String postId){
         Post post = POST_DATA_BASE.getPostById(postId);
         if(post == null){
-            return new Response(ErrorMessages.POST_DOES_NOT_EXIST, ErrorCodes.POST_DOES_NOT_EXIST);
+            return new Response(ResponseUtil.MSG_POST_DOES_NOT_EXIST, ResponseUtil.CODE_POST_DOES_NOT_EXIST);
         }
         String likers = post.getLikers() + userId + DIVIDER;
         post.setLikers(likers);
@@ -105,8 +104,13 @@ public class PostService implements PostInterf {
             POST_DATA_BASE.updateLikers(post);
         } catch (SQLException e){
             log.error("" + e);
-            return  new Response(ErrorMessages.LIKERS_UPDATE_ERROR, ErrorCodes.LIKERS_UPDATE_ERROR);
+            return  new Response(ResponseUtil.MSG_LIKERS_UPDATE_ERROR, ResponseUtil.CODE_LIKERS_UPDATE_ERROR);
         }
-        return new Response(ErrorMessages.OK,ErrorCodes.OK);
+        return new Response(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK);
+    }
+
+    @Override
+    public Post getPostById(String postId) {
+        return POST_DATA_BASE.getPostById(postId);
     }
 }

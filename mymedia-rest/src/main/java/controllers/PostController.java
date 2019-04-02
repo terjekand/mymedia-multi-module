@@ -12,7 +12,6 @@ import mymediaMain.services.PostService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.util.List;
 
 @Path("/post")
 public class PostController {
@@ -24,7 +23,8 @@ public class PostController {
     @Path("/getlikersofpost/{postid}")
     @Produces(MediaType.APPLICATION_JSON)
     public LikersResponse getLikersOfPost(@PathParam("postid") String postId) {
-        return postService.getLikersOfPost(postId);
+        LikersResponse response = postService.getLikersOfPost(postId);
+        return response;
     }
 
     @POST

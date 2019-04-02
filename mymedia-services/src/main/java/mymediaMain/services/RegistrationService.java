@@ -3,8 +3,7 @@ package mymediaMain.services;
 import database.dao.UserDataBase;
 import lombok.extern.slf4j.Slf4j;
 import mymediaMain.dto.RegistrationDto;
-import mymediaMain.enums.ErrorCodes;
-import mymediaMain.enums.ErrorMessages;
+import mymediaMain.enums.ResponseUtil;
 import mymediaMain.response.Response;
 import database.entities.User;
 
@@ -38,11 +37,11 @@ public class RegistrationService {
         User user = createUser(registrationDto);
 
         if(isUsedEmail(user.getEmail())){
-            return new Response(ErrorMessages.USED_EMAIL, ErrorCodes.USED_EMAIL);
+            return new Response(ResponseUtil.MSG_USED_EMAIL, ResponseUtil.CODE_USED_EMAIL);
         }
 
         if(isUsedUsername(user.getUsername())){
-            return new Response(ErrorMessages.USED_USERNAME, ErrorCodes.USED_USERNAME);
+            return new Response(ResponseUtil.MSG_USED_USERNAME, ResponseUtil.CODE_USED_USERNAME);
         }
         try {
             String hashPw = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
@@ -50,9 +49,9 @@ public class RegistrationService {
              USER_DATA_BASE.save(user);
         } catch (Exception e) {
             log.error("" + e);
-            return new Response(ErrorMessages.UNKNOWN_ERROR, ErrorCodes.UNKNOWN_ERROR);
+            return new Response(ResponseUtil.MSG_UNKNOWN_ERROR, ResponseUtil.CODE_UNKNOWN_ERROR);
         }
 
-        return new Response(ErrorMessages.OK, ErrorCodes.OK);
+        return new Response(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK);
     }
 }

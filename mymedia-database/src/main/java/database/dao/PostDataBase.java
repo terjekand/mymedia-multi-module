@@ -3,6 +3,9 @@ package database.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import database.entities.Post;
 import database.entities.User;
@@ -35,8 +38,9 @@ public class PostDataBase {
             return post;
         }catch (SQLException e){
             log.error(e + "");
-            return null;
         }
+
+        return null;
     }
 
     public void save(Post post) throws SQLException{
@@ -50,7 +54,8 @@ public class PostDataBase {
     }
 
     public void updateLikers(Post post) throws SQLException{
-        String sql = "update " + TABLE_NAME + " set likers ='" + post.getLikers() + "' where id =" + post.getId();
+//      update employee set name='Michael Sam' where emp_id=1
+        String sql = "update " + TABLE_NAME + " set likers ='" + post.getLikers() + "' where id ='" + post.getId() + "'";
         Statement statement = databaseConnector.connection.createStatement();
         statement.executeUpdate(sql);
     }
@@ -58,7 +63,7 @@ public class PostDataBase {
     public Post getPostById(String postId){
         try{
             Statement statement = databaseConnector.connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_NAME  + " WHERE ID = '"+ postId +"'" );
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_NAME  + " WHERE ID = '"+ postId + "'" );
             if (resultSet.next()){
                 return convertResultSetToPost(resultSet);
             }

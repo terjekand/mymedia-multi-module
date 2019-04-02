@@ -1,7 +1,6 @@
 package controllers;
 
-import mymediaMain.enums.ErrorCodes;
-import mymediaMain.enums.ErrorMessages;
+import mymediaMain.enums.ResponseUtil;
 import mymediaMain.response.Response;
 
 import javax.ws.rs.GET;
@@ -16,6 +15,6 @@ public class PersonalController {
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
     public Response defaultFunction(){
-        return new Response(ErrorMessages.NOT_IMPLEMENTED, ErrorCodes.NOT_IMPLEMENTED);
+        return new Response(ResponseUtil.MSG_NOT_IMPLEMENTED, ResponseUtil.CODE_NOT_IMPLEMENTED);
     }
 }
