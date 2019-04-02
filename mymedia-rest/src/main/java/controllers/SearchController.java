@@ -2,20 +2,19 @@ package controllers;
 
 import mymediaMain.dto.SearchDto;
 import mymediaMain.response.SearchResponse;
+import mymediaMain.services.SearchService;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Path("/search")
 public class SearchController {
+    SearchService searchService = new SearchService();
 
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
+    @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public SearchResponse multiSearch(SearchDto searchDto){
-        return null;
+    @Path("/{req}")
+    public SearchResponse multiSearch(@PathParam("req") String req){
+        return searchService.searchUser(req);
     }
 }

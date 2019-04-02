@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 @Slf4j
 public class UserDataBase {
@@ -79,6 +81,21 @@ public class UserDataBase {
                 return convertResultSetToUser(resultSet);
             }
             return null;
+        }catch (SQLException e){
+            log.error(e + "");
+            return null;
+        }
+    }
+
+    public List<User> searchUser(String req){
+        try{
+            Statement statement = databaseConnector.connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_NAME  + " WHERE USERNAME like '%"+ req +"%' OR fullname like '%"+ req +"%'" );
+            List<User> users = new ArrayList<>();
+            while (resultSet.next()){
+                users.add(convertResultSetToUser(resultSet));
+            }
+            return users;
         }catch (SQLException e){
             log.error(e + "");
             return null;
