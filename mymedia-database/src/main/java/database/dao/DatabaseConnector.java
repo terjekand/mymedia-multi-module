@@ -12,9 +12,35 @@ public class DatabaseConnector {
     private static final String PASSWORD = "kiss";
 
     private static final DatabaseConnector databaseConnector = new DatabaseConnector();
-
+    private DatabaseMetaData databaseMetaData;
     private DatabaseConnector() {
         connect();
+        try {
+            databaseMetaData = connection.getMetaData();
+        } catch (SQLException e) {
+            log.error("" + e);
+        }
+        try {
+            statement = connection.createStatement();
+            ResultSet rs = databaseMetaData.getTables(null, "PUBLIC", "USERS", null);
+            if(!rs.next())
+            {
+                statement.execute("create table users(id VARCHAR not null primary key, username varchar(32) not null, password varchar not null, email varchar(32) not null, fullname varchar(32) not null)");
+            }
+        } catch (SQLException e) {
+            log.error("" + e);
+        }
+
+        try {
+            ResultSet rs = databaseMetaData.getTables(null, "PUBLIC", "POSTS", null);
+            if(!rs.next())
+            {
+                statement.execute("create table posts(id VARCHAR not null primary key , userid varchar not null, text varchar, likers varchar, post_date timestamp)");
+            }
+        } catch (SQLException e) {
+            log.error("" + e);
+        }
+        statement = null;
     }
 
     public static final DatabaseConnector getInstance(){
