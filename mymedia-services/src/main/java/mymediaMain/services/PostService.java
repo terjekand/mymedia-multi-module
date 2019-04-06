@@ -1,5 +1,6 @@
 package mymediaMain.services;
 
+import com.sun.xml.internal.fastinfoset.stax.events.Util;
 import database.dao.PostDataBase;
 import database.dao.UserDataBase;
 import database.entities.Post;
@@ -98,7 +99,20 @@ public class PostService implements PostInterf {
         if(post == null){
             return new Response(ResponseUtil.MSG_POST_DOES_NOT_EXIST, ResponseUtil.CODE_POST_DOES_NOT_EXIST);
         }
-        String likers = post.getLikers() + userId + DIVIDER;
+        if(Util.isEmptyString(userId)){
+            return new Response(ResponseUtil.MSG_BAD_PARAMETERS, ResponseUtil.CODE_BAD_PARAMETERS);
+        }
+        String newLike = userId + DIVIDER;
+        String likers = post.getLikers();
+        if(likers.contains(newLike)){
+//            likers.replace(newLike, "");
+            String before = likers.substring(0, likers.indexOf(newLike));
+            String after = likers.substring(likers.indexOf(newLike) + newLike.length());
+            likers = before + after;
+        }
+        else{
+            likers += newLike;
+        }
         post.setLikers(likers);
         try{
             POST_DATA_BASE.updateLikers(post);
