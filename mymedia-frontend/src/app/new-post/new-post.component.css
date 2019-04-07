@@ -123,38 +123,6 @@ h1 {
 .icon {
   height: 30px;
 }
-.navbar {
-  background-color: #444;
-  border-bottom: solid 1px #ddd;
-  height: 60px;
-  margin-bottom: 50px;
-  overflow: hidden;
-  position: sticky;
-  top: 0;
-  width: 100%;
-}
-.navbar a {
-  display: block;
-  float: right;
-  font: 12px Helvetica, sans-serif;
-  padding: 15px;
-  text-align: center;
-  text-decoration: none;
-  width: 3%;
-}
-.navbar input[type=text] {
-  background-color: #666;
-  border: none;
-  border-radius: 50px;
-  font: 14px Helvetica, sans-serif;
-  height: 35px;
-  outline: none;
-  text-align: center;
-  width: 100%;
-}
-.navbar input:focus[type=text] {
-  color: #bbb;
-}
 .post-container {
   background-color: white;
   border: solid 1px #ddd;

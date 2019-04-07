@@ -123,6 +123,17 @@ h1 {
 .icon {
   height: 30px;
 }
+.like-section {
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.like-text {
+  color: #444;
+  display: inline;
+  font: bold 12px Helvetica, sans-serif;
+  padding: 0 10px;
+}
 .navbar {
   background-color: #444;
   border-bottom: solid 1px #ddd;

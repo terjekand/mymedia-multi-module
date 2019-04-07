@@ -10,6 +10,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import {Router, RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { NewPostComponent } from './new-post/new-post.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ProfileEditComponent } from './profile-edit/profile-edit.component';
 
 const appRouter: Routes = [
   {
@@ -21,13 +24,25 @@ const appRouter: Routes = [
     component: NewsFeedComponent
   },
   {
-    path: '**',
-    component: NotFoundComponent
+    path: 'newpost',
+    component: NewPostComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
+  },
+  {
+    path: 'editprofile',
+    component: ProfileEditComponent
   },
   {
     path: '',
     component: LoginComponent,
     pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
   }
 ];
 
@@ -37,7 +52,10 @@ const appRouter: Routes = [
     NavigationComponent,
     LoginComponent,
     NewsFeedComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    NewPostComponent,
+    ProfileComponent,
+    ProfileEditComponent
   ],
   imports: [
     BrowserModule,
