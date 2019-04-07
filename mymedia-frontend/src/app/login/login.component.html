@@ -1,17 +1,19 @@
+
+<!--<app-navigation></app-navigation>-->
 <body>
 <div class="container">
   <div class="login">
-    <form>
+    <form (ngSubmit)="doLogin()">
       <h1 class="title">Bejelentkezés</h1>
 
       <label for="username" class="body">Felhasználónév</label>
       <br>
-      <input type="text" name="username" required>
+      <input type="text" name="username" required [(ngModel)]="loginModel.username">
       <br>
 
       <label for="password" class="body">Jelszó</label>
       <br>
-      <input type="password" name="password" required>
+      <input type="password" name="password" required [(ngModel)]="loginModel.password">
       <br>
 
       <label for="remember" class="body">
@@ -23,42 +25,37 @@
 
     </form>
   </div>
-  <div>
-    <button onclick="dropdown()" class="or">
-      Ha nincs még fiókja, <b>regisztráljon</b> egyet most!
-    </button>
-  </div>
   <div id="reg" class="signup">
-    <form>
+    <form (ngSubmit)="doRegistration()">
       <h1 class="title">Regisztráció</h1>
 
       <label for="username" class="body">Felhasználónév</label>
       <br>
-      <input type="text" name="username" required>
+      <input type="text" name="username" required [(ngModel)]="regModel.username">
       <br>
 
       <label for="fullname" class="body">Név</label>
       <br>
-      <input type="text" name="fullname" required>
+      <input type="text" name="fullname" required [(ngModel)]="regModel.fullname">
       <br>
 
       <label for="email" class="body">Email</label>
       <br>
-      <input type="text" name="email" required>
+      <input type="text" name="email" required [(ngModel)]="regModel.email">
       <br>
 
       <label for="password" class="body">Jelszó</label>
       <br>
-      <input type="password" name="password" required>
+      <input type="password" name="password" required [(ngModel)]="regModel.password">
       <br>
 
       <label for="password-re" class="body">Jelszó ismét</label>
       <br>
-      <input type="password" name="password-re" required>
+      <input type="password" name="password-re" required [(ngModel)]="regModel.password_re">
       <br>
 
       <label for="privacy" class="body">
-        <input type="checkbox" name="privacy" required>Elfogadom az <a href="#">adatvédelmi szabályzatot</a>.
+        <input type="checkbox" name="privacy" required [(ngModel)]="regModel.isAcceptAgreement">Elfogadom az <a href="#">adatvédelmi szabályzatot</a>.
         <br>
       </label>
 
@@ -66,11 +63,5 @@
 
     </form>
   </div>
-
-  <script>
-    function dropdown() {
-      document.getElementById("reg").classList.toggle("show");
-    }
-  </script>
 </div>
 </body>

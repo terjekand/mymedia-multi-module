@@ -9,6 +9,7 @@ import { NewsFeedComponent } from './news-feed/news-feed.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {Router, RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 const appRouter: Routes = [
   {
@@ -41,6 +42,7 @@ const appRouter: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     AppRoutingModule,
     RouterModule.forRoot(appRouter, {enableTracing: true})
   ],
