@@ -26,6 +26,12 @@ public class SessionManager {
         return instance;
     }
 
+    /**
+     * User login.
+     *
+     * @param userId the ID of the user who's login.
+     * @return status code.
+     */
     public LoginResponse addUserId(String userId) {
 
         if (!hasPermission(userId)) {
@@ -38,14 +44,33 @@ public class SessionManager {
         return new LoginResponse(ResponseUtil.MSG_ALREADY_AUTHORIZED_USER, ResponseUtil.CODE_ALREADY_AUTHORIZED_USER, null);
     }
 
+    /**
+     * Checks if the userId can be found in the sessionMap.
+     *
+     * @param userId the userId what we are looking for.
+     * @return true if the user has permission.
+     */
     public boolean hasPermission(String userId) {
         return sessionMap.containsKey(userId);
     }
 
+    /**
+     * Returns the token of a userId.
+     *
+     * @param userId the key of the map.
+     * @return token.
+     */
     public String getTokenOfUser(String userId) {
         return sessionMap.get(userId);
     }
 
+    /**
+     * Returns the userId of the token.
+     *
+     * @param map usually this is the session map.
+     * @param token the token of the user.
+     * @return userId.
+     */
     private static String getUserIdByToken(Map<String, String> map, String token) {
         List<String> keys = map.entrySet()
                 .stream()
@@ -55,10 +80,22 @@ public class SessionManager {
         return keys.get(0);
     }
 
+    /**
+     * The public version of this function.
+     *
+     * @param token this usually comes from the frontend.
+     * @return userId.
+     */
     public String getUserIdByToken(String token){
         return getUserIdByToken(sessionMap, token);
     }
 
+    /**
+     * Used to logout a user.
+     *
+     * @param token the token of the user.
+     * @return status response.
+     */
     public Response removePermission(String token) {
         try {
             checkTokenFormat(token);

@@ -3,6 +3,7 @@ package mymediaMain.services.interfaces;
 import database.entities.Post;
 import mymediaMain.dto.CreatePostDto;
 import mymediaMain.response.LikersResponse;
+import mymediaMain.response.PostListResponse;
 import mymediaMain.response.PostResponse;
 import mymediaMain.response.Response;
 import database.entities.User;
@@ -54,5 +55,31 @@ public interface PostInterf {
      * @return the post entity.
      */
     Post getPostById(String postId);
+
+    /**
+     * Returns the posts of the user by its userId.
+     *
+     * @param userId the ID of the user.
+     * @return a list with posts who's belong to the user.
+     */
+    PostListResponse getPostsOfUserByUserId(String userId);
+
+    /**
+     * Returns the posts of the user by its username.
+     *
+     * @param username the username of the user.
+     * @return a list with posts who's belong to the user.
+     */
+    PostListResponse getPostsOfUserByUsername(String username);
+
+    /**
+     * Returns the posts of the user by its token, if its authorized.
+     *
+     * @param token the token of the authorized user.
+     * @return a list with posts who's belong to the user.
+     */
+    PostListResponse getPostsOfUserByToken(String token);
+
+
 
 }

@@ -4,8 +4,8 @@ import database.dao.UserDataBase;
 import lombok.extern.slf4j.Slf4j;
 import mymediaMain.dto.RegistrationDto;
 import mymediaMain.enums.ResponseUtil;
-import mymediaMain.response.Response;
 import database.entities.User;
+import mymediaMain.response.UserIdResponse;
 
 @Slf4j
 public class RegistrationService {
@@ -32,16 +32,16 @@ public class RegistrationService {
                         registrationDto.getFullname());
     }
 
-    public Response userRegistration(RegistrationDto registrationDto) {
+    public UserIdResponse userRegistration(RegistrationDto registrationDto) {
 
         User user = createUser(registrationDto);
 
         if(isUsedEmail(user.getEmail())){
-            return new Response(ResponseUtil.MSG_USED_EMAIL, ResponseUtil.CODE_USED_EMAIL);
+            return new UserIdResponse(ResponseUtil.MSG_USED_EMAIL, ResponseUtil.CODE_USED_EMAIL, null);
         }
 
         if(isUsedUsername(user.getUsername())){
-            return new Response(ResponseUtil.MSG_USED_USERNAME, ResponseUtil.CODE_USED_USERNAME);
+            return new UserIdResponse(ResponseUtil.MSG_USED_USERNAME, ResponseUtil.CODE_USED_USERNAME, null);
         }
         try {
             String hashPw = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
@@ -49,9 +49,9 @@ public class RegistrationService {
              USER_DATA_BASE.save(user);
         } catch (Exception e) {
             log.error("" + e);
-            return new Response(ResponseUtil.MSG_UNKNOWN_ERROR, ResponseUtil.CODE_UNKNOWN_ERROR);
+            return new UserIdResponse(ResponseUtil.MSG_UNKNOWN_ERROR, ResponseUtil.CODE_UNKNOWN_ERROR, null);
         }
 
-        return new Response(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK);
+        return new UserIdResponse(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK, user.getId());
     }
 }

@@ -52,6 +52,8 @@ public class UserDataBase {
             user.setFullname(resultSet.getString("FULLNAME"));
             user.setPassword(resultSet.getString("PASSWORD"));
             user.setUsername(resultSet.getString("USERNAME"));
+            user.setBio(resultSet.getString("BIO"));
+            user.setPhoneNumber(resultSet.getString("PHONENUMBER"));
             return user;
         }catch (SQLException e){
             log.error(e + "");
@@ -79,6 +81,20 @@ public class UserDataBase {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_NAME  + " WHERE USERNAME = '"+ username +"'" );
             if (resultSet.next()){
                 return convertResultSetToUser(resultSet);
+            }
+            return null;
+        }catch (SQLException e){
+            log.error(e + "");
+            return null;
+        }
+    }
+
+    public String getUserIdByUsername(String username){
+        try{
+            Statement statement = databaseConnector.connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_NAME  + " WHERE USERNAME = '"+ username +"'" );
+            if (resultSet.next()){
+                return resultSet.getString("ID");
             }
             return null;
         }catch (SQLException e){

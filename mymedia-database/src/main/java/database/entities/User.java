@@ -17,6 +17,8 @@ public class User implements Serializable {
     private String password;
     private String email;
     private String fullname;
+    private String bio;
+    private String phoneNumber;
 
     public User(String username, String password, String email, String fullname) {
         this.id = UUID.randomUUID().toString();
@@ -24,6 +26,8 @@ public class User implements Serializable {
         this.password = password;
         this.email = email;
         this.fullname = fullname;
+        this.bio = null;
+        this.phoneNumber = null;
     }
 
     public User() {
@@ -35,6 +39,5 @@ public class User implements Serializable {
         return "User [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email
                 + ", fullname=" + fullname + "]";
     }
-
 
 }

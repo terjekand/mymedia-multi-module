@@ -1,2 +1,5 @@
+controllers\PersonalController.class
+controllers\SearchController.class
+controllers\AuthenticationController.class
+controllers\PostController.class
 conf\JAXRSConfiguration.class
-controllers\MymRestAuth.class

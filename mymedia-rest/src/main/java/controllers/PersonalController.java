@@ -1,20 +1,32 @@
 package controllers;
 
-import mymediaMain.enums.ResponseUtil;
+import mymediaMain.dto.UpdateProfileDto;
+import mymediaMain.response.PersonalDataResponse;
 import mymediaMain.response.Response;
+import mymediaMain.services.PersonalService;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Path("/personal")
 public class PersonalController {
 
-    @GET
-    @Path("/")
+    PersonalService personalService = new PersonalService();
+
+    @POST
+    @Path("/update")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response defaultFunction(){
-        return new Response(ResponseUtil.MSG_NOT_IMPLEMENTED, ResponseUtil.CODE_NOT_IMPLEMENTED);
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response updatePersonalData(UpdateProfileDto updateProfileDto){
+        return personalService.updatePersonalData(updateProfileDto);
     }
+
+    @GET
+    @Path("/getdata/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public PersonalDataResponse updatePersonalData(@PathParam("id") String userId){
+        return personalService.getPersonalData(userId);
+    }
+
+
 }

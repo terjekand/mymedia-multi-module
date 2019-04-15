@@ -4,6 +4,7 @@ import mymediaMain.dto.LoginDto;
 import mymediaMain.dto.RegistrationDto;
 import mymediaMain.response.LoginResponse;
 import mymediaMain.response.Response;
+import mymediaMain.response.UserIdResponse;
 import mymediaMain.response.UserResponse;
 import mymediaMain.services.AuthService;
 import mymediaMain.services.RegistrationService;
@@ -36,7 +37,7 @@ public class AuthenticationController {
     @Path("/registration")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response registration(RegistrationDto registrationDto){
+    public UserIdResponse registration(RegistrationDto registrationDto){
         return registrationService.userRegistration(registrationDto);
     }
 

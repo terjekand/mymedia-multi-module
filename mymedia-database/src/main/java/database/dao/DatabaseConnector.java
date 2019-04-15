@@ -28,7 +28,7 @@ public class DatabaseConnector {
             ResultSet rs = databaseMetaData.getTables(null, "PUBLIC", "USERS", null);
             if(!rs.next())
             {
-                statement.execute("create table users(id VARCHAR not null primary key, username varchar(32) not null, password varchar not null, email varchar(32) not null, fullname varchar(32) not null)");
+                statement.execute("create table users(id VARCHAR not null primary key, username varchar(32) not null, password varchar not null, email varchar(32) not null, fullname varchar(32) not null, bio varchar(32), phoneNumber varchar (10))");
             }
         } catch (SQLException e) {
             log.error("" + e);

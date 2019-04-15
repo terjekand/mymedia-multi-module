@@ -5,7 +5,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import database.entities.Post;
 import database.entities.User;
@@ -69,6 +71,21 @@ public class PostDataBase {
             }
             log.info("No entity found");
             return null;
+        }catch (SQLException e){
+            log.error(e + "");
+            return null;
+        }
+    }
+
+    public List<Post> getPostByUserId(String userId){
+        try{
+            Statement statement = databaseConnector.connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_NAME  + " WHERE userId = '"+ userId + "'" );
+            List<Post> posts = new ArrayList<>();
+            while (resultSet.next()){
+                posts.add(convertResultSetToPost(resultSet));
+            }
+            return posts;
         }catch (SQLException e){
             log.error(e + "");
             return null;

@@ -1,6 +1,5 @@
 package mymediaMain.services;
 
-import com.sun.xml.internal.fastinfoset.stax.events.Util;
 import database.dao.PostDataBase;
 import database.dao.UserDataBase;
 import database.entities.Post;
@@ -9,6 +8,7 @@ import mymediaMain.config.SessionManager;
 import mymediaMain.dto.CreatePostDto;
 import mymediaMain.enums.ResponseUtil;
 import mymediaMain.response.LikersResponse;
+import mymediaMain.response.PostListResponse;
 import mymediaMain.response.PostResponse;
 import mymediaMain.response.Response;
 import mymediaMain.services.interfaces.PostInterf;
@@ -99,13 +99,12 @@ public class PostService implements PostInterf {
         if(post == null){
             return new Response(ResponseUtil.MSG_POST_DOES_NOT_EXIST, ResponseUtil.CODE_POST_DOES_NOT_EXIST);
         }
-        if(Util.isEmptyString(userId)){
+        if(userId == null || userId.equals("")){
             return new Response(ResponseUtil.MSG_BAD_PARAMETERS, ResponseUtil.CODE_BAD_PARAMETERS);
         }
         String newLike = userId + DIVIDER;
         String likers = post.getLikers();
         if(likers.contains(newLike)){
-//            likers.replace(newLike, "");
             String before = likers.substring(0, likers.indexOf(newLike));
             String after = likers.substring(likers.indexOf(newLike) + newLike.length());
             likers = before + after;
@@ -118,7 +117,7 @@ public class PostService implements PostInterf {
             POST_DATA_BASE.updateLikers(post);
         } catch (SQLException e){
             log.error("" + e);
-            return  new Response(ResponseUtil.MSG_LIKERS_UPDATE_ERROR, ResponseUtil.CODE_LIKERS_UPDATE_ERROR);
+            return new Response(ResponseUtil.MSG_LIKERS_UPDATE_ERROR, ResponseUtil.CODE_LIKERS_UPDATE_ERROR);
         }
         return new Response(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK);
     }
@@ -126,5 +125,27 @@ public class PostService implements PostInterf {
     @Override
     public Post getPostById(String postId) {
         return POST_DATA_BASE.getPostById(postId);
+    }
+
+    @Override
+    public PostListResponse getPostsOfUserByUserId(String userId) {
+        if(userId == null || userId.equals("")){
+            return new PostListResponse(ResponseUtil.MSG_BAD_PARAMETERS, ResponseUtil.CODE_BAD_PARAMETERS, null);
+        }
+        List<Post> posts = POST_DATA_BASE.getPostByUserId(userId);
+        return new PostListResponse(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK, posts);
+    }
+
+    @Override
+    public PostListResponse getPostsOfUserByUsername(String username) {
+        String userId = USER_DATA_BASE.getUserIdByUsername(username);
+        return getPostsOfUserByUserId(userId);
+    }
+
+    @Override
+    public PostListResponse getPostsOfUserByToken(String token) {
+        String userId = SESSION_MANAGER.getUserIdByToken(token);
+
+        return getPostsOfUserByUserId(userId);
     }
 }
