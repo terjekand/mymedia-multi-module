@@ -30,14 +30,33 @@ public class UserDataBase {
         try {
 
             Statement statement = databaseConnector.connection.createStatement();
-            statement.executeUpdate("INSERT INTO " + TABLE_NAME  + " VALUES('" + user.getId() + "', '" +
-                    user.getUsername() + "', '" +
-                    user.getPassword() + "', '" +
-                    user.getEmail()    + "', '" +
-                    user.getFullname() + "')");
+            statement.executeUpdate("INSERT INTO " + TABLE_NAME  + " VALUES('" +
+                    user.getId()          + "', '" +
+                    user.getUsername()    + "', '" +
+                    user.getPassword()    + "', '" +
+                    user.getEmail()       + "', '" +
+                    user.getBio()         + "', '" +
+                    user.getPhoneNumber() + "', '" +
+                    user.getFullname()    + "')");
             /**
              * "INSERT INTO " + TABLE_NAME + " + " VALUES("' + user.getId() + "', '" + user.getUsername() + "', '" + user.getPassword() + "', '" + user.getEmail() + "', '" + user.getFullname + "')"
             */
+
+        } catch (SQLException e) {
+            log.error(e + "");
+        }
+    }
+
+    public void update(User user){
+
+        try {
+
+            String sql = "update " + TABLE_NAME + " set bio ='" + user.getBio() +
+                                                  "' phonenumber ='" + user.getId() +
+                                                  "' fullname ='" + user.getFullname() +
+                                                  "' where id ='" + user.getId() + "'";
+            Statement statement = databaseConnector.connection.createStatement();
+            statement.executeUpdate(sql);
 
         } catch (SQLException e) {
             log.error(e + "");

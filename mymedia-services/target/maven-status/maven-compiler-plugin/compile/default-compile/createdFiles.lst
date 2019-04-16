@@ -21,7 +21,9 @@ mymediaMain\response\LikersResponse.class
 mymediaMain\response\LoginResponse.class
 mymediaMain\config\SessionManager.class
 mymediaMain\services\PersonalService.class
+mymediaMain\response\PersonalDataResponse.class
 mymediaMain\response\PostResponse.class
 mymediaMain\response\UserResponse.class
 mymediaMain\dto\RegistrationDto.class
+mymediaMain\dto\UpdateProfileDto.class
 mymediaMain\services\BCrypt.class

@@ -34,7 +34,7 @@ public class PersonalService {
 
     private Response updatePersonalDataByUserId(UpdateProfileDto updateProfileDto){
         User user = Converter.convertUpdateProfileDtoToUser(updateProfileDto);
-        USER_DATA_BASE.save(user);
+        USER_DATA_BASE.update(user);
         return new Response(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK);
     }
 
@@ -46,6 +46,7 @@ public class PersonalService {
             return updatePersonalDataByUserId(updateProfileDto);
         }
         else{
+            log.error("Some of the parameters were null (userId/token");
             return new Response(ResponseUtil.MSG_BAD_PARAMETERS, ResponseUtil.CODE_BAD_PARAMETERS);
         }
     }
