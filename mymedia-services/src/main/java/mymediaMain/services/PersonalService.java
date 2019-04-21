@@ -9,6 +9,8 @@ import mymediaMain.enums.ResponseUtil;
 import mymediaMain.response.PersonalDataResponse;
 import mymediaMain.response.Response;
 
+import java.sql.SQLException;
+
 @Slf4j
 public class PersonalService {
     private static final UserDataBase USER_DATA_BASE = UserDataBase.getInstance();
@@ -34,8 +36,16 @@ public class PersonalService {
 
     private Response updatePersonalDataByUserId(UpdateProfileDto updateProfileDto){
         User user = Converter.convertUpdateProfileDtoToUser(updateProfileDto);
-        USER_DATA_BASE.update(user);
-        return new Response(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK);
+        if(user == null){
+            return new Response(ResponseUtil.MSG_USER_NOT_FOUND, ResponseUtil.CODE_USER_NOT_FOUND);
+        }
+        try{
+            USER_DATA_BASE.update(user);
+            return new Response(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK);
+        } catch (SQLException e){
+            log.error("" + e);
+            return new Response(ResponseUtil.MSG_USER_UPDATE_ERROR, ResponseUtil.CODE_USER_UPDATE_ERROR);
+        }
     }
 
     public Response updatePersonalData(UpdateProfileDto updateProfileDto){

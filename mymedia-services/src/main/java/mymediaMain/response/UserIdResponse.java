@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class UserIdResponse extends Response {
-    public String userId;
+    private String userId;
 
     public UserIdResponse(String errorMessages, int errorCodes, String userId) {
         super(errorMessages, errorCodes);

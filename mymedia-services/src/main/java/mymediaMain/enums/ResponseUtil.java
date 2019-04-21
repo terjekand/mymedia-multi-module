@@ -22,6 +22,8 @@ public class ResponseUtil {
 
     public static int CODE_USER_NOT_FOUND = -110;
 
+    public static int CODE_USER_UPDATE_ERROR= -111;
+
     public static int CODE_OK = 200;
 
     public static int CODE_POST_DOES_NOT_EXIST = -301;
@@ -81,6 +83,8 @@ public class ResponseUtil {
     public static String MSG_SAVE_POST_FAILED = "Failed to save post!";
 
     public static String MSG_POST_DOES_NOT_EXIST = "Post does not exist!";
+
+    public static String MSG_USER_UPDATE_ERROR= "User update error!";
 
 
 }

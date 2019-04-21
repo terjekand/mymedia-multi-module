@@ -35,9 +35,9 @@ public class UserDataBase {
                     user.getUsername()    + "', '" +
                     user.getPassword()    + "', '" +
                     user.getEmail()       + "', '" +
+                    user.getFullname()    + "', '" +
                     user.getBio()         + "', '" +
-                    user.getPhoneNumber() + "', '" +
-                    user.getFullname()    + "')");
+                    user.getPhoneNumber() + "')");
             /**
              * "INSERT INTO " + TABLE_NAME + " + " VALUES("' + user.getId() + "', '" + user.getUsername() + "', '" + user.getPassword() + "', '" + user.getEmail() + "', '" + user.getFullname + "')"
             */
@@ -47,20 +47,14 @@ public class UserDataBase {
         }
     }
 
-    public void update(User user){
-
-        try {
-
+    public void update(User user) throws SQLException{
             String sql = "update " + TABLE_NAME + " set bio ='" + user.getBio() +
-                                                  "' phonenumber ='" + user.getId() +
-                                                  "' fullname ='" + user.getFullname() +
+                                                  "', phonenumber ='" + user.getPhoneNumber() +
+                                                  "', fullname ='" + user.getFullname() +
                                                   "' where id ='" + user.getId() + "'";
             Statement statement = databaseConnector.connection.createStatement();
             statement.executeUpdate(sql);
 
-        } catch (SQLException e) {
-            log.error(e + "");
-        }
     }
 
     private User convertResultSetToUser(ResultSet resultSet){

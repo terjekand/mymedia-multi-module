@@ -37,6 +37,9 @@ public class Converter {
      */
     public static User convertUpdateProfileDtoToUser(UpdateProfileDto updateProfileDto){
         User user = USER_DATA_BASE.getUserById(updateProfileDto.getUserId());
+        if(user == null){
+            return null;
+        }
         user.setBio(updateProfileDto.getBio());
         user.setPhoneNumber(updateProfileDto.getPhoneNumber());
         return user;

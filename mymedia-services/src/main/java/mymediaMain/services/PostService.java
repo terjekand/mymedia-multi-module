@@ -83,6 +83,14 @@ public class PostService implements PostInterf {
 
     @Override
     public PostResponse createPost(CreatePostDto createPostDto) {
+        if(createPostDto.getText() == null || "".equals(createPostDto.getText()) ||
+           createPostDto.getUserId() == null ||"".equals(createPostDto.getUserId())){
+            return  new PostResponse(ResponseUtil.MSG_BAD_PARAMETERS, ResponseUtil.CODE_BAD_PARAMETERS, null);
+        }
+        User user = USER_DATA_BASE.getUserById(createPostDto.getUserId());
+        if(user == null){
+            return new PostResponse(ResponseUtil.MSG_USER_NOT_FOUND, ResponseUtil.CODE_USER_NOT_FOUND, null);
+        }
         Post post = new Post(createPostDto.getUserId(), createPostDto.getText());
         try{
             POST_DATA_BASE.save(post);
