@@ -24,45 +24,8 @@ public class PostService implements PostInterf {
     private static final PostDataBase POST_DATA_BASE = PostDataBase.getInstance();
     private static final UserDataBase USER_DATA_BASE = UserDataBase.getInstance();
     private static final SessionManager SESSION_MANAGER = SessionManager.getInstance();
-    private static final String DIVIDER = "###";
 
-    /**
-     * Convert String to a list.
-     * The liker's of a post is stored in a concatenated string divide with DIVIDER.
-     * This function creates substrings and return them in a list.
-     *
-     * @param concatedIdString it usually comes from the database.
-     * @return divided userId list.
-     */
-    private List<String> convertStringToIdList(String concatedIdString){
-        List<String> result = new ArrayList<>();
-        String tmp;
 
-        while(concatedIdString.contains(DIVIDER)){
-            tmp = concatedIdString.substring(0, concatedIdString.indexOf(DIVIDER));
-            result.add(tmp);
-            concatedIdString = concatedIdString.substring(concatedIdString.indexOf(DIVIDER) + DIVIDER.length());
-        }
-        return result;
-    }
-
-    /**
-     * Convert userId list to a list witch contains Users for the ids.
-     *
-     * @param userIds a list with user ids.
-     * @return list of users.
-     */
-    private List<User> convertIdsToUsers(List<String> userIds){
-        List<User> users = new ArrayList<>();
-        for(String id : userIds){
-            User tmp = USER_DATA_BASE.getUserById(id);
-            if(tmp != null)
-                users.add(tmp);
-            else
-                log.error("Unable to get User for this id: " + id);
-        }
-        return users;
-    }
 
     @Override
     public LikersResponse getLikersOfPost(String postId){
@@ -70,8 +33,8 @@ public class PostService implements PostInterf {
         if(post == null){
             return new LikersResponse(ResponseUtil.MSG_POST_DOES_NOT_EXIST, ResponseUtil.CODE_POST_DOES_NOT_EXIST, null);
         }
-        List<String> userIdList = convertStringToIdList(post.getLikers());
-        List<User> likers = convertIdsToUsers(userIdList);
+        List<String> userIdList = Converter.convertStringToIdList(post.getLikers());
+        List<User> likers = Converter.convertIdsToUsers(userIdList);
         return new LikersResponse(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK, likers);
     }
 
@@ -110,16 +73,9 @@ public class PostService implements PostInterf {
         if(userId == null || userId.equals("")){
             return new Response(ResponseUtil.MSG_BAD_PARAMETERS, ResponseUtil.CODE_BAD_PARAMETERS);
         }
-        String newLike = userId + DIVIDER;
+        String newLike = userId + Converter.DIVIDER;
         String likers = post.getLikers();
-        if(likers.contains(newLike)){
-            String before = likers.substring(0, likers.indexOf(newLike));
-            String after = likers.substring(likers.indexOf(newLike) + newLike.length());
-            likers = before + after;
-        }
-        else{
-            likers += newLike;
-        }
+        likers = Converter.addOrRemoveIfContains(likers, newLike);
         post.setLikers(likers);
         try{
             POST_DATA_BASE.updateLikers(post);
@@ -156,4 +112,25 @@ public class PostService implements PostInterf {
 
         return getPostsOfUserByUserId(userId);
     }
+
+    @Override
+    public Response deletePostById(String postId) {
+
+        if(postId == null || postId == ""){
+            return new Response(ResponseUtil.MSG_BAD_PARAMETERS, ResponseUtil.CODE_BAD_PARAMETERS);
+        }
+
+        Post post = POST_DATA_BASE.getPostById(postId);
+        if(post == null){
+            return new Response(ResponseUtil.MSG_POST_DOES_NOT_EXIST, ResponseUtil.CODE_POST_DOES_NOT_EXIST);
+        }
+        try{
+            POST_DATA_BASE.deletePostById(postId);
+        } catch (SQLException e){
+            log.error("An error occurred while delete post: " + e);
+            return new Response(ResponseUtil.MSG_DELETE_POST_FAILED, ResponseUtil.CODE_DELETE_POST_FAILED);
+        }
+        return new Response(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK);
+    }
+
 }

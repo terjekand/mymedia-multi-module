@@ -62,6 +62,12 @@ public class PostDataBase {
         statement.executeUpdate(sql);
     }
 
+    public void deletePostById(String postId) throws SQLException{
+        Statement statement = databaseConnector.connection.createStatement();
+        String sql = "DELETE FROM "+ TABLE_NAME + " WHERE id = '"+ postId + "'" ;
+        statement.executeUpdate(sql);
+    }
+
     public Post getPostById(String postId){
         try{
             Statement statement = databaseConnector.connection.createStatement();

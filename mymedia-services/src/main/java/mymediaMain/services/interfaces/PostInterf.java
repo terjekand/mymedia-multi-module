@@ -80,6 +80,14 @@ public interface PostInterf {
      */
     PostListResponse getPostsOfUserByToken(String token);
 
+    /**
+     * Deletes the post which belongs to te given id.
+     *
+     * @param postId the id of the post what we wants to delete.
+     * @return basic response with an error code and message.
+     */
+    Response deletePostById(String postId);
+
 
 
 }

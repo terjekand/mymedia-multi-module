@@ -1,5 +1,6 @@
 controllers\PersonalController.class
+controllers\PostController.class
+controllers\FollowController.class
 controllers\SearchController.class
 controllers\AuthenticationController.class
-controllers\PostController.class
 conf\JAXRSConfiguration.class

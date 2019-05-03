@@ -40,6 +40,8 @@ public class ResponseUtil {
 
     public static int CODE_SAVE_POST_FAILED = -504;
 
+    public static int CODE_DELETE_POST_FAILED = -505;
+
     public static int CODE_UNKNOWN_ERROR = -999;
 
     public static int CODE_NOT_IMPLEMENTED = -3166;
@@ -85,6 +87,8 @@ public class ResponseUtil {
     public static String MSG_POST_DOES_NOT_EXIST = "Post does not exist!";
 
     public static String MSG_USER_UPDATE_ERROR= "User update error!";
+
+    public static String MSG_DELETE_POST_FAILED = "An error occurred while delete post";
 
 
 }

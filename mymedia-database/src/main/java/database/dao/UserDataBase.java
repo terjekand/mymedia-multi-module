@@ -37,7 +37,10 @@ public class UserDataBase {
                     user.getEmail()       + "', '" +
                     user.getFullname()    + "', '" +
                     user.getBio()         + "', '" +
-                    user.getPhoneNumber() + "')");
+                    user.getPhoneNumber() + "', '" +
+                    user.getFollowers()   + "', '" +
+                    user.getFollowing()   +
+                    "')");
             /**
              * "INSERT INTO " + TABLE_NAME + " + " VALUES("' + user.getId() + "', '" + user.getUsername() + "', '" + user.getPassword() + "', '" + user.getEmail() + "', '" + user.getFullname + "')"
             */
@@ -57,6 +60,20 @@ public class UserDataBase {
 
     }
 
+    public void updateFollowers(User user) throws SQLException {
+        String sql = "update " + TABLE_NAME + " set followers ='" + user.getFollowers() +
+                "' where id ='" + user.getId() + "'";
+        Statement statement = databaseConnector.connection.createStatement();
+        statement.executeUpdate(sql);
+    }
+
+    public void updateFollowing(User user) throws SQLException {
+        String sql = "update " + TABLE_NAME + " set following ='" + user.getFollowing() +
+                "' where id ='" + user.getId() + "'";
+        Statement statement = databaseConnector.connection.createStatement();
+        statement.executeUpdate(sql);
+    }
+
     private User convertResultSetToUser(ResultSet resultSet){
         User user = new User();
         try{
@@ -67,6 +84,8 @@ public class UserDataBase {
             user.setUsername(resultSet.getString("USERNAME"));
             user.setBio(resultSet.getString("BIO"));
             user.setPhoneNumber(resultSet.getString("PHONENUMBER"));
+            user.setFollowers(resultSet.getString("FOLLOWERS"));
+            user.setFollowing(resultSet.getString("FOLLOWING"));
             return user;
         }catch (SQLException e){
             log.error(e + "");

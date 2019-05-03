@@ -4,6 +4,7 @@ package mymediaMain.config;
 import lombok.extern.slf4j.Slf4j;
 import mymediaMain.enums.ResponseUtil;
 import mymediaMain.exceptions.MalformedTokenException;
+import mymediaMain.model.Token;
 import mymediaMain.response.LoginResponse;
 import mymediaMain.response.Response;
 
@@ -14,7 +15,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class SessionManager {
 
-    private Map<String, String> sessionMap = new HashMap<>();
+    private Map<String, Token> sessionMap = new HashMap<>();
     private static SessionManager instance = new SessionManager();
 
 
@@ -38,7 +39,7 @@ public class SessionManager {
 
             String token = "TK_" + UUID.randomUUID().toString();
 
-            sessionMap.put(userId, token);
+            sessionMap.put(userId, new Token(token));
             return new LoginResponse(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK, token);
         }
         return new LoginResponse(ResponseUtil.MSG_ALREADY_AUTHORIZED_USER, ResponseUtil.CODE_ALREADY_AUTHORIZED_USER, null);
@@ -46,12 +47,21 @@ public class SessionManager {
 
     /**
      * Checks if the userId can be found in the sessionMap.
+     * Checks if the token is expired, if it is, then we will remove it.
      *
      * @param userId the userId what we are looking for.
-     * @return true if the user has permission.
+     * @return true if the user has permission and the token is not expired.
      */
     public boolean hasPermission(String userId) {
-        return sessionMap.containsKey(userId);
+        if(!sessionMap.containsKey(userId)){
+            return false;
+        }
+        Token token = sessionMap.get(userId);
+        if(token.isExpired()){
+            sessionMap.remove(userId);
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -61,7 +71,7 @@ public class SessionManager {
      * @return token.
      */
     public String getTokenOfUser(String userId) {
-        return sessionMap.get(userId);
+        return sessionMap.get(userId).getValue();
     }
 
     /**
@@ -71,10 +81,10 @@ public class SessionManager {
      * @param token the token of the user.
      * @return userId.
      */
-    private static String getUserIdByToken(Map<String, String> map, String token) {
+    private static String getUserIdByToken(Map<String, Token> map, String token) {
         List<String> keys = map.entrySet()
                 .stream()
-                .filter(entry -> Objects.equals(entry.getValue(), token))
+                .filter(entry -> Objects.equals(entry.getValue().getValue(), token))
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
         return keys.get(0);
@@ -82,12 +92,26 @@ public class SessionManager {
 
     /**
      * The public version of this function.
+     * It's refreshes the token.
      *
      * @param token this usually comes from the frontend.
      * @return userId.
      */
     public String getUserIdByToken(String token){
-        return getUserIdByToken(sessionMap, token);
+        String userId = getUserIdByToken(sessionMap, token);
+        sessionMap.get(userId).refresh();
+        return userId;
+    }
+
+    /**
+     * Used to remove expired tokens.
+     */
+    public void removeExpiredTokens(){
+        for (Map.Entry<String, Token> entry : sessionMap.entrySet()) {
+            if(entry.getValue().isExpired()){
+                sessionMap.remove(entry.getKey());
+            }
+        }
     }
 
     /**
@@ -103,7 +127,7 @@ public class SessionManager {
 
             log.error("" + ex);
 
-            return new Response(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK);
+            return new Response(ResponseUtil.MSG_MALFORMED_TOKEN, ResponseUtil.CODE_MALFORMED_TOKEN);
         }
         String userId = getUserIdByToken(sessionMap, token);
 
@@ -116,7 +140,7 @@ public class SessionManager {
 
     public List<String> listAllTokensOfSession() {
         final ArrayList<String> tokens = new ArrayList<>();
-        sessionMap.values().stream().forEach(e -> tokens.add(e));
+        sessionMap.values().stream().forEach(e -> tokens.add(e.getValue()));
         return tokens;
     }
 

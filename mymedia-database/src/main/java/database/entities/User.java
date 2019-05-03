@@ -18,6 +18,8 @@ public class User implements Serializable {
     private String email;
     private String fullname;
     private String bio;
+    private String followers;
+    private String following;
     private String phoneNumber;
 
     public User(String username, String password, String email, String fullname) {
@@ -28,6 +30,8 @@ public class User implements Serializable {
         this.fullname = fullname;
         this.bio = null;
         this.phoneNumber = null;
+        this.followers = "";
+        this.following = "";
     }
 
     public User() {

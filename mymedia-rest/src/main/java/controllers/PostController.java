@@ -1,11 +1,10 @@
 package controllers;
 
-import database.entities.Post;
-import database.entities.User;
 import mymediaMain.dto.CreatePostDto;
 import mymediaMain.dto.LikeUserIdDto;
 import mymediaMain.dto.LikeWithTokenDto;
 import mymediaMain.response.LikersResponse;
+import mymediaMain.response.PostListResponse;
 import mymediaMain.response.PostResponse;
 import mymediaMain.response.Response;
 import mymediaMain.services.PostService;
@@ -42,6 +41,36 @@ public class PostController {
     public Response likeWithToken(LikeWithTokenDto likeWithTokenDto) {
         return postService.likeWithToken(likeWithTokenDto.getToken(), likeWithTokenDto.getPostId());
     }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/getpostsofuserbyusername/{username}")
+    public PostListResponse getPostsOfUserByUsername(@PathParam("username") String username) {
+        return postService.getPostsOfUserByUsername(username);
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/getpostsofuserbytoken/{token}")
+    public PostListResponse getPostsOfUserByToken(@PathParam("token") String token) {
+        return postService.getPostsOfUserByToken(token);
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/getpostsofuserbyuserid/{userId}")
+    public PostListResponse getPostsOfUserByUserId(@PathParam("userId") String userId) {
+        return postService.getPostsOfUserByUserId(userId);
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/deletepostbyid/{postId}")
+    public Response deletePostById(@PathParam("postId") String postId) {
+        return postService.deletePostById(postId);
+    }
+
+
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
