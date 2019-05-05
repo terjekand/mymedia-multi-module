@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {ApiService} from '../shared/api.service';
+import {LoginResponse, LoginViewModel, RegistrationViewModel, RegResponse} from './model/login';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -20,43 +22,67 @@ export class LoginComponent implements OnInit {
     password_re: '',
     isAcceptAgreement: false
   };
-  constructor(private http: HttpClient) { }
+
+  public actualUser: LoginResponse = {
+    errorCode: -1,
+    errorMessage: '',
+    token: ''
+  };
+
+  public regResponse: RegResponse = {
+    errorCode: '',
+    errorMessage: '',
+    userId: ''
+  };
+
+  constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit() {
   }
 
 
+  public setCookie(name: string, val: string) {
+    const date = new Date();
+    const value = val;
+
+    // Set it expire in 7 days
+    date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000));
+
+    // Set it
+    document.cookie = name + '=' + value + '; expires=' + date.toUTCString() + '; path=/';
+  }
+
+
   doLogin(): void {
-    const URL = 'http://localhost:8080/mymedia-rest/rest/auth/login';
-    this.http.post(URL, this.loginModel).subscribe(
+    this.apiService.postLoginUser(this.loginModel).subscribe(
       res => {
-        location.reload();
+        this.actualUser = res;
+        this.setCookie('token' , this.actualUser.token);
+        alert('token:  ' + this.actualUser.token);
+        if (this.actualUser.errorCode > 0) {
+          this.router.navigateByUrl('/newsfeed');
+        } else {
+          location.reload();
+        }
       },
-      error1 => {
-        alert('An error has occurred!');
+      err => {
+        alert('failed to login');
       }
     );
   }
 
   doRegistration(): void {
-    const URL = 'http://localhost:8080/mymedia-rest/rest/auth/registration';
-    alert(this.regModel.username);
-    alert(this.regModel.password);
-    alert(this.regModel.password_re);
-    alert(this.regModel.fullname);
-    alert(this.regModel.email);
-    alert(this.regModel.isAcceptAgreement);
-}
-}
-
-export interface LoginViewModel {
-  username: string;
-  password: string;
+    this.apiService.postRegisterUser(this.regModel).subscribe(
+      res => {
+        this.regResponse = res;
+        alert('MSG:' + this.regResponse.errorMessage + '    CODE:' + this.regResponse.errorCode);
+        location.reload();
+      },
+      err => {
+        alert('Failed to register');
+      }
+    );
+  }
 }
 
-export interface RegistrationViewModel extends  LoginViewModel{
-  fullname: string;
-  email: string;
-  password_re: string;
-  isAcceptAgreement: boolean;
-}
+
