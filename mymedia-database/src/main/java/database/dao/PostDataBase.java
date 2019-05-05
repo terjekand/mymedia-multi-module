@@ -3,14 +3,10 @@ package database.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import database.entities.Post;
-import database.entities.User;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -56,7 +52,6 @@ public class PostDataBase {
     }
 
     public void updateLikers(Post post) throws SQLException{
-//      update employee set name='Michael Sam' where emp_id=1
         String sql = "update " + TABLE_NAME + " set likers ='" + post.getLikers() + "' where id ='" + post.getId() + "'";
         Statement statement = databaseConnector.connection.createStatement();
         statement.executeUpdate(sql);
@@ -87,6 +82,27 @@ public class PostDataBase {
         try{
             Statement statement = databaseConnector.connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_NAME  + " WHERE userId = '"+ userId + "'" );
+            List<Post> posts = new ArrayList<>();
+            while (resultSet.next()){
+                posts.add(convertResultSetToPost(resultSet));
+            }
+            return posts;
+        }catch (SQLException e){
+            log.error(e + "");
+            return null;
+        }
+    }
+
+    public List<Post> getPostsByUserIdList(List<String> userIds){
+        String sql = "";
+        for(int i = 0; i < userIds.size() - 1; i++){
+            sql += "userId = '" + userIds.get(i) + "' OR ";
+        }
+        sql += "userId = '" + userIds.get(userIds.size() - 1) + "'";
+
+        try{
+            Statement statement = databaseConnector.connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_NAME  + " WHERE "+ sql +" order by post_date desc");
             List<Post> posts = new ArrayList<>();
             while (resultSet.next()){
                 posts.add(convertResultSetToPost(resultSet));
