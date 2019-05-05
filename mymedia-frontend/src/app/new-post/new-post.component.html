@@ -3,8 +3,8 @@
 <div class="post-container">
   <div class="title">Create Post</div>
   <div class="create">
-    <form action="#">
-      <textarea name="post" placeholder="Share your thoughts..." onfocus="this.placeholder=''" onblur="this.placeholder = 'Share your thoughts...'"></textarea>
+    <form (ngSubmit)="doCreatePost()">
+      <textarea name="post" placeholder="Share your thoughts..." onfocus="this.placeholder=''" onblur="this.placeholder = 'Share your thoughts...'" [(ngModel)]="createPostDto.text"></textarea>
       <br><br>
       <input type="submit" value="Share">
       <input type="reset" value="Clear">

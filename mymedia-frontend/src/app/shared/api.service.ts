@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {LoginViewModel, LoginResponse, RegistrationViewModel} from '../login/model/login';
+import {CreatePostDto, CreatePostResponse} from '../new-post/model/createPost';
 
 
 @Injectable({
@@ -10,8 +11,12 @@ import {LoginViewModel, LoginResponse, RegistrationViewModel} from '../login/mod
 export class ApiService {
   private BASE_URL = 'http://localhost:8080/mymedia-rest/rest/';
   private AUTH_URL = this.BASE_URL + 'auth/';
+  private POST_URL = this.BASE_URL + 'post/';
+
   private LOGIN_URL = this.AUTH_URL + 'login';
   private REGISTER_URL = this.AUTH_URL + 'registration';
+
+  private CREATE_POST_URL = this.POST_URL + 'createpostwithtoken';
 
 
   constructor(private http: HttpClient) {
@@ -53,6 +58,9 @@ export class ApiService {
 
   postLoginUser(loginData: LoginViewModel): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(this.LOGIN_URL, loginData);
+  }
+  postCreatePost(createPostDto: CreatePostDto): Observable<CreatePostResponse> {
+    return this.http.post<CreatePostResponse>(this.CREATE_POST_URL, createPostDto);
   }
 
 }
