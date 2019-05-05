@@ -1,6 +1,8 @@
 controllers\PersonalController.class
 controllers\PostController.class
 controllers\FollowController.class
+controllers\NewsFeedController.class
 controllers\SearchController.class
 controllers\AuthenticationController.class
+conf\SwaggerConfiguration.class
 conf\JAXRSConfiguration.class

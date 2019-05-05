@@ -1,4 +1,4 @@
-FROM payara/server-full
+FROM payara/server-full:5.184
 
 COPY mymedia-rest/target/mymedia-rest.war $DEPLOY_DIR
 

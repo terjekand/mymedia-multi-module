@@ -6,6 +6,7 @@ import database.entities.Post;
 import lombok.extern.slf4j.Slf4j;
 import mymediaMain.config.SessionManager;
 import mymediaMain.dto.CreatePostDto;
+import mymediaMain.dto.CreatePostWithTokenDto;
 import mymediaMain.enums.ResponseUtil;
 import mymediaMain.response.LikersResponse;
 import mymediaMain.response.PostListResponse;
@@ -42,6 +43,17 @@ public class PostService implements PostInterf {
     public Response likeWithToken(String token, String postId){
         String userId = SESSION_MANAGER.getUserIdByToken(token);
         return likeWithUserId(userId, postId);
+    }
+
+    public PostResponse createPostWithToken(CreatePostWithTokenDto CreatePostWithTokenDto){
+        String userId = SESSION_MANAGER.getUserIdByToken(CreatePostWithTokenDto.getToken());
+        if(userId == null){
+            return new PostResponse(ResponseUtil.MSG_TOKEN_DOES_NOT_EXIST, ResponseUtil.CODE_TOKEN_DOES_NOT_EXIST, null);
+        }
+        CreatePostDto createPostDto = new CreatePostDto();
+        createPostDto.setText(CreatePostWithTokenDto.getText());
+        createPostDto.setUserId(userId);
+        return createPost(createPostDto);
     }
 
     @Override

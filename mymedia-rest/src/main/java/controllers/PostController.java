@@ -1,6 +1,7 @@
 package controllers;
 
 import mymediaMain.dto.CreatePostDto;
+import mymediaMain.dto.CreatePostWithTokenDto;
 import mymediaMain.dto.LikeUserIdDto;
 import mymediaMain.dto.LikeWithTokenDto;
 import mymediaMain.response.LikersResponse;
@@ -78,5 +79,12 @@ public class PostController {
     @Path("/createpost")
     public PostResponse createPost(CreatePostDto createPostDto){
         return postService.createPost(createPostDto);
+    }
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/createpostwithtoken")
+    public PostResponse createPost(CreatePostWithTokenDto createPostWithTokenDto){
+        return postService.createPostWithToken(createPostWithTokenDto);
     }
 }

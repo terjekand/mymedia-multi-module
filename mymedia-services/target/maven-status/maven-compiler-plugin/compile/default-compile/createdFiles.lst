@@ -4,9 +4,11 @@ mymediaMain\dto\FollowWithTokenDto.class
 mymediaMain\response\Response.class
 mymediaMain\dto\LoginDto.class
 mymediaMain\response\UserIdResponse.class
+mymediaMain\services\FollowService.class
 mymediaMain\model\PersonalData.class
 mymediaMain\dto\LikeUserIdDto.class
 mymediaMain\response\SearchResponse.class
+mymediaMain\services\NewsFeedService.class
 mymediaMain\exceptions\MalformedTokenException.class
 mymediaMain\services\RegistrationService.class
 mymediaMain\dto\LikeWithTokenDto.class
@@ -30,4 +32,3 @@ mymediaMain\dto\RegistrationDto.class
 mymediaMain\model\Token.class
 mymediaMain\dto\UpdateProfileDto.class
 mymediaMain\services\BCrypt.class
-mymediaMain\services\FollowingService.class
