@@ -28,6 +28,11 @@ public class PersonalService {
         return new PersonalDataResponse(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK,Converter.convertUserToPersonalData(user));
     }
 
+    public PersonalDataResponse getPersonalDataByToken(String token){
+        String userId = SESSION_MANAGER.getUserIdByToken(token);
+        return getPersonalData(userId);
+    }
+
     private Response updatePersonalDataByToken(UpdateProfileDto updateProfileDto){
         String userId = SESSION_MANAGER.getUserIdByToken(updateProfileDto.getToken());
         updateProfileDto.setUserId(userId);

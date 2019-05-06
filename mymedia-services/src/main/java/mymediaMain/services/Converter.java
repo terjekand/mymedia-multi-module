@@ -48,8 +48,15 @@ public class Converter {
         if(user == null){
             return null;
         }
-        user.setBio(updateProfileDto.getBio());
-        user.setPhoneNumber(updateProfileDto.getPhoneNumber());
+        if(updateProfileDto.getBio() != null){
+            user.setBio(updateProfileDto.getBio());
+        }
+        if(updateProfileDto.getPhoneNumber() != null){
+            user.setPhoneNumber(updateProfileDto.getPhoneNumber());
+        }
+        if(updateProfileDto.getFullName() != null){
+            user.setFullname(updateProfileDto.getFullName());
+        }
         return user;
     }
 

@@ -27,6 +27,12 @@ public class PersonalController {
     public PersonalDataResponse updatePersonalData(@PathParam("id") String userId){
         return personalService.getPersonalData(userId);
     }
+    @GET
+    @Path("/getdatabytoken/{token}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public PersonalDataResponse getPersonalDataByToken(@PathParam("token") String token){
+        return personalService.getPersonalDataByToken(token);
+    }
 
 
 }

@@ -14,6 +14,7 @@ import java.io.Serializable;
 public class UpdateProfileDto implements Serializable {
     private String userId;
     private String token;
+    private String fullName;
     private String bio;
     private String phoneNumber;
 }
