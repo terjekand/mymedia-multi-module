@@ -7,17 +7,17 @@
     <a href="#"><b>311</b> followers</a>
     <a href="#"><b>349</b> following</a>
   </div>
-  <form action="#">
+  <form (ngSubmit)="updatePersonalData()">
     <div class="profile-container">
       <div class="profile-heading">Profile Infomation</div>
-      <div class="profile-body"><b>Username</b><br>kissd97</div>
-      <div class="profile-body"><b>Full name</b><br><input type="text" name="fname"></div>
-      <div class="profile-body"><b>Bio</b><br><input type="text" name="bio"></div>
+      <div class="profile-body"><b>Username</b><br>{{personalResponse.personalData.username}}</div>
+      <div class="profile-body"><b>Full name</b><br><input type="text" name="fullName" [(ngModel)]="updateProfile.fullName"></div>
+      <div class="profile-body"><b>Bio</b><br><input type="text" name="bio" [(ngModel)]="updateProfile.bio"></div>
     </div>
     <div class="profile-container">
       <div class="profile-heading">Personal Infomation</div>
       <div class="profile-body"><b>Email</b><br>info@mail.com</div>
-      <div class="profile-body"><b>Phone</b><br><input type="text" name="phone"></div>
+      <div class="profile-body"><b>Phone</b><br><input type="text" name="phoneNumber" [(ngModel)]="updateProfile.phoneNumber"></div>
     </div>
     <input type="submit" value="Save">
     <input type="reset" value="Clear">

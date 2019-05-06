@@ -4,6 +4,9 @@ import {HttpClient} from '@angular/common/http';
 import {LoginViewModel, LoginResponse, RegistrationViewModel} from '../login/model/login';
 import {CreatePostDto, CreatePostResponse} from '../new-post/model/createPost';
 import {MymediaResponse} from './model/Shared';
+import {PostListResponse} from '../news-feed/model/PostListResponse';
+import {PersonalResponse} from '../profile/Model/PersonalData';
+import {UpdateProfile} from '../profile-edit/model/UpdateProfile';
 
 
 @Injectable({
@@ -13,46 +16,44 @@ export class ApiService {
   private BASE_URL = 'http://localhost:8080/mymedia-rest/rest/';
   private AUTH_URL = this.BASE_URL + 'auth/';
   private POST_URL = this.BASE_URL + 'post/';
+  private PERSONAL_URL = this.BASE_URL + 'personal/';
+  private NEWSFEED_URL = this.BASE_URL + 'newsfeed/';
 
   private LOGIN_URL = this.AUTH_URL + 'login';
   private REGISTER_URL = this.AUTH_URL + 'registration';
   private LOGOUT_URL = this.AUTH_URL + 'logout/';
 
+  private GET_PERSONAL_DATA_BY_ID_URL = this.PERSONAL_URL + 'getdata/';
+  private GET_PERSONAL_DATA_BY_TOKEN_URL = this.PERSONAL_URL + 'getdatabytoken/';
+  private UPDATE_PERSONAL_DATA = this.PERSONAL_URL + 'update';
+
   private CREATE_POST_URL = this.POST_URL + 'createpostwithtoken';
+
+  private GET_NEWS_FEED_BY_TOKEN_URL = this.NEWSFEED_URL + 'getbytoken/';
 
 
   constructor(private http: HttpClient) {
 
   }
 
+  public getCookie(name: string) {
+    const value = '; ' + document.cookie;
+    const parts = value.split('; ' + name + '=');
 
-  // postFeedback(feedback: FeedbackViewModel): Observable<any> {
-  //   return this.http.post(this.SEND_FEEDBACK_URL, feedback);
-  // }
-  //
-  // getFavoritesOfUser(username: number): Observable<Favorite[]> {
-  //   return this.http.get<Favorite[]>(this.GET_FAVORITES_OF_USER_URL  + username);
-  // }
-  //
-  // postDeleteFavoriteById(favoriteId: number): Observable<any> {
-  //   return this.http.post(this.DELETE_FROM_FAVORITES_URL, favoriteId);
-  // }
-  //
-  // postAddToFavorites(fav: FavoriteViewModel): Observable<any> {
-  //   return this.http.post(this.ADD_TO_FAVORITES_URL, fav);
-  // }
-  //
-  // getCartByUser(id: number): Observable<Cart[]> {
-  //   return this.http.get<Cart[]>(this.GET_CART_BY_USER + id);
-  // }
-  //
-  // postDeleteCartById(cartId: number): Observable<any> {
-  //   return this.http.post(this.DELETE_CART, cartId);
-  // }
-  //
-  // postAddToCart(cart: CartViewModel): Observable<any>{
-  //   return this.http.post(this.ADD_TO_CART, cart);
-  // }
+    if (parts.length === 2) {
+      return parts.pop().split(';').shift();
+    }
+  }
+
+  public deleteCookie(name: string) {
+    const date = new Date();
+
+    // Set it expire in -1 days
+    date.setTime(date.getTime() + (-1 * 24 * 60 * 60 * 1000));
+
+    // Set it
+    document.cookie = name + '=; expires=' + date.toUTCString() + '; path=/';
+  }
 
   postRegisterUser(regData: RegistrationViewModel ): Observable<any> {
     return this.http.post(this.REGISTER_URL, regData);
@@ -67,6 +68,22 @@ export class ApiService {
 
   getLogout(token: string): Observable<MymediaResponse> {
     return this.http.get<MymediaResponse>(this.LOGOUT_URL + token);
+  }
+
+  getNewsfeedByToken(token: string): Observable<PostListResponse> {
+    return this.http.get<PostListResponse>(this.GET_NEWS_FEED_BY_TOKEN_URL + token);
+  }
+
+  getPersonalDataByUserId(userId: string): Observable<PersonalResponse> {
+    return this.http.get<PersonalResponse>(this.GET_PERSONAL_DATA_BY_ID_URL + userId);
+  }
+
+  getPersonalDataByToken(token: string): Observable<PersonalResponse> {
+    return this.http.get<PersonalResponse>(this.GET_PERSONAL_DATA_BY_TOKEN_URL + token);
+  }
+
+  postUpdatePersonalData(updateProfile: UpdateProfile): Observable<MymediaResponse> {
+    return this.http.post<MymediaResponse>(this.UPDATE_PERSONAL_DATA, updateProfile);
   }
 
 }
