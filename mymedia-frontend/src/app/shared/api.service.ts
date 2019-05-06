@@ -3,6 +3,7 @@ import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {LoginViewModel, LoginResponse, RegistrationViewModel} from '../login/model/login';
 import {CreatePostDto, CreatePostResponse} from '../new-post/model/createPost';
+import {MymediaResponse} from './model/Shared';
 
 
 @Injectable({
@@ -15,6 +16,7 @@ export class ApiService {
 
   private LOGIN_URL = this.AUTH_URL + 'login';
   private REGISTER_URL = this.AUTH_URL + 'registration';
+  private LOGOUT_URL = this.AUTH_URL + 'logout/';
 
   private CREATE_POST_URL = this.POST_URL + 'createpostwithtoken';
 
@@ -61,6 +63,10 @@ export class ApiService {
   }
   postCreatePost(createPostDto: CreatePostDto): Observable<CreatePostResponse> {
     return this.http.post<CreatePostResponse>(this.CREATE_POST_URL, createPostDto);
+  }
+
+  getLogout(token: string): Observable<MymediaResponse> {
+    return this.http.get<MymediaResponse>(this.LOGOUT_URL + token);
   }
 
 }

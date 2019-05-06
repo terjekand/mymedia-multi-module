@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ApiService} from '../shared/api.service';
+import {Router} from '@angular/router';
+import {MymediaResponse} from '../shared/model/Shared';
 
 @Component({
   selector: 'app-navigation',
@@ -9,9 +12,13 @@ export class NavigationComponent implements OnInit {
 
   token: string;
 
+  response: MymediaResponse = {
+    errorMessage: '',
+    errorCode: -1
+  }
   ngOnInit() {
   }
-  constructor() {
+  constructor(private apiService: ApiService, private router: Router) {
     this.token = this.getCookie('token');
   }
 
@@ -36,8 +43,19 @@ export class NavigationComponent implements OnInit {
 
 
   public logout(): any {
-    this.deleteCookie('token');
-    location.reload();
+    this.apiService.getLogout(this.getCookie('token')).subscribe(
+      res => {
+        this.response = res;
+        alert('MSG: ' + this.response.errorMessage + ' CODE:  ' + this.response.errorCode);
+        this.deleteCookie('token');
+        this.router.navigateByUrl('/');
+
+      },
+      err => {
+        alert('An error occurred while logout');
+        location.reload();
+      }
+    );
   }
 
 
