@@ -95,10 +95,15 @@ public class PostDataBase {
 
     public List<Post> getPostsByUserIdList(List<String> userIds){
         String sql = "";
-        for(int i = 0; i < userIds.size() - 1; i++){
-            sql += "userId = '" + userIds.get(i) + "' OR ";
+        try{
+            for(int i = 0; i < userIds.size() - 1; i++){
+                sql += "userId = '" + userIds.get(i) + "' OR ";
+            }
+            sql += "userId = '" + userIds.get(userIds.size() - 1) + "'";
+        } catch (ArrayIndexOutOfBoundsException ae){
+            log.error(ae + "");
+            return new ArrayList<>();
         }
-        sql += "userId = '" + userIds.get(userIds.size() - 1) + "'";
 
         try{
             Statement statement = databaseConnector.connection.createStatement();
