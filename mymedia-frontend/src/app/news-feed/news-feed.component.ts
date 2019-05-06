@@ -27,14 +27,19 @@ export class NewsFeedComponent implements OnInit {
         this.postListResponse = res;
         if (this.postListResponse.errorCode < 0) {
           alert('MSG: ' + this.postListResponse.errorMessage + ' CODE: ' + this.postListResponse.errorCode);
+
+          this.apiService.getLogout(this.apiService.getCookie('token'));
+          this.apiService.deleteCookie('token');
           this.router.navigateByUrl('/');
         } else {
           this.posts = this.postListResponse.postList;
-          alert('size: ' + this.posts.length);
         }
       },
       err => {
         alert('An error occurred while load newsfeed');
+
+        this.apiService.getLogout(this.apiService.getCookie('token'));
+        this.apiService.deleteCookie('token');
         this.router.navigateByUrl('/');
       }
     );

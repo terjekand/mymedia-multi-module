@@ -4,7 +4,7 @@
 <div *ngFor="let post of posts" class="post-container">
   <div class="author">
     <img class="avatar" src="assets/images/newsfeed/avatar.jpg" alt="Profile Picture">
-    <div class="author-name">{{post.userId}}</div>
+    <div class="author-name">{{apiService.getUserNameByUserid(post.userId)}}</div>
   </div>
   <p class="author-date">{{post.postDate}}</p>
   <div class="content">

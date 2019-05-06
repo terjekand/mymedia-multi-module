@@ -31,6 +31,17 @@ export class ApiService {
 
   private GET_NEWS_FEED_BY_TOKEN_URL = this.NEWSFEED_URL + 'getbytoken/';
 
+  personalResponse: PersonalResponse = {
+    errorCode: -1,
+    errorMessage: '',
+    personalData: {
+      bio: '',
+      fullName: '',
+      phoneNumber: '',
+      email: '',
+      username: ''
+    }
+  };
 
   constructor(private http: HttpClient) {
 
@@ -76,6 +87,18 @@ export class ApiService {
 
   getPersonalDataByUserId(userId: string): Observable<PersonalResponse> {
     return this.http.get<PersonalResponse>(this.GET_PERSONAL_DATA_BY_ID_URL + userId);
+  }
+
+  getUserNameByUserid(userId: string): string {
+    this.getPersonalDataByUserId(userId).subscribe(
+      res => {
+        this.personalResponse = res;
+      },
+      err => {
+        alert('An error occurred while get userName from userId: ' + userId);
+      }
+    );
+    return this.personalResponse.personalData.username;
   }
 
   getPersonalDataByToken(token: string): Observable<PersonalResponse> {

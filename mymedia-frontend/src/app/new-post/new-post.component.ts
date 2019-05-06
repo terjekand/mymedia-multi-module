@@ -40,7 +40,10 @@ export class NewPostComponent implements OnInit {
     this.createPostDto.token = this.getCookie('token');
     if (this.createPostDto.token === null || this.createPostDto.token === undefined || this.createPostDto.token === '') {
       alert('Failed to create post!');
-      this.router.navigateByUrl('/login');
+
+      this.apiService.getLogout(this.apiService.getCookie('token'));
+      this.apiService.deleteCookie('token');
+      this.router.navigateByUrl('/');
     }
     this.apiService.postCreatePost(this.createPostDto).subscribe(
         res => {
@@ -52,7 +55,10 @@ export class NewPostComponent implements OnInit {
         },
         err => {
             alert('Failed to create post');
-            this.router.navigateByUrl('/login');
+
+            this.apiService.getLogout(this.apiService.getCookie('token'));
+            this.apiService.deleteCookie('token');
+            this.router.navigateByUrl('/');
         }
     );
   }

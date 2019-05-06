@@ -46,6 +46,8 @@ export class ProfileEditComponent implements OnInit {
       },
       err => {
         alert('An error occurred while get personal data');
+        this.apiService.getLogout(this.apiService.getCookie('token'));
+        this.apiService.deleteCookie('token');
         this.router.navigateByUrl('/');
       }
     );
@@ -61,6 +63,8 @@ export class ProfileEditComponent implements OnInit {
       },
       err => {
         alert('An error occurred while update personal data');
+        this.apiService.getLogout(this.apiService.getCookie('token'));
+        this.apiService.deleteCookie('token');
         this.router.navigateByUrl('/');
       }
     );
