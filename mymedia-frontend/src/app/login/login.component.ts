@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   };
 
   public regResponse: RegResponse = {
-    errorCode: '',
+    errorCode: -1,
     errorMessage: '',
     userId: ''
   };
@@ -58,7 +58,6 @@ export class LoginComponent implements OnInit {
       res => {
         this.actualUser = res;
         this.setCookie('token' , this.actualUser.token);
-        alert('token:  ' + this.actualUser.token);
         if (this.actualUser.errorCode > 0) {
           this.router.navigateByUrl('/newsfeed');
         } else {
@@ -75,7 +74,9 @@ export class LoginComponent implements OnInit {
     this.apiService.postRegisterUser(this.regModel).subscribe(
       res => {
         this.regResponse = res;
-        alert('MSG:' + this.regResponse.errorMessage + '    CODE:' + this.regResponse.errorCode);
+        if (this.regResponse.errorCode < 0) {
+          alert('MSG: ' + this.regResponse.errorMessage + ' CODE: ' + this.regResponse.errorCode);
+        }
         location.reload();
       },
       err => {

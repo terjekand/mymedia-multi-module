@@ -17,7 +17,7 @@ export interface LoginResponse {
 }
 
 export interface RegResponse {
-  errorCode: string;
+  errorCode: number;
   errorMessage: string;
   userId: string;
 }

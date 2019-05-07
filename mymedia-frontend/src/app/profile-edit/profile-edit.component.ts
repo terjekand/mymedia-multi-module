@@ -42,7 +42,9 @@ export class ProfileEditComponent implements OnInit {
     this.apiService.getPersonalDataByToken(this.apiService.getCookie('token')).subscribe(
       res => {
         this.personalResponse = res;
-        alert('MSG: ' + this.personalResponse.errorMessage + ' CODE: ' + this.personalResponse.errorCode);
+        if (this.personalResponse.errorCode < 0) {
+          alert('MSG: ' + this.personalResponse.errorMessage + ' CODE: ' + this.personalResponse.errorCode);
+        }
       },
       err => {
         alert('An error occurred while get personal data');
@@ -58,7 +60,9 @@ export class ProfileEditComponent implements OnInit {
     this.apiService.postUpdatePersonalData(this.updateProfile).subscribe(
       res => {
         this.mymediaResponse = res;
-        alert('MSG: ' + this.mymediaResponse.errorMessage + ' CODE: ' + this.mymediaResponse.errorCode);
+        if (this.mymediaResponse.errorCode < 0) {
+          alert('MSG: ' + this.mymediaResponse.errorMessage + ' CODE: ' + this.mymediaResponse.errorCode);
+        }
         this.router.navigateByUrl('/profile');
       },
       err => {

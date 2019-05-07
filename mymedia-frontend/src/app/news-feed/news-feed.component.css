@@ -74,8 +74,9 @@ h1 {
   width: 100%;
 }
 .content-text {
+  padding-top: 2em;
   color: #444;
-  font: 14px Helvetica, sans-serif;
+  font: 30px Helvetica, sans-serif;
   text-align: left;
 }
 .counter {

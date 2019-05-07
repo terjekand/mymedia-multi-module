@@ -28,7 +28,9 @@ export class ProfileComponent implements OnInit {
     this.apiService.getPersonalDataByToken(this.apiService.getCookie('token')).subscribe(
       res => {
           this.personalResponse = res;
-          alert('MSG: ' + this.personalResponse.errorMessage + ' CODE: ' + this.personalResponse.errorCode);
+          if (this.personalResponse.errorCode < 0) {
+            alert('MSG: ' + this.personalResponse.errorMessage + ' CODE: ' + this.personalResponse.errorCode);
+          }
       },
       err => {
         alert('An error occurred while get personal data');

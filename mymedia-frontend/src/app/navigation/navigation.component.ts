@@ -46,7 +46,9 @@ export class NavigationComponent implements OnInit {
     this.apiService.getLogout(this.getCookie('token')).subscribe(
       res => {
         this.response = res;
-        alert('MSG: ' + this.response.errorMessage + ' CODE:  ' + this.response.errorCode);
+        if (this.response.errorCode < 0) {
+          alert('MSG: ' + this.response.errorMessage + ' CODE: ' + this.response.errorCode);
+        }
         this.deleteCookie('token');
         this.router.navigateByUrl('/');
 

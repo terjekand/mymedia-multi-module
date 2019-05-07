@@ -13,6 +13,7 @@ import {FormsModule} from '@angular/forms';
 import { NewPostComponent } from './new-post/new-post.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileEditComponent } from './profile-edit/profile-edit.component';
+import { SearchComponent } from './search/search.component';
 
 const appRouter: Routes = [
   {
@@ -55,7 +56,8 @@ const appRouter: Routes = [
     NotFoundComponent,
     NewPostComponent,
     ProfileComponent,
-    ProfileEditComponent
+    ProfileEditComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

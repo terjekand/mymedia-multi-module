@@ -48,9 +48,9 @@ export class NewPostComponent implements OnInit {
     this.apiService.postCreatePost(this.createPostDto).subscribe(
         res => {
             this.createPostResponse = res;
-            alert('CODE: ' + this.createPostResponse.errorCode
-              + ' MSG:' + this.createPostResponse.errorMessage
-              + ' POSTID:' + this.createPostResponse.postId);
+            if (this.createPostResponse.errorCode < 0) {
+              alert('MSG: ' + this.createPostResponse.errorMessage + ' CODE: ' + this.createPostResponse.errorCode);
+            }
             this.router.navigateByUrl('/newsfeed');
         },
         err => {
