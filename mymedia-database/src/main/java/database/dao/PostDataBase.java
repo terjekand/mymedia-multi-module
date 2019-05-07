@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import database.entities.Post;
+import database.entities.User;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -29,6 +30,7 @@ public class PostDataBase {
         Post post = new Post();
         try{
             post.setId(resultSet.getString("ID"));
+            post.setUserName(resultSet.getString("USERNAME"));
             post.setLikers(resultSet.getString("LIKERS"));
             post.setPostDate(resultSet.getDate("POST_DATE"));
             post.setText(resultSet.getString("TEXT"));
@@ -44,15 +46,22 @@ public class PostDataBase {
     public void save(Post post) throws SQLException{
         Statement statement = databaseConnector.connection.createStatement();
         statement.executeUpdate("INSERT INTO " + TABLE_NAME + " VALUES('" + post.getId() + "', '" +
-                    post.getUserId() + "', '" +
-                    post.getText() + "', '" +
-                    post.getLikers() + "', '" +
+                    post.getUserId()   + "', '" +
+                    post.getUserName() + "', '" +
+                    post.getText()     + "', '" +
+                    post.getLikers()   + "', '" +
                     post.getPostDate() + "')");
 
     }
 
     public void updateLikers(Post post) throws SQLException{
         String sql = "update " + TABLE_NAME + " set likers ='" + post.getLikers() + "' where id ='" + post.getId() + "'";
+        Statement statement = databaseConnector.connection.createStatement();
+        statement.executeUpdate(sql);
+    }
+
+    public void updateFullname(User user) throws SQLException{
+        String sql = "update " + TABLE_NAME + " set username ='" + user.getFullname() + "' where userId ='" + user.getId() + "'";
         Statement statement = databaseConnector.connection.createStatement();
         statement.executeUpdate(sql);
     }

@@ -69,4 +69,12 @@ public class AuthenticationController {
         return "Here you are!";
     }
 
+    @GET
+    @Path("/logoutall")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String logoutAllUsers(){
+        authService.logoutALlUser();
+        return "DONE!";
+    }
+
 }

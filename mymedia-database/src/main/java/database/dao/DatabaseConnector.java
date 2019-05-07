@@ -38,7 +38,7 @@ public class DatabaseConnector {
             ResultSet rs = databaseMetaData.getTables(null, "PUBLIC", "POSTS", null);
             if(!rs.next())
             {
-                statement.execute("create table posts(id VARCHAR not null primary key , userid varchar not null, text varchar, likers varchar, post_date timestamp)");
+                statement.execute("create table posts(id VARCHAR not null primary key , userid varchar not null, userName varchar not null, text varchar, likers varchar, post_date timestamp)");
             }
         } catch (SQLException e) {
             log.error("" + e);

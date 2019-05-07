@@ -65,4 +65,8 @@ public class AuthService implements AuthInterf {
         }
         return new UserResponse(ResponseUtil.MSG_USER_NOT_FOUND, ResponseUtil.CODE_USER_NOT_FOUND, null);
     }
+
+    public void logoutALlUser(){
+        SESSION_MANAGER.clear();
+    }
 }

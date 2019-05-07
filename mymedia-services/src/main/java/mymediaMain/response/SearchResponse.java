@@ -4,6 +4,7 @@ import database.entities.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import mymediaMain.model.SearchData;
 
 import java.util.List;
 
@@ -11,10 +12,10 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 public class SearchResponse extends Response {
-    List<User> result;
+    private List<SearchData> searchData;
 
-    public SearchResponse(String errorMessages, int errorCodes, List<User> result) {
+    public SearchResponse(String errorMessages, int errorCodes, List<SearchData> searchData) {
         super(errorMessages, errorCodes);
-        this.result = result;
+        this.searchData = searchData;
     }
 }

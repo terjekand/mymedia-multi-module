@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import mymediaMain.config.SessionManager;
 import mymediaMain.dto.UpdateProfileDto;
 import mymediaMain.model.PersonalData;
+import mymediaMain.model.SearchData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -108,5 +109,19 @@ public class Converter {
             str += newStr;
         }
         return str;
+    }
+
+    public static SearchData convertUserToSearcData(String destUserId, User user){
+        SearchData searchData = new SearchData();
+        searchData.setFullName(user.getFullname());
+        searchData.setUserId(user.getId());
+        searchData.setUserName(user.getUsername());
+        if(user.getFollowers().contains(destUserId)){
+            searchData.setIsFollowed(true);
+        } else {
+            searchData.setIsFollowed(false);
+        }
+
+        return searchData;
     }
 }

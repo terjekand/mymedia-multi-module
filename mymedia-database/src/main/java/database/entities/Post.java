@@ -14,7 +14,10 @@ public class Post implements Serializable {
 
     @Id
     private String id;
+
     private String userId;
+
+    private String userName;
 
     private Date postDate;
 

@@ -66,7 +66,7 @@ public class PostService implements PostInterf {
         if(user == null){
             return new PostResponse(ResponseUtil.MSG_USER_NOT_FOUND, ResponseUtil.CODE_USER_NOT_FOUND, null);
         }
-        Post post = new Post(createPostDto.getUserId(), createPostDto.getText());
+        Post post = PostFactory.create(createPostDto.getUserId(), createPostDto.getText());
         try{
             POST_DATA_BASE.save(post);
         } catch (SQLException e){

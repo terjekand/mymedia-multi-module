@@ -23,6 +23,7 @@ public class NewsFeedService {
             return new PostListResponse(ResponseUtil.MSG_USER_NOT_FOUND, ResponseUtil.CODE_USER_NOT_FOUND, null);
         }
         List<String> userIds = Converter.convertStringToIdList(user.getFollowing());
+        userIds.add(userId);
         List<Post> posts = POST_DATA_BASE.getPostsByUserIdList(userIds);
         return new PostListResponse(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK, posts);
     }

@@ -11,10 +11,11 @@ import javax.ws.rs.core.MediaType;
 public class SearchController {
     SearchService searchService = new SearchService();
 
-    @GET
+    @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{req}")
-    public SearchResponse multiSearch(@PathParam("req") String req){
-        return searchService.searchUser(req);
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/byuserid")
+    public SearchResponse multiSearch(SearchDto searchDto){
+        return searchService.searchUser(searchDto);
     }
 }

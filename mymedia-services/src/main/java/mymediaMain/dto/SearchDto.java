@@ -6,8 +6,7 @@ import java.io.Serializable;
 
 @Data
 public class SearchDto implements Serializable {
-    private String username;
-    private String fullname;
-    private String email;
+    private String destUserId;
+    private String req;
 
 }
