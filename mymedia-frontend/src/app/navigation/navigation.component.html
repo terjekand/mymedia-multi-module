@@ -3,8 +3,9 @@
   <a href="/newsfeed"><img class="icon" src="assets/images/navbar/feed.png"></a>
   <div class="logout"><img class="icon" src="assets/images/navbar/discovery.png" (click)="logout()"></div>
   <div class="src-container">
-    <form action="#">
-      <input type="text" placeholder="Search..." onfocus="this.placeholder=''" onblur="this.placeholder = 'Search...'" name="search" />
+    <form>
+      <input type="text" placeholder="Search..." onfocus="this.placeholder=''" onblur="this.placeholder = 'Search...'" name="search" [(ngModel)]="req"/>
+      <button type="submit" style="display:none" (click)="search()">Search</button>
     </form>
   </div>
 </div>

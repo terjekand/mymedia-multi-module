@@ -37,6 +37,10 @@ const appRouter: Routes = [
     component: ProfileEditComponent
   },
   {
+    path: 'search',
+    component: SearchComponent
+  },
+  {
     path: '',
     component: LoginComponent,
     pathMatch: 'full'

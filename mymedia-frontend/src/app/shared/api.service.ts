@@ -7,6 +7,9 @@ import {MymediaResponse} from './model/Shared';
 import {PostListResponse} from '../news-feed/model/PostListResponse';
 import {PersonalResponse} from '../profile/Model/PersonalData';
 import {UpdateProfile} from '../profile-edit/model/UpdateProfile';
+import {FollowWithTokenDto, SearchData, SearchDto, SearchResponse} from '../search/model/SearchResponse';
+import {SearchComponent} from '../search/search.component';
+import {Router} from '@angular/router';
 
 
 @Injectable({
@@ -18,6 +21,8 @@ export class ApiService {
   private POST_URL = this.BASE_URL + 'post/';
   private PERSONAL_URL = this.BASE_URL + 'personal/';
   private NEWSFEED_URL = this.BASE_URL + 'newsfeed/';
+  private SEARCH_URL = this.BASE_URL + 'search/';
+  private FOLLOW_URL = this.BASE_URL + 'follow/';
 
   private LOGIN_URL = this.AUTH_URL + 'login';
   private REGISTER_URL = this.AUTH_URL + 'registration';
@@ -31,6 +36,12 @@ export class ApiService {
 
   private GET_NEWS_FEED_BY_TOKEN_URL = this.NEWSFEED_URL + 'getbytoken/';
 
+  private SEARCH_USER_BY_TOKEN = this.SEARCH_URL + 'bytoken/';
+
+
+  private FOLLOW_BY_TOKEN = this.FOLLOW_URL + 'bytoken/';
+
+
   personalResponse: PersonalResponse = {
     errorCode: -1,
     errorMessage: '',
@@ -43,8 +54,47 @@ export class ApiService {
     }
   };
 
-  constructor(private http: HttpClient) {
+  req = '';
 
+  searchResponse: SearchResponse = {
+    errorCode: -1,
+    errorMessage: '',
+    searchData: []
+  };
+
+  searcDto: SearchDto = {
+    token: '',
+    req: ''
+  };
+
+  findings: SearchData[] = [];
+
+
+
+
+  constructor(private http: HttpClient, private router: Router) {
+
+  }
+
+  doSearch() {
+    if (this.req !== '') {
+      this.searcDto.token = this.getCookie('token');
+      this.searcDto.req = this.req;
+      this.postSearchUserByToken(this.searcDto).subscribe(
+        res => {
+          this.searchResponse = res;
+          this.findings = this.searchResponse.searchData;
+          this.router.navigateByUrl('/search');
+        },
+        err => {
+          alert('An error occurred while search');
+          this.router.navigateByUrl('/newsfeed');
+        }
+      );
+    } else {
+      alert('Type something to the search bar...');
+    }
+    this.req = '';
   }
 
   public getCookie(name: string) {
@@ -89,24 +139,20 @@ export class ApiService {
     return this.http.get<PersonalResponse>(this.GET_PERSONAL_DATA_BY_ID_URL + userId);
   }
 
-  getUserNameByUserid(userId: string): string {
-    this.getPersonalDataByUserId(userId).subscribe(
-      res => {
-        this.personalResponse = res;
-      },
-      err => {
-        alert('An error occurred while get userName from userId: ' + userId);
-      }
-    );
-    return this.personalResponse.personalData.username;
-  }
-
   getPersonalDataByToken(token: string): Observable<PersonalResponse> {
     return this.http.get<PersonalResponse>(this.GET_PERSONAL_DATA_BY_TOKEN_URL + token);
   }
 
   postUpdatePersonalData(updateProfile: UpdateProfile): Observable<MymediaResponse> {
     return this.http.post<MymediaResponse>(this.UPDATE_PERSONAL_DATA, updateProfile);
+  }
+
+  postSearchUserByToken(searchDto: SearchDto): Observable<SearchResponse> {
+    return this.http.post<SearchResponse>(this.SEARCH_USER_BY_TOKEN, searchDto);
+  }
+
+  postFollowUserByToken(followWithTokenDto: FollowWithTokenDto): Observable<MymediaResponse> {
+    return this.http.post<MymediaResponse>(this.FOLLOW_BY_TOKEN, followWithTokenDto);
   }
 
 }

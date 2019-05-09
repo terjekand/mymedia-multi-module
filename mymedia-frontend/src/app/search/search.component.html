@@ -1,3 +1,11 @@
 <p>
-  search works!
+  <app-navigation></app-navigation>
 </p>
+
+<div *ngFor="let finding of this.apiService.findings">
+  <div id="item">
+    <div id="name">{{finding.fullName}} ({{finding.userName}})</div>
+    <div id="{{finding.value}}" (click)="doFollowAction(finding.userId)"><i class="fa fa-plus"></i>{{finding.value}}</div>
+    <div id="clear"></div>
+  </div>
+</div>

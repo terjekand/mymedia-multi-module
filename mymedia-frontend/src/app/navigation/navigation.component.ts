@@ -15,7 +15,10 @@ export class NavigationComponent implements OnInit {
   response: MymediaResponse = {
     errorMessage: '',
     errorCode: -1
-  }
+  };
+
+  private req = '';
+
   ngOnInit() {
   }
   constructor(private apiService: ApiService, private router: Router) {
@@ -41,7 +44,6 @@ export class NavigationComponent implements OnInit {
     document.cookie = name + '=; expires=' + date.toUTCString() + '; path=/';
   }
 
-
   public logout(): any {
     this.apiService.getLogout(this.getCookie('token')).subscribe(
       res => {
@@ -60,6 +62,9 @@ export class NavigationComponent implements OnInit {
     );
   }
 
-
+  search() {
+    this.apiService.req = this.req;
+    this.apiService.doSearch();
+  }
 
 }
