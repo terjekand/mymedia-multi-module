@@ -13,7 +13,7 @@ public class FollowController {
     private FollowService followService = new FollowService();
 
     @POST
-    @Path("/withUserId")
+    @Path("/byuserid")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response followWithUserId(FollowWithUserIdDto followWithUserIdDto){
@@ -21,7 +21,7 @@ public class FollowController {
     }
 
     @POST
-    @Path("/withToken")
+    @Path("/bytoken")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response followWithToken(FollowWithTokenDto followWithTokenDto){

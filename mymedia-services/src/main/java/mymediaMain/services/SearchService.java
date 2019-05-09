@@ -3,6 +3,8 @@ package mymediaMain.services;
 import database.dao.UserDataBase;
 import database.entities.User;
 import lombok.extern.slf4j.Slf4j;
+import mymediaMain.config.SessionManager;
+import mymediaMain.dto.SearchByTokenDto;
 import mymediaMain.dto.SearchDto;
 import mymediaMain.enums.ResponseUtil;
 import mymediaMain.model.SearchData;
@@ -13,7 +15,8 @@ import java.util.List;
 
 @Slf4j
 public class SearchService {
-    private UserDataBase USER_DATA_BASE = UserDataBase.getInstance();
+    private static final UserDataBase USER_DATA_BASE = UserDataBase.getInstance();
+    private static final SessionManager SESSION_MANAGER = SessionManager.getInstance();
 
     public SearchService(){
 
@@ -33,5 +36,10 @@ public class SearchService {
             searchDataList.add(Converter.convertUserToSearcData(searchDto.getDestUserId(), user));
         }
         return new SearchResponse(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK, searchDataList);
+    }
+
+    public SearchResponse searchUserByToken(SearchByTokenDto searchByTokenDto){
+        String userId = SESSION_MANAGER.getUserIdByToken(searchByTokenDto.getToken());
+        return searchUser(new SearchDto(userId, searchByTokenDto.getReq()));
     }
 }

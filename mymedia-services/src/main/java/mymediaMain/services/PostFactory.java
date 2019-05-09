@@ -17,7 +17,7 @@ public class PostFactory {
             return null;
         }
         Post post = new Post(userId, text);
-        post.setUserName(user.getUsername());
+        post.setUserName(user.getFullname());
         return post;
     }
 }

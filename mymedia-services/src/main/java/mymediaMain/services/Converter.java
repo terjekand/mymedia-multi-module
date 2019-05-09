@@ -117,9 +117,9 @@ public class Converter {
         searchData.setUserId(user.getId());
         searchData.setUserName(user.getUsername());
         if(user.getFollowers().contains(destUserId)){
-            searchData.setIsFollowed(true);
+            searchData.setValue("Following");
         } else {
-            searchData.setIsFollowed(false);
+            searchData.setValue("Follow");
         }
 
         return searchData;

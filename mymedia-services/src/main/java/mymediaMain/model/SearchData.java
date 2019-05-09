@@ -13,5 +13,5 @@ public class SearchData {
     private String userId;
     private String fullName;
     private String userName;
-    private Boolean isFollowed;
+    private String value;
 }
