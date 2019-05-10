@@ -8,7 +8,6 @@ import {PostListResponse} from '../news-feed/model/PostListResponse';
 import {PersonalResponse} from '../profile/Model/PersonalData';
 import {UpdateProfile} from '../profile-edit/model/UpdateProfile';
 import {FollowWithTokenDto, SearchData, SearchDto, SearchResponse} from '../search/model/SearchResponse';
-import {SearchComponent} from '../search/search.component';
 import {Router} from '@angular/router';
 
 

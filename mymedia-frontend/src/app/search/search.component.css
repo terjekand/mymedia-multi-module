@@ -1,6 +1,6 @@
 #item{
   position: relative;
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
   margin-bottom: 15px;
   padding: 12px;
@@ -22,10 +22,11 @@
   font-size: 16px;
   max-width: 50%;
   position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  /*top: 50%;*/
+  /*-webkit-transform: translateY(-50%);*/
+  /*-ms-transform: translateY(-50%);*/
+  /*transform: translateY(-50%);*/
+  padding-top: 0.6em;
 }
 
 #Follow{
@@ -86,7 +87,7 @@
   font-family: "Font Awesome 5 Free";
 }
 #Following:hover:after {
-  content: " unfollow";
+  content: " Unfollow";
 }
 
 #clear{clear: both;}
