@@ -1,13 +1,11 @@
 package mymediaMain.dto;
 
-import lombok.*;
+import lombok.Data;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
-@Builder
-public class LoginDto {
+import java.io.Serializable;
+
+@Data
+public class LoginDto implements Serializable {
     private String username;
     private String password;
 }

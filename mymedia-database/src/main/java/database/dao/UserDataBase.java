@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 @Slf4j
 public class UserDataBase {
@@ -28,11 +30,17 @@ public class UserDataBase {
         try {
 
             Statement statement = databaseConnector.connection.createStatement();
-            statement.executeUpdate("INSERT INTO " + TABLE_NAME  + " VALUES('" + user.getId() + "', '" +
-                    user.getUsername() + "', '" +
-                    user.getPassword() + "', '" +
-                    user.getEmail()    + "', '" +
-                    user.getFullname() + "')");
+            statement.executeUpdate("INSERT INTO " + TABLE_NAME  + " VALUES('" +
+                    user.getId()          + "', '" +
+                    user.getUsername()    + "', '" +
+                    user.getPassword()    + "', '" +
+                    user.getEmail()       + "', '" +
+                    user.getFullname()    + "', '" +
+                    user.getBio()         + "', '" +
+                    user.getPhoneNumber() + "', '" +
+                    user.getFollowers()   + "', '" +
+                    user.getFollowing()   +
+                    "')");
             /**
              * "INSERT INTO " + TABLE_NAME + " + " VALUES("' + user.getId() + "', '" + user.getUsername() + "', '" + user.getPassword() + "', '" + user.getEmail() + "', '" + user.getFullname + "')"
             */
@@ -40,6 +48,30 @@ public class UserDataBase {
         } catch (SQLException e) {
             log.error(e + "");
         }
+    }
+
+    public void update(User user) throws SQLException{
+            String sql = "update " + TABLE_NAME + " set bio ='" + user.getBio() +
+                                                  "', phonenumber ='" + user.getPhoneNumber() +
+                                                  "', fullname ='" + user.getFullname() +
+                                                  "' where id ='" + user.getId() + "'";
+            Statement statement = databaseConnector.connection.createStatement();
+            statement.executeUpdate(sql);
+
+    }
+
+    public void updateFollowers(User user) throws SQLException {
+        String sql = "update " + TABLE_NAME + " set followers ='" + user.getFollowers() +
+                "' where id ='" + user.getId() + "'";
+        Statement statement = databaseConnector.connection.createStatement();
+        statement.executeUpdate(sql);
+    }
+
+    public void updateFollowing(User user) throws SQLException {
+        String sql = "update " + TABLE_NAME + " set following ='" + user.getFollowing() +
+                "' where id ='" + user.getId() + "'";
+        Statement statement = databaseConnector.connection.createStatement();
+        statement.executeUpdate(sql);
     }
 
     private User convertResultSetToUser(ResultSet resultSet){
@@ -50,6 +82,10 @@ public class UserDataBase {
             user.setFullname(resultSet.getString("FULLNAME"));
             user.setPassword(resultSet.getString("PASSWORD"));
             user.setUsername(resultSet.getString("USERNAME"));
+            user.setBio(resultSet.getString("BIO"));
+            user.setPhoneNumber(resultSet.getString("PHONENUMBER"));
+            user.setFollowers(resultSet.getString("FOLLOWERS"));
+            user.setFollowing(resultSet.getString("FOLLOWING"));
             return user;
         }catch (SQLException e){
             log.error(e + "");
@@ -79,6 +115,35 @@ public class UserDataBase {
                 return convertResultSetToUser(resultSet);
             }
             return null;
+        }catch (SQLException e){
+            log.error(e + "");
+            return null;
+        }
+    }
+
+    public String getUserIdByUsername(String username){
+        try{
+            Statement statement = databaseConnector.connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_NAME  + " WHERE USERNAME = '"+ username +"'" );
+            if (resultSet.next()){
+                return resultSet.getString("ID");
+            }
+            return null;
+        }catch (SQLException e){
+            log.error(e + "");
+            return null;
+        }
+    }
+
+    public List<User> searchUser(String req){
+        try{
+            Statement statement = databaseConnector.connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_NAME  + " WHERE USERNAME like '%"+ req +"%' OR fullname like '%"+ req +"%'" );
+            List<User> users = new ArrayList<>();
+            while (resultSet.next()){
+                users.add(convertResultSetToUser(resultSet));
+            }
+            return users;
         }catch (SQLException e){
             log.error(e + "");
             return null;

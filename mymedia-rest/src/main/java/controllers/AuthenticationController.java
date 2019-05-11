@@ -1,10 +1,10 @@
 package controllers;
 
-import database.entities.User;
 import mymediaMain.dto.LoginDto;
 import mymediaMain.dto.RegistrationDto;
 import mymediaMain.response.LoginResponse;
 import mymediaMain.response.Response;
+import mymediaMain.response.UserIdResponse;
 import mymediaMain.response.UserResponse;
 import mymediaMain.services.AuthService;
 import mymediaMain.services.RegistrationService;
@@ -13,7 +13,8 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Path("/auth")
-public class MymRestAuth {
+public class AuthenticationController {
+
     private AuthService authService = new AuthService();
     private RegistrationService registrationService = new RegistrationService();
 
@@ -36,7 +37,7 @@ public class MymRestAuth {
     @Path("/registration")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response registration(RegistrationDto registrationDto){
+    public UserIdResponse registration(RegistrationDto registrationDto){
         return registrationService.userRegistration(registrationDto);
     }
 
@@ -59,6 +60,21 @@ public class MymRestAuth {
     @Produces(MediaType.APPLICATION_JSON)
     public UserResponse getUserByEmail(@PathParam("email") String email){
         return authService.getUserByEmail(email);
+    }
+
+    @GET
+    @Path("/givemestring")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String giveMeString(){
+        return "Here you are!";
+    }
+
+    @GET
+    @Path("/logoutall")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String logoutAllUsers(){
+        authService.logoutALlUser();
+        return "DONE!";
     }
 
 }

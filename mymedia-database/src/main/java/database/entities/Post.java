@@ -5,47 +5,37 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.util.List;
+import java.sql.Date;
+import java.util.UUID;
 
-@Entity
-@Table(name = "Posts")
-
-@NamedQueries({
-        @NamedQuery(name = "Post.getPostsOfUser", query = "SELECT u FROM Post u WHERE u.userId =:id"),
-        @NamedQuery(name = "Post.getLikersOfPost", query = "SELECT u.likers FROM Post u WHERE u.id =:pId"),
-        @NamedQuery(name = "Post.getPostByPostId", query = "SELECT u FROM Post u WHERE u.id =:id"),
-})
 @Getter
 @Setter
 public class Post implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID", nullable = false, updatable = false)
-    private Long id;
+    private String id;
 
-    @JoinColumn(name = "USER_ID", nullable = false, updatable = false)
     private String userId;
 
-    @Column(name = "POST_DATE", nullable = false, updatable = false)
-    private LocalDate postDate;
+    private String userName;
 
-    @Column(name = "TEXT", nullable = false)
+    private Date postDate;
+
     private String text;
 
-    @JoinColumn(name = "LIKERS")
-    @OneToMany
-    private List<User> likers;
+    private String likers;
 
     public Post() {
+        id = UUID.randomUUID().toString();
     }
 
     public Post(String userId, String text) {
+        id = UUID.randomUUID().toString();
         this.userId = userId;
-        postDate = LocalDate.now();
+        java.util.Date date = new java.util.Date();
+        postDate = new Date(date.getTime());
         this.text = text;
-        likers = null;
+        likers = "";
     }
 
     @Override

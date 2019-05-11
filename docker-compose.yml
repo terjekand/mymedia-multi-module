@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+
+    database-service:
+        build: ./mymedia-database
+        volumes:
+          - /var/lib/postgresql/data
+        ports:
+          - '5432:5432'
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: kiss
+            POSTGRES_DB: postgres
+
+    api-service:
+        build: ./mymedia-rest
+        ports:
+          - '8080:8080'
+        depends_on:
+          - database-service
+          
+    
