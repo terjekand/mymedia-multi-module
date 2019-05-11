@@ -5,7 +5,7 @@ import {LoginViewModel, LoginResponse, RegistrationViewModel} from '../login/mod
 import {CreatePostDto, CreatePostResponse} from '../new-post/model/createPost';
 import {MymediaResponse} from './model/Shared';
 import {PostListResponse} from '../news-feed/model/PostListResponse';
-import {PersonalResponse} from '../profile/Model/PersonalData';
+import {FollowersAndFollowingResponse, PersonalResponse} from '../profile/Model/PersonalData';
 import {UpdateProfile} from '../profile-edit/model/UpdateProfile';
 import {FollowWithTokenDto, SearchData, SearchDto, SearchResponse} from '../search/model/SearchResponse';
 import {Router} from '@angular/router';
@@ -39,6 +39,7 @@ export class ApiService {
 
 
   private FOLLOW_BY_TOKEN = this.FOLLOW_URL + 'bytoken/';
+  private GET_NUMBERS_OF_FOLLOWING_BY_TOKEN = this.FOLLOW_URL + 'getnumbersbytoken/';
 
 
   personalResponse: PersonalResponse = {
@@ -154,4 +155,7 @@ export class ApiService {
     return this.http.post<MymediaResponse>(this.FOLLOW_BY_TOKEN, followWithTokenDto);
   }
 
+  getFollowersAndFollowingByToken(token: string): Observable<FollowersAndFollowingResponse> {
+    return this.http.get<FollowersAndFollowingResponse>(this.GET_NUMBERS_OF_FOLLOWING_BY_TOKEN + token);
+  }
 }

@@ -11,3 +11,10 @@ export interface PersonalData {
 export interface PersonalResponse extends MymediaResponse {
   personalData: PersonalData;
 }
+
+export interface FollowersAndFollowingResponse extends MymediaResponse {
+  following: number;
+  followers: number;
+  posts: number;
+
+}

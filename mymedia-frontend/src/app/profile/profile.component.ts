@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PersonalResponse} from './Model/PersonalData';
+import {FollowersAndFollowingResponse, PersonalResponse} from './Model/PersonalData';
 import {ApiService} from '../shared/api.service';
 import {Router} from '@angular/router';
 
@@ -22,6 +22,14 @@ export class ProfileComponent implements OnInit {
     }
   };
 
+  followersAndFollowingResponse: FollowersAndFollowingResponse = {
+    errorCode: -1,
+    errorMessage: '',
+    followers: 0,
+    following: 0,
+    posts: 0
+  };
+
   constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit() {
@@ -38,6 +46,21 @@ export class ProfileComponent implements OnInit {
         this.apiService.getLogout(this.apiService.getCookie('token'));
         this.apiService.deleteCookie('token');
         this.router.navigateByUrl('/');
+      }
+    );
+
+    this.apiService.getFollowersAndFollowingByToken(this.apiService.getCookie('token')).subscribe(
+      res => {
+        this.followersAndFollowingResponse = res;
+        if (this.followersAndFollowingResponse.errorCode < 0) {
+          alert('MSG: ' + this.followersAndFollowingResponse.errorMessage + ' CODE: ' + this.followersAndFollowingResponse.errorCode);
+          this.followersAndFollowingResponse.following = 0;
+          this.followersAndFollowingResponse.followers = 0;
+          this.followersAndFollowingResponse.posts = 0;
+        }
+      },
+      err => {
+        alert('An error occurred while loading followers and following numbers');
       }
     );
   }
