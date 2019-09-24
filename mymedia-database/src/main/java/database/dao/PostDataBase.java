@@ -9,6 +9,7 @@ import java.util.List;
 import database.entities.Post;
 import database.entities.User;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 
 @Slf4j
 public class PostDataBase {
@@ -103,7 +104,7 @@ public class PostDataBase {
     }
 
     public List<Post> getPostsByUserIdList(List<String> userIds){
-        String sql = "";
+        String sql = StringUtils.EMPTY;
         try{
             for(int i = 0; i < userIds.size() - 1; i++){
                 sql += "userId = '" + userIds.get(i) + "' OR ";

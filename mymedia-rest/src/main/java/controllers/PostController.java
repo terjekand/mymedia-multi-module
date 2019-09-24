@@ -1,9 +1,6 @@
 package controllers;
 
-import mymediaMain.dto.CreatePostDto;
-import mymediaMain.dto.CreatePostWithTokenDto;
-import mymediaMain.dto.LikeUserIdDto;
-import mymediaMain.dto.LikeWithTokenDto;
+import mymediaMain.dto.*;
 import mymediaMain.response.LikersResponse;
 import mymediaMain.response.PostListResponse;
 import mymediaMain.response.PostResponse;
@@ -71,7 +68,13 @@ public class PostController {
         return postService.deletePostById(postId);
     }
 
-
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/deletepostbytoken")
+    public Response deletePostOfUserByToken(DeletePostWithTokenDto deletePostWithTokenDto) {
+        return deletePostOfUserByToken(deletePostWithTokenDto);
+    }
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
@@ -80,6 +83,7 @@ public class PostController {
     public PostResponse createPost(CreatePostDto createPostDto){
         return postService.createPost(createPostDto);
     }
+
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)

@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import mymediaMain.config.SessionManager;
 import mymediaMain.dto.CreatePostDto;
 import mymediaMain.dto.CreatePostWithTokenDto;
+import mymediaMain.dto.DeletePostWithTokenDto;
 import mymediaMain.enums.ResponseUtil;
 import mymediaMain.response.LikersResponse;
 import mymediaMain.response.PostListResponse;
@@ -26,7 +27,9 @@ public class PostService implements PostInterf {
     private static final UserDataBase USER_DATA_BASE = UserDataBase.getInstance();
     private static final SessionManager SESSION_MANAGER = SessionManager.getInstance();
 
-
+    private boolean isEmptyString(String string) {
+        return string == null || string.equals("");
+    }
 
     @Override
     public LikersResponse getLikersOfPost(String postId){
@@ -58,8 +61,7 @@ public class PostService implements PostInterf {
 
     @Override
     public PostResponse createPost(CreatePostDto createPostDto) {
-        if(createPostDto.getText() == null || "".equals(createPostDto.getText()) ||
-           createPostDto.getUserId() == null ||"".equals(createPostDto.getUserId())){
+        if(isEmptyString(createPostDto.getText()) || isEmptyString(createPostDto.getUserId())){
             return  new PostResponse(ResponseUtil.MSG_BAD_PARAMETERS, ResponseUtil.CODE_BAD_PARAMETERS, null);
         }
         User user = USER_DATA_BASE.getUserById(createPostDto.getUserId());
@@ -105,7 +107,7 @@ public class PostService implements PostInterf {
 
     @Override
     public PostListResponse getPostsOfUserByUserId(String userId) {
-        if(userId == null || userId.equals("")){
+        if(isEmptyString(userId)){
             return new PostListResponse(ResponseUtil.MSG_BAD_PARAMETERS, ResponseUtil.CODE_BAD_PARAMETERS, null);
         }
         List<Post> posts = POST_DATA_BASE.getPostByUserId(userId);
@@ -114,13 +116,23 @@ public class PostService implements PostInterf {
 
     @Override
     public PostListResponse getPostsOfUserByUsername(String username) {
+        if(isEmptyString(username)) {
+            return new PostListResponse(ResponseUtil.MSG_BAD_PARAMETERS, ResponseUtil.CODE_BAD_PARAMETERS, null);
+        }
         String userId = USER_DATA_BASE.getUserIdByUsername(username);
         return getPostsOfUserByUserId(userId);
     }
 
     @Override
     public PostListResponse getPostsOfUserByToken(String token) {
+        if(isEmptyString(token)) {
+            return new PostListResponse(ResponseUtil.MSG_BAD_PARAMETERS, ResponseUtil.CODE_BAD_PARAMETERS, null);
+        }
+
         String userId = SESSION_MANAGER.getUserIdByToken(token);
+        if(isEmptyString(userId)) {
+            return new PostListResponse(ResponseUtil.MSG_TOKEN_DOES_NOT_EXIST, ResponseUtil.CODE_TOKEN_DOES_NOT_EXIST, null);
+        }
 
         return getPostsOfUserByUserId(userId);
     }
@@ -128,7 +140,7 @@ public class PostService implements PostInterf {
     @Override
     public Response deletePostById(String postId) {
 
-        if(postId == null || postId == ""){
+        if(isEmptyString(postId)){
             return new Response(ResponseUtil.MSG_BAD_PARAMETERS, ResponseUtil.CODE_BAD_PARAMETERS);
         }
 
@@ -143,6 +155,28 @@ public class PostService implements PostInterf {
             return new Response(ResponseUtil.MSG_DELETE_POST_FAILED, ResponseUtil.CODE_DELETE_POST_FAILED);
         }
         return new Response(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK);
+    }
+
+    public Response deletePostOfUserByToken(DeletePostWithTokenDto deletePostWithTokenDto) {
+        if(isEmptyString(deletePostWithTokenDto.getPostId()) || isEmptyString(deletePostWithTokenDto.getToken())) {
+            return new Response(ResponseUtil.MSG_BAD_PARAMETERS, ResponseUtil.CODE_BAD_PARAMETERS);
+        }
+        String userId = SESSION_MANAGER.getUserIdByToken(deletePostWithTokenDto.getToken());
+        Post post = POST_DATA_BASE.getPostById(deletePostWithTokenDto.getPostId());
+
+        if(isEmptyString(userId)) {
+            return new Response(ResponseUtil.MSG_TOKEN_DOES_NOT_EXIST, ResponseUtil.CODE_TOKEN_DOES_NOT_EXIST);
+        }
+
+        if(post == null) {
+            return new Response(ResponseUtil.MSG_POST_DOES_NOT_EXIST, ResponseUtil.CODE_POST_DOES_NOT_EXIST);
+        }
+
+        if(!post.getUserId().equals(userId)) {
+            return new Response(ResponseUtil.MSG_POST_DELETE_NOT_ALLOWED, ResponseUtil.CODE_POST_DELETE_NOT_ALLOWED);
+        }
+
+        return deletePostById(post.getId());
     }
 
 }

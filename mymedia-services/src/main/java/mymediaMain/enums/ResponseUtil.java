@@ -30,6 +30,8 @@ public class ResponseUtil {
 
     public static int CODE_POST_UPDATE_FAILED= -302;
 
+    public static int CODE_POST_DELETE_NOT_ALLOWED= -303;
+
     public static int CODE_UNAUTHORIZED = -401;
 
     public static int CODE_NO_DATA_BASE_CONNECTION = -500;
@@ -93,6 +95,8 @@ public class ResponseUtil {
     public static String MSG_DELETE_POST_FAILED = "An error occurred while delete post";
 
     public static String MSG_POST_UPDATE_FAILED= "An error occurred while update post";
+
+    public static String MSG_POST_DELETE_NOT_ALLOWED= "Post delete not allowed for the user";
 
 
 }
