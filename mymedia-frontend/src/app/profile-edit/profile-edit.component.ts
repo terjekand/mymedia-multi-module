@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../shared/api.service';
 import {Router} from '@angular/router';
-import {PersonalResponse} from '../profile/Model/PersonalData';
+import {FollowersAndFollowingResponse, PersonalResponse} from '../profile/Model/PersonalData';
 import {UpdateProfile} from './model/UpdateProfile';
 import {MymediaResponse} from '../shared/model/Shared';
 
@@ -32,10 +32,21 @@ export class ProfileEditComponent implements OnInit {
     phoneNumber: undefined
   };
 
+  followersAndFollowingResponse: FollowersAndFollowingResponse = {
+    errorCode: -1,
+    errorMessage: '',
+    followers: 0,
+    following: 0,
+    posts: 0
+  };
+
   mymediaResponse: MymediaResponse = {
     errorCode: -1,
     errorMessage: ''
-  }
+  };
+
+  selectedFile: File = null;
+
   constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit() {
@@ -51,6 +62,21 @@ export class ProfileEditComponent implements OnInit {
         this.apiService.getLogout(this.apiService.getCookie('token'));
         this.apiService.deleteCookie('token');
         this.router.navigateByUrl('/');
+      }
+    );
+
+    this.apiService.getFollowersAndFollowingByToken(this.apiService.getCookie('token')).subscribe(
+      res => {
+        this.followersAndFollowingResponse = res;
+        if (this.followersAndFollowingResponse.errorCode < 0) {
+          alert('MSG: ' + this.followersAndFollowingResponse.errorMessage + ' CODE: ' + this.followersAndFollowingResponse.errorCode);
+          this.followersAndFollowingResponse.following = 0;
+          this.followersAndFollowingResponse.followers = 0;
+          this.followersAndFollowingResponse.posts = 0;
+        }
+      },
+      err => {
+        alert('An error occurred while loading followers and following numbers');
       }
     );
   }

@@ -5,4 +5,5 @@ export interface Post {
   postDate: string;
   text: string;
   likers: string;
+  numberOfLikes: number;
 }

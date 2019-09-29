@@ -11,8 +11,8 @@
     <p class="content-text">{{post.text}}</p>
   </div>
   <div class="like-section">
-    <button class="like"></button>
-    <p class="like-text">256 likes</p>
+    <button class="like" (click)="likeUserId(post.id)"></button>
+    <p class="like-text">{{post.numberOfLikes}} likes</p>
   </div>
 </div>
 

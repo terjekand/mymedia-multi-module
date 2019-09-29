@@ -9,6 +9,7 @@ import {FollowersAndFollowingResponse, PersonalResponse} from '../profile/Model/
 import {UpdateProfile} from '../profile-edit/model/UpdateProfile';
 import {FollowWithTokenDto, SearchData, SearchDto, SearchResponse} from '../search/model/SearchResponse';
 import {Router} from '@angular/router';
+import {LikeWithUserId} from '../news-feed/model/LikeWithUserId';
 
 
 @Injectable({
@@ -32,6 +33,7 @@ export class ApiService {
   private UPDATE_PERSONAL_DATA = this.PERSONAL_URL + 'update';
 
   private CREATE_POST_URL = this.POST_URL + 'createpostwithtoken';
+  private DELETE_POST_BY_POST_ID = this.POST_URL + 'deletepostbyid/';
 
   private GET_NEWS_FEED_BY_TOKEN_URL = this.NEWSFEED_URL + 'getbytoken/';
 
@@ -40,6 +42,8 @@ export class ApiService {
 
   private FOLLOW_BY_TOKEN = this.FOLLOW_URL + 'bytoken/';
   private GET_NUMBERS_OF_FOLLOWING_BY_TOKEN = this.FOLLOW_URL + 'getnumbersbytoken/';
+
+  private LIKE_WITH_TOKEN = this.POST_URL + 'likewithtoken/';
 
 
   personalResponse: PersonalResponse = {
@@ -158,4 +162,13 @@ export class ApiService {
   getFollowersAndFollowingByToken(token: string): Observable<FollowersAndFollowingResponse> {
     return this.http.get<FollowersAndFollowingResponse>(this.GET_NUMBERS_OF_FOLLOWING_BY_TOKEN + token);
   }
+
+  deletePostByPostId(postId: string): Observable<MymediaResponse> {
+    return this.http.get<MymediaResponse>(this.DELETE_POST_BY_POST_ID + postId);
+  }
+
+  likePostWithToken(likeWithUserId: LikeWithUserId): Observable<MymediaResponse> {
+    return this.http.post<MymediaResponse>(this.LIKE_WITH_TOKEN, likeWithUserId);
+  }
+
 }
