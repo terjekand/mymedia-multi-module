@@ -1,9 +1,11 @@
 package mymediaMain.services;
 
 import database.dao.UserDataBase;
+import database.entities.Post;
 import database.entities.User;
 import lombok.extern.slf4j.Slf4j;
 import mymediaMain.config.SessionManager;
+import mymediaMain.dto.ExtendedPost;
 import mymediaMain.dto.UpdateProfileDto;
 import mymediaMain.model.PersonalData;
 import mymediaMain.model.SearchData;
@@ -123,5 +125,28 @@ public class Converter {
         }
 
         return searchData;
+    }
+
+    public static ExtendedPost convertPostToExtendedPost(Post post) {
+        PostService postService = new PostService();
+        ExtendedPost temp = new ExtendedPost();
+        temp.setId(post.getId());
+        temp.setLikers(post.getLikers());
+        temp.setPostDate(post.getPostDate());
+        temp.setText(post.getText());
+        temp.setUserId(post.getUserId());
+        temp.setUserName(post.getUserName());
+        temp.setNumberOfLikes(postService.getLikersOfPost(post.getId()).getLikers().size());
+
+        return temp;
+    }
+
+    public static List<ExtendedPost> convertPostListToExtendedPostList(List<Post> posts) {
+        List<ExtendedPost> extendedPosts = new ArrayList<>();
+
+        for(Post post: posts) {
+            extendedPosts.add(convertPostToExtendedPost(post));
+        }
+        return extendedPosts;
     }
 }

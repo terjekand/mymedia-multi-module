@@ -5,9 +5,11 @@ import database.dao.UserDataBase;
 import database.entities.Post;
 import database.entities.User;
 import mymediaMain.config.SessionManager;
+import mymediaMain.dto.ExtendedPost;
 import mymediaMain.enums.ResponseUtil;
 import mymediaMain.response.PostListResponse;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -25,7 +27,8 @@ public class NewsFeedService {
         List<String> userIds = Converter.convertStringToIdList(user.getFollowing());
         userIds.add(userId);
         List<Post> posts = POST_DATA_BASE.getPostsByUserIdList(userIds);
-        return new PostListResponse(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK, posts);
+
+        return new PostListResponse(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK, Converter.convertPostListToExtendedPostList(posts));
     }
 
     public PostListResponse fillNewsFeedByToken(String token){

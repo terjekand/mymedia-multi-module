@@ -8,6 +8,7 @@ import mymediaMain.config.SessionManager;
 import mymediaMain.dto.CreatePostDto;
 import mymediaMain.dto.CreatePostWithTokenDto;
 import mymediaMain.dto.DeletePostWithTokenDto;
+import mymediaMain.dto.ExtendedPost;
 import mymediaMain.enums.ResponseUtil;
 import mymediaMain.response.LikersResponse;
 import mymediaMain.response.PostListResponse;
@@ -111,7 +112,8 @@ public class PostService implements PostInterf {
             return new PostListResponse(ResponseUtil.MSG_BAD_PARAMETERS, ResponseUtil.CODE_BAD_PARAMETERS, null);
         }
         List<Post> posts = POST_DATA_BASE.getPostByUserId(userId);
-        return new PostListResponse(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK, posts);
+
+        return new PostListResponse(ResponseUtil.MSG_OK, ResponseUtil.CODE_OK, Converter.convertPostListToExtendedPostList(posts));
     }
 
     @Override

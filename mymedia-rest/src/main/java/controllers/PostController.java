@@ -24,6 +24,20 @@ public class PostController {
         return response;
     }
 
+
+    @GET
+    @Path("/getnumberoflikes/{postid}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getNumberOfLikes(@PathParam("postid") String postId) {
+        Response response = new Response();
+
+        LikersResponse likersResp = postService.getLikersOfPost(postId);
+        response.setErrorMessage(likersResp.getErrorMessage());
+        response.setErrorCode(likersResp.getLikers().size());
+
+        return response;
+    }
+
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
