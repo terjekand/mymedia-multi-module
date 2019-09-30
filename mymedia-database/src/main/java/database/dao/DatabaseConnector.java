@@ -17,7 +17,7 @@ public class DatabaseConnector {
     private static final DatabaseConnector databaseConnector = new DatabaseConnector();
     private DatabaseMetaData databaseMetaData;
     private DatabaseConnector() {
-        connect2();
+        connect();
         try {
             databaseMetaData = connection.getMetaData();
         } catch (SQLException e) {
